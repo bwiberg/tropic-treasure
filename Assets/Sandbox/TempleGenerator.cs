@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using UnityEngine;
 using Utility;
 using Debug = UnityEngine.Debug;
@@ -23,9 +22,10 @@ public class TempleGenerator : MonoBehaviour {
     public Material WallMaterial;
 
     public void GenerateTemple() {
+#if UNITY_EDITOR
         foreach (Transform child in transform) {
 //            UnityEditor.EditorApplication.delayCall += () => { DestroyImmediate(child.gameObject); };
-            GameObject.DestroyImmediate(child.gameObject);
+            DestroyImmediate(child.gameObject);
         }
         transform.DetachChildren();
 
@@ -47,5 +47,6 @@ public class TempleGenerator : MonoBehaviour {
 
         Debug.LogFormat("Generated temple with {0} levels in {1} milliseconds", temple.Levels.Count,
             sw.ElapsedMilliseconds);
+#endif
     }
 }

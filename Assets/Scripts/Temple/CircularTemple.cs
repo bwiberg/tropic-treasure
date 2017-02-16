@@ -16,6 +16,7 @@ public class CircularTemple {
 
         public GameObject toGameObject(int levelIndex, Material wallMaterial) {
             var gameObject = new GameObject(string.Format("Level {0}", levelIndex));
+            gameObject.AddComponent<CircularTempleLevel>();
 
             var segmentIndex = 0;
             foreach (var segment in Segments) {
