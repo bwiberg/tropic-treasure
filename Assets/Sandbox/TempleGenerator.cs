@@ -5,6 +5,8 @@ using Debug = UnityEngine.Debug;
 
 [ExecuteInEditMode]
 public class TempleGenerator : MonoBehaviour {
+    public GameObject LevelSegmentPrefab;
+
     [Range(2, 10)] public int TempleLevels = 5;
 
     [Range(0.1f, 10.0f)] public float InnerRadius = 0.25f;
@@ -18,8 +20,6 @@ public class TempleGenerator : MonoBehaviour {
     [Range(0.0f, 10.0f)] public float HeightRange = 0.0f;
 
     [Range(0.0f, 1.0f)] public float LevelPadding = 0.0f;
-
-    public Material WallMaterial;
 
     public void GenerateTemple() {
 #if UNITY_EDITOR
@@ -40,7 +40,7 @@ public class TempleGenerator : MonoBehaviour {
             Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
             LevelPadding);
 
-        var templeGameObject = temple.toGameObject(WallMaterial);
+        var templeGameObject = temple.toGameObject(LevelSegmentPrefab);
         templeGameObject.transform.SetParent(transform);
 
         sw.Stop();
