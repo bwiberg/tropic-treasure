@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 81305823817827734}
   - component: {fileID: 114293593167338684}
   - component: {fileID: 114193443254116138}
+  - component: {fileID: 114853300868282770}
+  - component: {fileID: 114839291862406550}
   m_Layer: 0
   m_Name: MainGameCamera
   m_TagString: MainCamera
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784280522117896}
   m_LocalRotation: {x: 0.5084179, y: -0, z: -0, w: 0.8611105}
-  m_LocalPosition: {x: 0, y: 18.755, z: -10}
+  m_LocalPosition: {x: 0, y: 24.9, z: -13.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,21 +63,21 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 5
-  far clip plane: 40
-  field of view: 60
-  orthographic: 1
+  near clip plane: 15
+  far clip plane: 45.1
+  field of view: 67
+  orthographic: 0
   orthographic size: 18.22
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
@@ -133,6 +135,41 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114839291862406550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784280522117896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dec3315a39c540c3a737af45512bce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 100
+  Height: 60
+  MarginRight: 10
+  MarginTop: 10
+--- !u!114 &114853300868282770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784280522117896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Radius: 0.4
+  m_SampleCount: 0
+  m_OcclusionIntensity: 1.5
+  m_Blur: 2
+  m_Downsampling: 1
+  m_OcclusionAttenuation: 2
+  m_MinZ: 0.001
+  m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}
+  m_RandomTexture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
 --- !u!124 &124490163075228596
 Behaviour:
   m_ObjectHideFlags: 1

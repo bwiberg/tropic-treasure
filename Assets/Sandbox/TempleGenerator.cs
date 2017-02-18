@@ -21,6 +21,10 @@ public class TempleGenerator : MonoBehaviour {
 
     [Range(0.0f, 1.0f)] public float LevelPadding = 0.0f;
 
+	public bool SnapWallRotations = true;
+
+	[Range(4, 120)] public int NumWallSnapModes = 12;
+
     public void GenerateTemple() {
 #if UNITY_EDITOR
         foreach (Transform child in transform) {
@@ -42,6 +46,11 @@ public class TempleGenerator : MonoBehaviour {
 
         var templeGameObject = temple.toGameObject(LevelSegmentPrefab);
         templeGameObject.transform.SetParent(transform);
+
+		foreach (var rotationGesture in templeGameObject.GetComponentsInChildren<SingleTouchRotationGesture>()) {
+			rotationGesture.ForceSnapping = SnapWallRotations;
+			rotationGesture.NumSnapAngles = NumWallSnapModes;
+		}
 
         sw.Stop();
 

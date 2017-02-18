@@ -8,7 +8,7 @@ public class WallMeshGenerator {
         float innerRadius,
         float thickness,
         float height,
-        float innerFaceArcLength = 0.25f,
+        float innerFaceArcLength = 1.0f,
         bool smoothInnerOuterNormals = false) {
         if (angleEnd < angleStart) {
             var temp = angleStart;

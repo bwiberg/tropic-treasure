@@ -1,5 +1,5 @@
 ﻿/*
- * @author Benjamin Wiberg / http://va.lent.in/
+ * @author Benjamin Wiberg
  */
 
 using System.Collections.Generic;
@@ -18,6 +18,12 @@ using UnityEngine;
 /// </summary>
 public class SingleTouchRotationGesture : TransformGestureBase, ITransformGesture {
     #region Public properties
+
+    [SerializeField]
+    public bool ForceSnapping = true;
+
+    [SerializeField, Range(4, 120)]
+    public int NumSnapAngles = 12;
 
     /// <summary>
     /// Gets or sets transform's projection plane normal.
@@ -60,22 +66,35 @@ public class SingleTouchRotationGesture : TransformGestureBase, ITransformGestur
 
     #region Private variables
 
-    [SerializeField] private Vector3 projectionPlaneNormal = Vector3.forward;
+    [SerializeField] private Vector3 projectionPlaneNormal = Vector3.up;
 
     private TouchLayer projectionLayer;
     private Plane transformPlane;
+
+	private float cumulativeAngle = 0.0f;
+
+	private float snappedRotationAngle = 0.0f;
+
+	private float previousSnappedAngle = 0.0f;
+
+	private float SnapAngle {
+		get { return 360.0f / NumSnapAngles; }
+	}
 
     #endregion
 
     #region Public methods
 
-    /// <inheritdoc />
-    public void ApplyTransform(Transform target) {
-        if (!Mathf.Approximately(DeltaScale, 1f)) target.localScale *= DeltaScale;
-        if (!Mathf.Approximately(DeltaRotation, 0f))
-            target.rotation = Quaternion.AngleAxis(DeltaRotation, RotationAxis) * target.rotation;
-        if (DeltaPosition != Vector3.zero) target.position += DeltaPosition;
-    }
+	/// <inheritdoc />
+	public void ApplyTransform(Transform target) {
+		if (ForceSnapping) {
+			target.rotation = Quaternion.AngleAxis(snappedRotationAngle, RotationAxis);
+		} else {
+			// Delta rotation
+			if (!Mathf.Approximately(DeltaRotation, 0f))
+				target.rotation = Quaternion.AngleAxis(DeltaRotation, RotationAxis) * target.rotation;
+		}
+	}
 
     #endregion
 
@@ -85,7 +104,6 @@ public class SingleTouchRotationGesture : TransformGestureBase, ITransformGestur
     protected override void Awake() {
         base.Awake();
         transformPlane = new Plane();
-        ProjectionPlaneNormal = Vector3.up;
     }
 
     /// <inheritdoc />
@@ -107,6 +125,8 @@ public class SingleTouchRotationGesture : TransformGestureBase, ITransformGestur
             projectionLayer = activeTouches[0].Layer;
             updateProjectionPlane();
         }
+
+		cumulativeAngle = previousSnappedAngle;
     }
 
     #endregion
@@ -134,29 +154,30 @@ public class SingleTouchRotationGesture : TransformGestureBase, ITransformGestur
         var oldScreenPos1 = getPointPreviousScreenPosition(0);
 
         dR = doSingleTouchRotation(oldScreenPos1, newScreenPos1, projectionParams);
+		cumulativeAngle += dR;
 
-        Debug.LogFormat("touchesMoved [State={0} new={1} old={2} dR={3}]", State, newScreenPos1, oldScreenPos1, dR);
+		snappedRotationAngle = SnapAngle * Mathf.Round((cumulativeAngle / (360.0f)) * NumSnapAngles);
 
-
-        if (dP == Vector3.zero && dR == 0 && dS == 1) return;
         if (State == GestureState.Possible) setState(GestureState.Began);
         switch (State) {
             case GestureState.Began:
             case GestureState.Changed:
-                deltaPosition = dP;
                 deltaRotation = dR;
-                deltaScale = dS;
                 setState(GestureState.Changed);
                 break;
         }
     }
 
+	protected override void touchesEnded (IList<TouchPoint> touches) {
+		base.touchesEnded (touches);
+		cumulativeAngle = 0.0f;
+		previousSnappedAngle = snappedRotationAngle;
+	}
 
     protected float doSingleTouchRotation(Vector2 oldScreenPos, Vector2 newScreenPos,
         ProjectionParams projectionParams) {
         var newVector = projectionParams.ProjectTo(newScreenPos, TransformPlane);
         var oldVector = projectionParams.ProjectTo(oldScreenPos, TransformPlane);
-        Debug.LogFormat("doSingleTouchRotation [newVector={0} oldVector={1}", newVector, oldVector);
         var angle = Vector3.Angle(oldVector, newVector);
         if (Vector3.Dot(Vector3.Cross(oldVector, newVector), TransformPlane.normal) < 0)
             angle = -angle;
