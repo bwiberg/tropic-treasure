@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 33709157050574056}
   - component: {fileID: 23280614243561592}
   - component: {fileID: 114213282502674734}
+  - component: {fileID: 114213075435666888}
   m_Layer: 0
   m_Name: CircularLevelSegment
   m_TagString: Untagged
@@ -95,6 +96,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &114213075435666888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128144196939256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fa884ed156844819750bfcd1a0a9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InnerRadius: 0
+  Thickness: 0
+  Height: 0
 --- !u!114 &114213282502674734
 MonoBehaviour:
   m_ObjectHideFlags: 1
