@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TempleTarget : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
-		GameObject.Destroy(other.gameObject);
+		if(other.gameObject.GetComponent<SimpleAgent>())
+			GameObject.Destroy(other.gameObject);
 	}
 }
