@@ -29,21 +29,21 @@ public class CircularTempleGenerator {
         return segments;
     }
 
-    public static CircularTemple Generate(
+	public static CircularTempleDescription Generate(
         int levels,
         float startRadius,
         Tuple<float, float> thicknessRange,
         Tuple<float, float> heightRange,
         float levelPadding = 0.0f) {
 
-        var temple = new CircularTemple();
+		var temple = new CircularTempleDescription();
 
         var currentRadius = startRadius;
         for (var ilevel = 0; ilevel < levels; ilevel++) {
             var thickness = Random.Range(thicknessRange.Item1, thicknessRange.Item2);
             var height = Random.Range(heightRange.Item1, heightRange.Item2);
 
-            var level = new CircularTemple.Level(currentRadius, thickness, height);
+			var level = new CircularTempleDescription.Level(currentRadius, thickness, height);
             currentRadius += thickness + levelPadding;
 
             level.Segments.AddRange(GenerateLevelSegments(ilevel));
