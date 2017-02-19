@@ -13,8 +13,4 @@ public class SimpleAgent : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 }

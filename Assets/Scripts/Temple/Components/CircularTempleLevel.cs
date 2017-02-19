@@ -39,9 +39,9 @@ public class CircularTempleLevel : MonoBehaviour {
 		}
 
 		clone.transform.rotation = transform.rotation;
-		//clone.gesture.PreviousAngle = transform.eulerAngles.y; // TODO: fix this hack
 		clone.gameObject.SetActive(true);
 		clone.setRenderOutlineOnly(false);
+		clone.transform.DOShakeRotation(DURATION_SHAKE, 4.0f * Vector3.up);
 		this.setRenderOutlineOnly(true);
     }
 
@@ -83,7 +83,7 @@ public class CircularTempleLevel : MonoBehaviour {
 		var animation = DOTween.Sequence();
 
 		animation
-			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
+			//.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
 			.Append(transform.DORotateQuaternion(target, DURATION_ROTATE).SetEase(Ease.Linear))
 			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
 			.Play();
