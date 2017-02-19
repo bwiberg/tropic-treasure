@@ -1,0 +1,82 @@
+﻿using System;
+using cakeslice;
+using TouchScript.Behaviors;
+using TouchScript.Gestures;
+using UnityEngine;
+
+using DG.Tweening;
+
+[RequireComponent(typeof(Transformer),
+    typeof(SingleTouchRotationGesture))]
+public class CircularTempleLevel : MonoBehaviour {
+    
+	public Material outlineOnlyMaterial;
+	public Material originalMaterial;
+
+	private Outline outline;
+	private SingleTouchRotationGesture gesture;
+
+	private CircularTempleLevel clone;
+
+	void Awake() {
+		outline = GetComponent<Outline>();
+		gesture = GetComponent<SingleTouchRotationGesture>();
+	}
+
+	void OnEnable() {
+		gesture.TransformStarted += transformStartedHandler;
+		gesture.TransformCompleted += transformCompletedHandler;
+	}
+
+	void OnDisable() {
+		gesture.TransformStarted -= transformStartedHandler;
+		gesture.TransformCompleted -= transformCompletedHandler;
+	}
+
+    private void transformStartedHandler(object sender, EventArgs e) {
+		if (!clone) {
+			createClone();
+		}
+
+		clone.transform.rotation = transform.rotation;
+		//clone.gesture.PreviousAngle = transform.eulerAngles.y; // TODO: fix this hack
+		clone.gameObject.SetActive(true);
+		clone.setRenderOutlineOnly(false);
+		this.setRenderOutlineOnly(true);
+    }
+
+    private void transformCompletedHandler(object sender, EventArgs e) {
+		Quaternion target = transform.rotation;
+		this.setRenderOutlineOnly(false);
+		gameObject.SetActive(false);
+
+		clone.gesture.PreviousAngle = transform.eulerAngles.y;
+
+		clone.animateRotation(target);
+    }
+
+	private void createClone() {
+		clone = GameObject.Instantiate(gameObject).GetComponent<CircularTempleLevel>();
+
+		// Assign this GameObject as the clone's clone (phew!)
+		clone.clone = this;
+		clone.transform.SetParent(transform.parent);
+		clone.gameObject.SetActive(false);
+	}
+
+	private void setRenderOutlineOnly(bool renderOutlineOnly) {
+		foreach (Transform child in transform) {
+			child.GetComponent<Outline>().enabled = renderOutlineOnly;
+
+			if (renderOutlineOnly) {
+				child.GetComponent<MeshRenderer>().material = outlineOnlyMaterial;
+			} else {
+				child.GetComponent<MeshRenderer>().material = originalMaterial;
+			}
+		}
+	}
+
+	private void animateRotation(Quaternion target) {
+		transform.DORotateQuaternion(target, 1.0f);
+	}
+}

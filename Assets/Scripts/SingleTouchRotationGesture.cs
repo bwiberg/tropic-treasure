@@ -77,6 +77,13 @@ public class SingleTouchRotationGesture : TransformGestureBase, ITransformGestur
 
 	private float previousSnappedAngle = 0.0f;
 
+	public float PreviousAngle {
+		set {
+			previousSnappedAngle = value;
+			cumulativeAngle = value;
+		}
+	}
+
 	private float SnapAngle {
 		get { return 360.0f / NumSnapAngles; }
 	}

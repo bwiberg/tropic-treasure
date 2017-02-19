@@ -5,6 +5,8 @@ using Debug = UnityEngine.Debug;
 
 [ExecuteInEditMode]
 public class TempleGenerator : MonoBehaviour {
+	public GameObject LevelPrefab;
+
     public GameObject LevelSegmentPrefab;
 
     [Range(2, 10)] public int TempleLevels = 5;
@@ -44,7 +46,7 @@ public class TempleGenerator : MonoBehaviour {
             Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
             LevelPadding);
 
-        var templeGameObject = temple.toGameObject(LevelSegmentPrefab);
+        var templeGameObject = temple.toGameObject(LevelPrefab, LevelSegmentPrefab);
         templeGameObject.transform.SetParent(transform);
 
 		foreach (var rotationGesture in templeGameObject.GetComponentsInChildren<SingleTouchRotationGesture>()) {

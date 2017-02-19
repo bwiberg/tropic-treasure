@@ -2,7 +2,7 @@
 using cakeslice;
 using UnityEngine;
 
-public class CircularTemple {
+public class CircularTempleDescription {
     public class Level {
         public readonly List<Arc> Segments = new List<Arc>();
         public readonly float InnerRadius;
@@ -15,9 +15,9 @@ public class CircularTemple {
             Height = height;
         }
 
-        public GameObject toGameObject(int levelIndex, GameObject levelSegmentPrefab) {
-            var gameObject = new GameObject(string.Format("Level {0}", levelIndex));
-            gameObject.AddComponent<CircularTempleLevel>();
+        public GameObject toGameObject(int levelIndex, GameObject levelPrefab, GameObject levelSegmentPrefab) {
+			var gameObject = GameObject.Instantiate(levelPrefab);
+			gameObject.name = string.Format("Level {0}", levelIndex);
 
             var segmentIndex = 0;
             foreach (var segment in Segments) {
@@ -36,12 +36,12 @@ public class CircularTemple {
         }
     }
 
-    public GameObject toGameObject(GameObject levelSegmentPrefab) {
+	public GameObject toGameObject(GameObject levelPrefab, GameObject levelSegmentPrefab) {
         var gameObject = new GameObject("Temple");
 
         var levelIndex = 0;
         foreach (var level in Levels) {
-            var levelGameObject = level.toGameObject(levelIndex++, levelSegmentPrefab);
+            var levelGameObject = level.toGameObject(levelIndex++, levelPrefab, levelSegmentPrefab);
             levelGameObject.transform.SetParent(gameObject.transform);
         }
 
