@@ -76,7 +76,16 @@ public class CircularTempleLevel : MonoBehaviour {
 		}
 	}
 
+	private const float DURATION_SHAKE = 0.4f;
+	private const float DURATION_ROTATE = 1.0f;
+
 	private void animateRotation(Quaternion target) {
-		transform.DORotateQuaternion(target, 1.0f);
+		var animation = DOTween.Sequence();
+
+		animation
+			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
+			.Append(transform.DORotateQuaternion(target, DURATION_ROTATE).SetEase(Ease.Linear))
+			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
+			.Play();
 	}
 }
