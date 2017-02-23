@@ -1175,6 +1175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9cb0b1b98164dbe82b7aaaa7e00c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineOnlyMaterial: {fileID: 0}
+  originalMaterial: {fileID: 0}
 --- !u!114 &114115429225433634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1229,6 +1231,8 @@ MonoBehaviour:
   type: 7
   minScreenPointsDistance: 0.5
   screenTransformThreshold: 0.1
+  ForceSnapping: 1
+  NumSnapAngles: 12
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
 --- !u!114 &114244079733037460
 MonoBehaviour:
@@ -1252,6 +1256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9cb0b1b98164dbe82b7aaaa7e00c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineOnlyMaterial: {fileID: 0}
+  originalMaterial: {fileID: 0}
 --- !u!114 &114271247005129688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1263,6 +1269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9cb0b1b98164dbe82b7aaaa7e00c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineOnlyMaterial: {fileID: 0}
+  originalMaterial: {fileID: 0}
 --- !u!114 &114308849409884726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1317,6 +1325,8 @@ MonoBehaviour:
   type: 7
   minScreenPointsDistance: 0.5
   screenTransformThreshold: 0.1
+  ForceSnapping: 1
+  NumSnapAngles: 12
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
 --- !u!114 &114371828080653308
 MonoBehaviour:
@@ -1329,6 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c56de1b6ea3e469ea015acd7e008d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelPrefab: {fileID: 0}
   LevelSegmentPrefab: {fileID: 1128144196939256, guid: 300dc3ab517b246fd9f4b7e08b565e49,
     type: 2}
   TempleLevels: 5
@@ -1338,7 +1349,9 @@ MonoBehaviour:
   MeanHeight: 0.96
   HeightRange: 0
   LevelPadding: 0.2
-  WallMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  SnapWallRotations: 1
+  NumWallSnapModes: 12
+  RandomSeed: -1
 --- !u!114 &114387678897428590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1395,6 +1408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9cb0b1b98164dbe82b7aaaa7e00c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineOnlyMaterial: {fileID: 0}
+  originalMaterial: {fileID: 0}
 --- !u!114 &114482155003041196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1434,6 +1449,8 @@ MonoBehaviour:
   type: 7
   minScreenPointsDistance: 0.5
   screenTransformThreshold: 0.1
+  ForceSnapping: 1
+  NumSnapAngles: 12
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
 --- !u!114 &114560010072984482
 MonoBehaviour:
@@ -1459,6 +1476,8 @@ MonoBehaviour:
   type: 7
   minScreenPointsDistance: 0.5
   screenTransformThreshold: 0.1
+  ForceSnapping: 1
+  NumSnapAngles: 12
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
 --- !u!114 &114580462824609316
 MonoBehaviour:
@@ -1495,6 +1514,8 @@ MonoBehaviour:
   type: 7
   minScreenPointsDistance: 0.5
   screenTransformThreshold: 0.1
+  ForceSnapping: 1
+  NumSnapAngles: 12
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
 --- !u!114 &114663817789281460
 MonoBehaviour:
@@ -1574,6 +1595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9cb0b1b98164dbe82b7aaaa7e00c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineOnlyMaterial: {fileID: 0}
+  originalMaterial: {fileID: 0}
 --- !u!114 &114944901148701120
 MonoBehaviour:
   m_ObjectHideFlags: 1

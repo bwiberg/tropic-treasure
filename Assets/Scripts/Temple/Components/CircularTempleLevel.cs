@@ -3,6 +3,7 @@ using cakeslice;
 using TouchScript.Behaviors;
 using TouchScript.Gestures;
 using UnityEngine;
+using UnityEngine.AI;
 
 using DG.Tweening;
 
@@ -41,8 +42,11 @@ public class CircularTempleLevel : MonoBehaviour {
 		clone.transform.rotation = transform.rotation;
 		clone.gameObject.SetActive(true);
 		clone.setRenderOutlineOnly(false);
+		clone.setIsObstacleActive(true);
 		clone.transform.DOShakeRotation(DURATION_SHAKE, 4.0f * Vector3.up);
+
 		this.setRenderOutlineOnly(true);
+		this.setIsObstacleActive(false);
     }
 
     private void transformCompletedHandler(object sender, EventArgs e) {
@@ -73,6 +77,12 @@ public class CircularTempleLevel : MonoBehaviour {
 			} else {
 				child.GetComponent<MeshRenderer>().material = originalMaterial;
 			}
+		}
+	}
+
+	private void setIsObstacleActive(bool shouldBeActive) {
+		foreach (var obstacle in GetComponentsInChildren<NavMeshObstacle>()) {
+			obstacle.enabled = shouldBeActive;
 		}
 	}
 
