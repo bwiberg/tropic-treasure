@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class CircularTempleDescription {
 	public class Level {
-		public static readonly float NUM_OBSTACLES_FACTOR = 0.55f;
+		public static readonly float NUM_OBSTACLES_FACTOR = 0.75f;
 		public static readonly float OBSTACLE_SIZE_BIAS = 0.025f;
 
         public readonly List<Arc> Segments = new List<Arc>();

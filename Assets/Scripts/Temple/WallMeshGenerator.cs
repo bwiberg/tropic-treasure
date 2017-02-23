@@ -3,13 +3,16 @@ using UnityEngine;
 using Utility;
 
 public class WallMeshGenerator {
+	private static readonly float FACTOR_UV_SCALING = 1.0f;
+
     public static Mesh GenerateArcWallMesh(float angleStart,
         float angleEnd,
         float innerRadius,
         float thickness,
         float height,
         float innerFaceArcLength = 1.0f,
-        bool smoothInnerOuterNormals = false) {
+        bool smoothInnerOuterNormals = false,
+		bool doPolarUvMapping = false) {
         if (angleEnd < angleStart) {
             var temp = angleStart;
             angleStart = angleEnd;
@@ -40,10 +43,18 @@ public class WallMeshGenerator {
         //          /
         //         /
         //        o v[0]
-        var abstractVerts = new Vector3[numVertices];
+		var polarVertices = new Polar[numVertices];
         for (var ivert = 0; ivert < numVertices; ivert++) {
-            abstractVerts[ivert] = new Polar(1.0f, angleStart + ivert * segmentAngle).Cartesian3D;
+            polarVertices[ivert] = new Polar(1.0f, angleStart + ivert * segmentAngle);
         }
+
+		Mesh mesh = new Mesh();
+
+		var vertices = new List<Vector3>();
+		var normals = new List<Vector3>();
+		var uvs = new List<Vector2>();
+
+		var triangles = new List<int>();
 
         // Generate wall segments
         //   s[3]
@@ -60,42 +71,64 @@ public class WallMeshGenerator {
         //          / s[0]
         //         /
         //        o
-        var segments = new Tuple<Vector3, Vector3>[numVertices];
+		Vector3 normal;
+		int ivertexstart;
+		float uLeft = 0;
+		float uRight = 0;
         for (var isegment = 0; isegment < numSegments; ++isegment) {
-            segments[isegment] = Tuple.Create(abstractVerts[isegment], abstractVerts[isegment + 1]);
-        }
+            var bottomRightPolar = polarVertices[isegment];
+			var bottomLeftPolar = polarVertices[isegment + 1];
 
-        Mesh mesh = new Mesh();
+			var bottomRight = bottomRightPolar.Cartesian3D;
+			var bottomLeft = bottomLeftPolar.Cartesian3D;
 
-        var vertices = new List<Vector3>();
-        var normals = new List<Vector3>();
-        var uvs = new List<Vector2>();
-
-        var triangles = new List<int>();
-
-        Vector3 normal;
-        int ivertexstart;
-        for (var isegment = 0; isegment < numSegments; ++isegment) {
-            var segment = segments[isegment];
-
-            var bottomRight = segment.Item1;
-            var bottomLeft = segment.Item2;
+			uRight = uLeft;
+			uLeft += FACTOR_UV_SCALING;
 
             // inner wall
-            vertices.Add(innerRadius * bottomRight);
+            
+			vertices.Add(innerRadius * bottomRight);
             vertices.Add(innerRadius * bottomLeft);
             vertices.Add(innerRadius * bottomRight + height * Vector3.up);
             vertices.Add(innerRadius * bottomLeft + height * Vector3.up);
+
+			uvs.Add(new Vector2(uRight, 0.0f));
+			uvs.Add(new Vector2(uLeft, 0.0f));
+			uvs.Add(new Vector2(uRight, height));
+			uvs.Add(new Vector2(uLeft, height));
+
             // outer wall
+
             vertices.Add(outerRadius * bottomRight);
             vertices.Add(outerRadius * bottomLeft);
             vertices.Add(outerRadius * bottomRight + height * Vector3.up);
             vertices.Add(outerRadius * bottomLeft + height * Vector3.up);
+
+			uvs.Add(new Vector2(uRight, 0.0f));
+			uvs.Add(new Vector2(uLeft, 0.0f));
+			uvs.Add(new Vector2(uRight, height));
+			uvs.Add(new Vector2(uLeft, height));
+				
+
             // top part
+
             vertices.Add(innerRadius * bottomRight + height * Vector3.up);
             vertices.Add(innerRadius * bottomLeft + height * Vector3.up);
             vertices.Add(outerRadius * bottomRight + height * Vector3.up);
             vertices.Add(outerRadius * bottomLeft + height * Vector3.up);
+
+			if (doPolarUvMapping) {
+				uvs.Add(new Vector2(uRight, 0.0f));
+				uvs.Add(new Vector2(uLeft, 0.0f));
+				uvs.Add(new Vector2(uRight, 1.0f));
+				uvs.Add(new Vector2(uLeft, 1.0f));
+			} else {
+				uvs.Add((innerRadius * bottomRight + height * Vector3.up).xz());
+				uvs.Add((innerRadius * bottomLeft + height * Vector3.up).xz());
+				uvs.Add((outerRadius * bottomRight + height * Vector3.up).xz());
+				uvs.Add((outerRadius * bottomLeft + height * Vector3.up).xz());
+			}
+
 
             if (smoothInnerOuterNormals) {
                 // normals are generated so inner/outer walls are smoothly rounded
@@ -149,12 +182,19 @@ public class WallMeshGenerator {
         }
 
         // start
-        ivertexstart = vertices.Count;
-        var vert = abstractVerts[0];
-        vertices.Add(outerRadius * vert);
+        
+		ivertexstart = vertices.Count;
+        var vert = polarVertices[0].Cartesian3D;
+        
+		vertices.Add(outerRadius * vert);
         vertices.Add(innerRadius * vert);
         vertices.Add(outerRadius * vert + height * Vector3.up);
         vertices.Add(innerRadius * vert + height * Vector3.up);
+
+		uvs.Add(new Vector2(thickness, 0.0f));
+		uvs.Add(new Vector2(0.0f, 0.0f));
+		uvs.Add(new Vector2(thickness, height));
+		uvs.Add(new Vector2(0.0f, height));
 
         normal = new Vector3(vert.z, 0.0f, -vert.x);
         for (var i = 0; i < 4; ++i) normals.Add(normal);
@@ -166,13 +206,21 @@ public class WallMeshGenerator {
         triangles.Add(ivertexstart + 3);
         triangles.Add(ivertexstart + 2);
 
+
         // end
-        ivertexstart = vertices.Count;
-        vert = abstractVerts[numVertices - 1];
-        vertices.Add(innerRadius * vert);
+        
+		ivertexstart = vertices.Count;
+        vert = polarVertices[numVertices - 1].Cartesian3D;
+        
+		vertices.Add(innerRadius * vert);
         vertices.Add(outerRadius * vert);
         vertices.Add(innerRadius * vert + height * Vector3.up);
         vertices.Add(outerRadius * vert + height * Vector3.up);
+
+		uvs.Add(new Vector2(0.0f, 0.0f));
+		uvs.Add(new Vector2(thickness, 0.0f));
+		uvs.Add(new Vector2(0.0f, height));
+		uvs.Add(new Vector2(thickness, height));
 
         normal = new Vector3(vert.z, 0.0f, -vert.x);
         for (var i = 0; i < 4; ++i) normals.Add(normal);
