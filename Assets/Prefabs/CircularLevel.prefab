@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineOnlyMaterial: {fileID: 2100000, guid: 7860b0b2aaef14a21bae9a5ff39e263d, type: 2}
-  originalMaterial: {fileID: 2100000, guid: 2db29206e6f9a4eb7bd8deaa1ee0f22f, type: 2}
+  originalMaterial: {fileID: 2100000, guid: 44bf67127bcb9491390dc2a4f3572601, type: 2}
 --- !u!114 &114739523306815560
 MonoBehaviour:
   m_ObjectHideFlags: 1
