@@ -465,7 +465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224654620561984454}
   m_Layer: 5
-  m_Name: UI V2
+  m_Name: UI Start Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
