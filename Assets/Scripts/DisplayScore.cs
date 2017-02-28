@@ -19,6 +19,7 @@ public class DisplayScore : MonoBehaviour {
 		continousTime = 120;
 		seconds = continousTime;
 		timeText = GetComponent<Text>();
+		timeText.text = "" + Mathf.FloorToInt(seconds);
 		UpdateTime(0);
 	}
 
