@@ -27,6 +27,8 @@ public class TempleGenerator : MonoBehaviour {
 
 	[Range(4, 120)] public int NumWallSnapModes = 12;
 
+	public int RandomSeed = -1;
+
     public void GenerateTemple() {
 #if UNITY_EDITOR
         foreach (Transform child in transform) {
@@ -35,6 +37,9 @@ public class TempleGenerator : MonoBehaviour {
         }
         transform.DetachChildren();
 
+		if (RandomSeed != -1) {
+			Random.InitState(RandomSeed);
+		}
 
         var sw = new Stopwatch();
         sw.Start();
