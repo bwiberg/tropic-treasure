@@ -9,15 +9,17 @@ using DG.Tweening;
 
 [RequireComponent(typeof(Transformer),
     typeof(SingleTouchRotationGesture))]
-public class CircularTempleLevel : MonoBehaviour {
+public class CircularLevel : MonoBehaviour {
     
+	public CircularLevelDescription Description;
+
 	public Material outlineOnlyMaterial;
 	public Material originalMaterial;
 
 	private Outline outline;
 	private SingleTouchRotationGesture gesture;
 
-	private CircularTempleLevel clone;
+	private CircularLevel clone;
 
 	void Awake() {
 		outline = GetComponent<Outline>();
@@ -60,7 +62,7 @@ public class CircularTempleLevel : MonoBehaviour {
     }
 
 	private void createClone() {
-		clone = GameObject.Instantiate(gameObject).GetComponent<CircularTempleLevel>();
+		clone = GameObject.Instantiate(gameObject).GetComponent<CircularLevel>();
 
 		// Assign this GameObject as the clone's clone (phew!)
 		clone.clone = this;
@@ -96,6 +98,11 @@ public class CircularTempleLevel : MonoBehaviour {
 			//.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
 			.Append(transform.DORotateQuaternion(target, DURATION_ROTATE).SetEase(Ease.Linear))
 			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
+			.OnComplete(() => {
+				gesture.enabled = true;
+			})
 			.Play();
+
+		gesture.enabled = true;
 	}
 }

@@ -43,7 +43,7 @@ public class CircularTempleGenerator {
             var thickness = Random.Range(thicknessRange.Item1, thicknessRange.Item2);
             var height = Random.Range(heightRange.Item1, heightRange.Item2);
 
-			var level = new CircularTempleDescription.Level(currentRadius, thickness, height);
+			var level = new CircularLevelDescription(currentRadius, thickness, height);
             currentRadius += thickness + levelPadding;
 
             level.Segments.AddRange(GenerateLevelSegments(ilevel));

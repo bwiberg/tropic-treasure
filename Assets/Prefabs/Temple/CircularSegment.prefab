@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114213282502674734}
   - component: {fileID: 114213075435666888}
   m_Layer: 0
-  m_Name: CircularLevelSegment
+  m_Name: CircularSegment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,9 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fa884ed156844819750bfcd1a0a9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InnerRadius: 0
-  Thickness: 0
-  Height: 0
 --- !u!114 &114213282502674734
 MonoBehaviour:
   m_ObjectHideFlags: 1

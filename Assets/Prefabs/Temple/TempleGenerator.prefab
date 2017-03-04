@@ -1339,9 +1339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c56de1b6ea3e469ea015acd7e008d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TemplePrefab: {fileID: 0}
   LevelPrefab: {fileID: 0}
-  LevelSegmentPrefab: {fileID: 1128144196939256, guid: 300dc3ab517b246fd9f4b7e08b565e49,
-    type: 2}
+  SegmentPrefab: {fileID: 0}
   TempleLevels: 5
   InnerRadius: 2.51
   MeanThickness: 1.25
