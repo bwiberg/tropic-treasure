@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23280614243561592}
   - component: {fileID: 114213282502674734}
   - component: {fileID: 114213075435666888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CircularSegment
   m_TagString: CircularSegment
   m_Icon: {fileID: 0}

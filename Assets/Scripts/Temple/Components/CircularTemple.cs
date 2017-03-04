@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
 public class CircularTemple : MonoBehaviour {
-	public CircularTempleDescription Description;
+	public float WallRotationDurationFactor = 1.0f;
 }

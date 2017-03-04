@@ -51,3 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52526bfb451a54a0abb84d6ed5cabc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WallRotationDurationFactor: 0.25

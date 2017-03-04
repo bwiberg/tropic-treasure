@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using cakeslice;
 using TouchScript.Behaviors;
 using TouchScript.Gestures;
@@ -11,7 +12,16 @@ using DG.Tweening;
     typeof(SingleTouchRotationGesture))]
 public class CircularLevel : MonoBehaviour {
     
-	public CircularLevelDescription Description;
+	public CircularTemple ParentTemple {
+		get {
+			return transform.parent.GetComponent<CircularTemple>();
+		}
+	}
+
+	public List<Arc> Segments = new List<Arc>();
+	public float InnerRadius;
+	public float Thickness;
+	public float Height;
 
 	public Material outlineOnlyMaterial;
 	public Material originalMaterial;
@@ -90,21 +100,22 @@ public class CircularLevel : MonoBehaviour {
 		}
 	}
 
-	private const float DURATION_SHAKE = 0.4f;
-	private const float DURATION_ROTATE = 1.0f;
+	private static float DURATION_SHAKE = 0.4f;
+	private static float DURATION_ROTATE_FACTOR = 1.0f;
 
 	private void animateRotation(Quaternion target) {
+		float duration = InnerRadius * ParentTemple.WallRotationDurationFactor;
 		var animation = DOTween.Sequence();
-
 		animation
-			//.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
-			.Append(transform.DORotateQuaternion(target, DURATION_ROTATE).SetEase(Ease.Linear))
+			.Append(transform.DORotateQuaternion(target, duration).SetEase(Ease.Linear))
 			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
 			.OnComplete(() => {
+				// Enable further rotations when complete
 				gesture.enabled = true;
 			})
 			.Play();
 
+		// Disable further rotations until complete
 		gesture.enabled = false;
 	}
 }

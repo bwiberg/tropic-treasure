@@ -21,7 +21,11 @@ public class CircularLevelDescription {
 	public GameObject toGameObject(int levelIndex, GameObject levelPrefab, GameObject levelSegmentPrefab) {
 		var gameObject = GameObject.Instantiate(levelPrefab);
 		gameObject.name = string.Format("Level {0}", levelIndex);
-		gameObject.GetComponent<CircularLevel>().Description = this;
+		var circularLevel = gameObject.GetComponent<CircularLevel>();
+		circularLevel.Segments = new List<Arc>(Segments);
+		circularLevel.InnerRadius = InnerRadius;
+		circularLevel.Thickness = Thickness;
+		circularLevel.Height = Height;
 
 		var segmentIndex = 0;
 		foreach (var segment in Segments) {

@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CircularSegment : MonoBehaviour {
-	private CircularLevelDescription LevelDescription {
+	private CircularLevel ParentLevel {
 		get {
-			return transform.parent.GetComponent<CircularLevel>().Description;
+			return transform.parent.GetComponent<CircularLevel>();
 		}
 	}
 
 	public float InnerRadius {
 		get {
-			return LevelDescription.InnerRadius;
+			return ParentLevel.InnerRadius;
 		}
 	}
 
 	public float Thickness {
 		get {
-			return LevelDescription.Thickness;
+			return ParentLevel.Thickness;
 		}
 	}
 
 	public float Height {
 		get {
-			return LevelDescription.Height;
+			return ParentLevel.Height;
 		}
 	}
 
