@@ -18,12 +18,14 @@ public class CircularLevel : MonoBehaviour {
 
 	private Outline outline;
 	private SingleTouchRotationGesture gesture;
+	private Transformer transformer;
 
 	private CircularLevel clone;
 
 	void Awake() {
 		outline = GetComponent<Outline>();
 		gesture = GetComponent<SingleTouchRotationGesture>();
+		transformer = GetComponent<Transformer>();
 	}
 
 	void OnEnable() {
@@ -103,6 +105,6 @@ public class CircularLevel : MonoBehaviour {
 			})
 			.Play();
 
-		gesture.enabled = true;
+		gesture.enabled = false;
 	}
 }
