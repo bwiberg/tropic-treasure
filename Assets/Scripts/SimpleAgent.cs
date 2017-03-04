@@ -9,7 +9,7 @@ public class SimpleAgent : MonoBehaviour {
 	public Transform target;
 
 	// Use this for initialization
-	void Awake () {
+	void OnEnable () {
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
 	}

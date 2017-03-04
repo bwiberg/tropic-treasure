@@ -13,10 +13,13 @@ public class DisplayScore : MonoBehaviour {
 	private float continousTime;
 	private float seconds;
 
+	public int getScore() {
+		return (int) seconds;
+	}
 
 	// Use this for initialization
 	void Start () {
-		continousTime = 120;
+		continousTime = 0;
 		seconds = continousTime;
 		timeText = GetComponent<Text>();
 		timeText.text = "" + Mathf.FloorToInt(seconds);
@@ -31,14 +34,14 @@ public class DisplayScore : MonoBehaviour {
 	}
 
 	public void UpdateTime(float newTime) {
-		continousTime -= newTime;
-		if(seconds-continousTime > 1.0f)
+		continousTime += newTime;
+		if(continousTime-seconds > 1.0f)
 		{
-			seconds -= 1;
+			seconds += 1;
 			timeText.text = "" + Mathf.FloorToInt(seconds);
 		}
-		float angle = Mathf.Lerp(deltaAngle*(seconds+1), deltaAngle*(seconds), (seconds-continousTime)*rotationSpeed);
-		clock.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-		transform.localRotation = Quaternion.Euler(0f, 0f, -angle);
+		float angle = Mathf.Lerp(deltaAngle*(seconds), deltaAngle*(1+seconds), (continousTime-seconds)*rotationSpeed);
+		clock.transform.rotation = Quaternion.Euler(0f, 0f, -angle);
+		transform.localRotation = Quaternion.Euler(0f, 0f, angle);
 	}
 }
