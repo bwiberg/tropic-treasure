@@ -31,7 +31,7 @@ public class TempleGenerator : MonoBehaviour {
 
 	public int RandomSeed = -1;
 
-    public void GenerateTemple() {
+    public void GenerateTemple_InEditor() {
 #if UNITY_EDITOR
         foreach (Transform child in transform) {
 //            UnityEditor.EditorApplication.delayCall += () => { DestroyImmediate(child.gameObject); };
@@ -67,4 +67,8 @@ public class TempleGenerator : MonoBehaviour {
             sw.ElapsedMilliseconds);
 #endif
     }
+
+	private void Awake() {
+		
+	}
 }

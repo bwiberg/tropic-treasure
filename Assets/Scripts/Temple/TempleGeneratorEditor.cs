@@ -13,7 +13,7 @@ public class TempleGeneratorEditor : Editor {
         var generator = (TempleGenerator) target;
         if(GUILayout.Button("Generate temple"))
         {
-            generator.GenerateTemple();
+			generator.GenerateTemple_InEditor();
         }
     }
 }
