@@ -14,7 +14,8 @@ public class SimpleAgent : MonoBehaviour {
 
 	private GameObject pathEndMarker;
 
-	void Start() {
+	// Use this for initialization
+	void OnEnable () {
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
 

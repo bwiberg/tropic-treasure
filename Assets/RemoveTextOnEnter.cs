@@ -1,33 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class OpenNextMenu : StateMachineBehaviour {
-
-	public string currentMenu;
-	public string nextMenu;
-	private GameObject[] menus;
+public class RemoveTextOnEnter : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		if (menus == null)
-		  	menus = animator.gameObject.GetComponent<MenuLinker>().menus;
-
-		foreach (GameObject menu in menus)
-		{
-			if(menu.name == currentMenu)
-		  	{
-		  		menu.SetActive(false);
-		  	}
-		}
-
-		foreach (GameObject menu in menus)
-		{
-		  	if(menu.name == nextMenu)
-		  	{
-		  		menu.SetActive(true);
-		  	}
-		}
+		InputField input = animator.gameObject.GetComponent<InputField>();
+		input.text = "";
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

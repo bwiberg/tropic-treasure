@@ -2,31 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenNextMenu : StateMachineBehaviour {
+public class SaveEntries : StateMachineBehaviour {
 
-	public string currentMenu;
-	public string nextMenu;
 	private GameObject[] menus;
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		if (menus == null)
 		  	menus = animator.gameObject.GetComponent<MenuLinker>().menus;
-
 		foreach (GameObject menu in menus)
 		{
-			if(menu.name == currentMenu)
-		  	{
-		  		menu.SetActive(false);
-		  	}
-		}
-
-		foreach (GameObject menu in menus)
-		{
-		  	if(menu.name == nextMenu)
-		  	{
-		  		menu.SetActive(true);
-		  	}
+			if(menu.name == "GameManager")
+			{
+				GameManager gm = menu.GetComponent<GameManager>();
+				gm.StoreScoreAndName();
+				break;
+			}
 		}
 	}
 
