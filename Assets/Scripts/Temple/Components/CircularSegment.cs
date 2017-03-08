@@ -64,4 +64,9 @@ public class CircularSegment : MonoBehaviour {
 			obstacle.enabled = isActive;
 		}
 	}
+
+	public void handleCannonballHit(Cannonball cannonball) {
+		GameObject.Destroy(cannonball);
+
+	}
 }

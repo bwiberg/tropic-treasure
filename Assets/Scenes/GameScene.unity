@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 20982960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 24268878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 32956129}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 44868950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 46612712}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 51632277}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 52152458}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 70867144}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShieldBow_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 91700583}
   - component: {fileID: 91700587}
   - component: {fileID: 91700586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lumberjack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 95373614}
   - component: {fileID: 95373616}
   - component: {fileID: 95373615}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Hair_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 98521590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Backet_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 102752869}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 110118943}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 116607025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 131633769}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 132555204}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 132577821}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 134514121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 142230267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle View 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 145834770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 147212321}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 179130706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 186312872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 186977248}
   - component: {fileID: 186977247}
   - component: {fileID: 186977246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 194735441}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlotPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 196734544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 198179235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 217715689}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1390,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 222193271}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1419,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 227347694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlotPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 239101223}
   - component: {fileID: 239101225}
   - component: {fileID: 239101224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Hair_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1561,7 +1561,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 254794392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1598,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 264371381}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,7 +1627,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 269316689}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1655,7 +1655,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 269323281}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1684,7 +1684,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 274117360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1713,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 276314932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +1742,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 284482437}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1771,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 286223266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1802,7 +1802,7 @@ GameObject:
   - component: {fileID: 286449823}
   - component: {fileID: 286449825}
   - component: {fileID: 286449824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lumberjack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1874,7 +1874,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 291783098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 293861396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,7 +1932,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 298544714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShieldBow_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1961,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 298627494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,7 +1989,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 300963198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2017,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 314031282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2046,7 +2046,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 320511257}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2075,7 +2075,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 325388199}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2104,7 +2104,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 328042048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2133,7 +2133,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 343710998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2163,7 +2163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 347333280}
   - component: {fileID: 347333281}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Man_Normal001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2265,7 +2265,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 349745983}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle View 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2293,7 +2293,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 351020775}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2322,7 +2322,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 354757504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2352,7 +2352,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 368685865}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2381,7 +2381,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 376411601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2412,7 +2412,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 376747340}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2440,7 +2440,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 383723842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,7 +2485,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 403967733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2513,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404238766}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2542,7 +2542,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 405549231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2570,7 +2570,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 430509982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Backet_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2598,7 +2598,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439361809}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,7 +2628,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 445349410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2656,7 +2656,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 453678928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2686,7 +2686,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455348418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2717,7 +2717,7 @@ GameObject:
   - component: {fileID: 456561244}
   - component: {fileID: 456561246}
   - component: {fileID: 456561245}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Tools_Axe_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2788,7 +2788,7 @@ GameObject:
   - component: {fileID: 457178004}
   - component: {fileID: 457178006}
   - component: {fileID: 457178005}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Hair_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2913,7 +2913,7 @@ GameObject:
   - component: {fileID: 472111654}
   - component: {fileID: 472111653}
   - component: {fileID: 472111652}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2987,7 +2987,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 472305437}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3018,7 +3018,7 @@ GameObject:
   - component: {fileID: 486496568}
   - component: {fileID: 486496570}
   - component: {fileID: 486496569}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lumberjack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3090,7 +3090,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 500860658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3119,7 +3119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 502503291}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3149,7 +3149,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 512475869}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3179,7 +3179,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 513333057}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3208,7 +3208,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 521674480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3237,7 +3237,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 526977998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3269,7 +3269,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 551216611}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3298,7 +3298,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 559147957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3329,7 +3329,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 562377170}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3358,7 +3358,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 567572947}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3432,7 +3432,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 601437551}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3460,7 +3460,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 613243861}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3491,7 +3491,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 637393756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3519,7 +3519,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 641329884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3676,7 +3676,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 647041374}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3758,7 +3758,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 651763344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3832,7 +3832,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 655469629}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3861,7 +3861,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 658651359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3894,7 +3894,7 @@ GameObject:
   - component: {fileID: 662151478}
   - component: {fileID: 662151477}
   - component: {fileID: 662151476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3968,7 +3968,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 667648686}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4040,7 +4040,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 683666590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4118,7 +4118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 690887598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShieldBow_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4180,7 +4180,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 707663476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4208,7 +4208,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 715120061}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4237,7 +4237,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 718396664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4266,7 +4266,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 725012194}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4295,7 +4295,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 726144181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4325,7 +4325,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 730318956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4354,7 +4354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 732548216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4384,7 +4384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 732587928}
   - component: {fileID: 732587929}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Man_Normal001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4486,7 +4486,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 737246453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4516,7 +4516,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 751829055}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4545,7 +4545,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 766705000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4575,7 +4575,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 768827423}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlotPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4603,7 +4603,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 777876530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4631,7 +4631,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 778935772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4660,7 +4660,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 784390330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4690,7 +4690,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 786131452}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlotPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4718,7 +4718,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 798306924}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4747,7 +4747,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 799584705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4820,7 +4820,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 818690293}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4849,7 +4849,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 821593912}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4878,7 +4878,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 831296132}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4907,7 +4907,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 852762983}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5024,7 +5024,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 860018326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5053,7 +5053,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 867913319}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5082,7 +5082,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 881955699}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5111,7 +5111,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 884742865}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5184,7 +5184,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 893526397}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5214,7 +5214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 894242571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5244,7 +5244,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 903428706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5273,7 +5273,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 905829669}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5302,7 +5302,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 910098891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,7 +5331,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 917507501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlotPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5359,7 +5359,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 926192893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5387,7 +5387,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 936053602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5550,7 +5550,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 957297007}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5582,7 +5582,7 @@ GameObject:
   - component: {fileID: 961863771}
   - component: {fileID: 961863770}
   - component: {fileID: 961863772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5700,7 +5700,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 967413050}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5814,7 +5814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973979353}
   - component: {fileID: 973979354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Man_Normal001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6038,7 +6038,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 982507861}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Backet_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6072,7 +6072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 989175193}
   - component: {fileID: 989175194}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Man_Normal001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6174,7 +6174,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 989870874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6203,7 +6203,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 992236694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6232,7 +6232,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 993778995}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6260,7 +6260,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 994857780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6290,7 +6290,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1024747783}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6318,7 +6318,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1024760310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6361,7 +6361,7 @@ GameObject:
   - component: {fileID: 1036958885}
   - component: {fileID: 1036958887}
   - component: {fileID: 1036958886}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lumberjack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6433,7 +6433,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1037798313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6465,7 +6465,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1049357780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle View 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6537,7 +6537,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1087575709}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Backet_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6565,7 +6565,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1098488918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6596,7 +6596,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1106963681}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6669,7 +6669,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1127261076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6697,7 +6697,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1130200867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6845,7 +6845,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1165123599}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6874,7 +6874,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1167796310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7008,7 +7008,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1203052107}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7038,7 +7038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209437973}
   - component: {fileID: 1209437974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Man_Normal001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7184,7 +7184,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1214557026}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShieldBow_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7213,7 +7213,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1214633914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7242,7 +7242,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1219761463}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7270,7 +7270,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1221737762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Backet_Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7303,7 +7303,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1227326789}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7420,7 +7420,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1235598870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7450,7 +7450,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1238225519}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7609,7 +7609,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1240792347}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7684,7 +7684,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1246631085}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7713,7 +7713,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1251546941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7785,7 +7785,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1252870565}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7820,7 +7820,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1262399724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7849,7 +7849,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1262630422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7884,7 +7884,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1271558167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7914,7 +7914,7 @@ GameObject:
   - component: {fileID: 1283641104}
   - component: {fileID: 1283641106}
   - component: {fileID: 1283641105}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lumberjack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7986,7 +7986,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1286002804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8014,7 +8014,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1289985180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8043,7 +8043,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1294671357}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8071,7 +8071,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1308271925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8099,7 +8099,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1309912498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8127,7 +8127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1314162567}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8156,7 +8156,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1330669461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8185,7 +8185,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1354984510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8214,7 +8214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1372500892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8243,7 +8243,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1375280848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8275,7 +8275,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1381680698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8304,7 +8304,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1388516642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8333,7 +8333,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1407031072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8363,7 +8363,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1419073494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8394,7 +8394,7 @@ GameObject:
   - component: {fileID: 1429013074}
   - component: {fileID: 1429013076}
   - component: {fileID: 1429013075}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Tools_Axe_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8463,7 +8463,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1436402284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8491,7 +8491,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1440804221}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8564,7 +8564,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1457442609}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8594,7 +8594,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1458739245}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8623,7 +8623,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1497846440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8653,7 +8653,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1515814427}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8684,7 +8684,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1518323828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8714,7 +8714,7 @@ GameObject:
   - component: {fileID: 1523961723}
   - component: {fileID: 1523961725}
   - component: {fileID: 1523961724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Hair_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8782,7 +8782,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1534200780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8810,7 +8810,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1540054600}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8845,7 +8845,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1548099637}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RBracers_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9174,7 +9174,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1570621689}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9203,7 +9203,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1579871859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9231,7 +9231,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1598163216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle View 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9309,7 +9309,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1599479647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9338,7 +9338,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1610225175}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9367,7 +9367,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1620750409}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9395,7 +9395,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1646331738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9431,7 +9431,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1653655041}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9460,7 +9460,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1667016181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9532,7 +9532,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1687041579}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLLegDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9565,7 +9565,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1692310196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9594,7 +9594,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1716427604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9623,7 +9623,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1726166949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9654,7 +9654,7 @@ GameObject:
   - component: {fileID: 1733358917}
   - component: {fileID: 1733358919}
   - component: {fileID: 1733358918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Hair_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9722,7 +9722,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1740133109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9751,7 +9751,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1740380539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9781,7 +9781,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1751369813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFingers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9811,7 +9811,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1759465725}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9840,7 +9840,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1768293560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9869,7 +9869,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1803728561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9934,7 +9934,7 @@ GameObject:
   - component: {fileID: 1816243205}
   - component: {fileID: 1816243207}
   - component: {fileID: 1816243206}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Tools_Axe_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10003,7 +10003,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1818366284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10031,7 +10031,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1819740296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10063,7 +10063,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1821425237}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10091,7 +10091,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1824249545}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10125,7 +10125,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1834863891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10154,7 +10154,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1838790360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10184,7 +10184,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1842722677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10214,7 +10214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1858551830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10243,7 +10243,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1859910687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10275,7 +10275,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1867022461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10305,7 +10305,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1870438945}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10334,7 +10334,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1880469701}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10363,7 +10363,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1884033181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10394,7 +10394,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1884800965}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShieldBow_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10492,7 +10492,7 @@ Prefab:
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10502,7 +10502,7 @@ Prefab:
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 344
       objectReference: {fileID: 0}
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10522,7 +10522,7 @@ Prefab:
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10532,7 +10532,7 @@ Prefab:
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 344
       objectReference: {fileID: 0}
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10552,7 +10552,7 @@ Prefab:
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10562,7 +10562,7 @@ Prefab:
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 344
       objectReference: {fileID: 0}
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10582,7 +10582,7 @@ Prefab:
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -192
       objectReference: {fileID: 0}
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -10592,7 +10592,7 @@ Prefab:
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 344
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec3446b2ae6c144b9b883254f511a831, type: 2}
@@ -10649,7 +10649,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1895764354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATPelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10681,7 +10681,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1918168495}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10709,7 +10709,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1919486445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10738,7 +10738,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1922444799}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10766,7 +10766,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1934306371}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle View 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10794,7 +10794,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1938068457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10822,7 +10822,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1944891788}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10897,7 +10897,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1955266358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10925,7 +10925,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1955839485}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigLArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10997,7 +10997,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1959379925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11029,7 +11029,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1961319917}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11058,7 +11058,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1971969165}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11087,7 +11087,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1977495505}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11116,7 +11116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1983101745}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11144,7 +11144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2030374334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRigRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11172,7 +11172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2031403357}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11329,7 +11329,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2033137811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11357,7 +11357,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2037026787}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11389,7 +11389,7 @@ GameObject:
   - component: {fileID: 2037433381}
   - component: {fileID: 2037433380}
   - component: {fileID: 2037433379}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11463,7 +11463,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2037956962}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11492,7 +11492,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2043670837}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11523,7 +11523,7 @@ GameObject:
   - component: {fileID: 2054675679}
   - component: {fileID: 2054675681}
   - component: {fileID: 2054675680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Tools_Axe_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11592,7 +11592,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2064920782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11620,7 +11620,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2065072156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LShoulders_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11648,7 +11648,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2066654559}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11676,7 +11676,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2072692933}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11704,7 +11704,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2074932111}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11739,7 +11739,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2090920930}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFingers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11768,7 +11768,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2094537388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRClavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11797,7 +11797,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2094908886}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATLThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11826,7 +11826,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2109781721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRToe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11854,7 +11854,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2114776449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CATRFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11929,7 +11929,7 @@ GameObject:
   - component: {fileID: 2140526241}
   - component: {fileID: 2140526243}
   - component: {fileID: 2140526242}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC_Tools_Axe_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

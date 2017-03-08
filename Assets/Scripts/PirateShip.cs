@@ -20,7 +20,20 @@ public class PirateShip : MonoBehaviour {
 		float g = Physics.gravity.magnitude;
 
 		// https://en.wikipedia.org/wiki/Trajectory_of_a_projectile#Angle_.7F.27.22.60UNIQ--postMath-00000010-QINU.60.22.27.7F_required_to_hit_coordinate_.28x.2Cy.29
-		float angle = Mathf.Atan((v2 - Mathf.Sqrt(v2 * v2 - g * (g * x * x + 2 * y * v2 ))) / (g * x));
+		float angleA = Mathf.Atan((v2 - Mathf.Sqrt(v2 * v2 - g * (g * x * x + 2 * y * v2 ))) / (g * x));
+		float angleB = Mathf.Atan((v2 - Mathf.Sqrt(v2 * v2 - g * (g * x * x + 2 * y * v2 ))) / (g * x));
+
+		float angle = float.NaN;
+		if (!float.IsNaN(angleA) && !float.IsNaN(angleB)) {
+			float fortyfive = Mathf.Deg2Rad * 45.0f;
+			angle = Mathf.Min(Mathf.Abs(angleA - fortyfive), Mathf.Abs(angleB - fortyfive));
+		}
+		else if (float.IsNaN(angleB)) {
+			angle = angleA;
+		}
+		else {
+			angle = angleB;
+		}
 
 		float vy = initialSpeed * Mathf.Sin(angle);
 
@@ -53,6 +66,8 @@ public class PirateShip : MonoBehaviour {
 			.Append(cannon.transform.DOLookAt(cannon.transform.position + lookAt, CannonRotationDuration))
 			.AppendInterval(CannonFireWaitDuration)
 			.AppendCallback(() => {
+				playFireCannonExplosion();
+
 				cannonball.transform.position = cannonballSpawnPoint.transform.position;
 				cannonball.GetComponent<MeshRenderer>().enabled = true;
 
@@ -64,5 +79,9 @@ public class PirateShip : MonoBehaviour {
 				SimpleAgent.shipIsCurrentlyFiring = false;
 			})
 			.Play();
+	}
+
+	private void playFireCannonExplosion() {
+		
 	}
 }
