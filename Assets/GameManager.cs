@@ -53,8 +53,9 @@ public class GameManager : MonoBehaviour {
 		accomplishedScore = 0;
 		place = 0;
 
-		if(temple == null)
-			temple = GameObject.Find("Temple");
+		if(temple == null) {
+			temple = GameObject.FindGameObjectWithTag(Tags.CircularTemple);
+		}
 	}
 	
 	// Update is called once per frame

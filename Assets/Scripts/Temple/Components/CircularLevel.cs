@@ -29,6 +29,12 @@ public class CircularLevel : MonoBehaviour {
 	private SingleTouchRotationGesture gesture;
 	private Transformer transformer;
 
+	public CircularLevel Clone {
+		get {
+			return clone;
+		}
+	}
+
 	private CircularLevel clone;
 
 	private void Awake() {
@@ -125,5 +131,11 @@ public class CircularLevel : MonoBehaviour {
 
 		// Disable further rotations until complete
 		gesture.enabled = false;
+	}
+
+	public CircularSegment GetSegmentByIndex(int index) {
+		return segmentObjects.Find((CircularSegment segment) => {
+			return segment.SegmentIndex == index;
+		});
 	}
 }

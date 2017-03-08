@@ -9,6 +9,7 @@ TagManager:
   - CircularSegment
   - CircularSegmentObstacle
   - GameManager
+  - ParticleCollider
   layers:
   - Default
   - TransparentFX

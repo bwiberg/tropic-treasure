@@ -5,7 +5,8 @@ using UnityEngine;
 public class Cannonball : MonoBehaviour {
 	private void OnCollisionEnter(Collision col) {
 		if (col.gameObject.CompareTag(Tags.CircularSegment)) {
-			col.gameObject.GetComponent<CircularSegment>().handleCannonballHit(this);
+			col.gameObject.GetComponent<CircularSegment>().handleCannonballHit();
+			GameObject.Destroy(this);
 		}
 	}
 }

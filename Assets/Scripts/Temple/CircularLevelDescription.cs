@@ -27,6 +27,8 @@ public class CircularLevelDescription {
 		circularLevel.Thickness = Thickness;
 		circularLevel.Height = Height;
 
+		var particleColliderPlanes = GameObject.FindGameObjectsWithTag(Tags.ParticleCollider);
+
 		var segmentIndex = 0;
 		foreach (var segment in Segments) {
 			var segmentGameObject = GameObject.Instantiate(segmentPrefab) ;
@@ -34,17 +36,9 @@ public class CircularLevelDescription {
 			segmentGameObject.transform.SetParent(gameObject.transform);
 
 			var segmentComponent = segmentGameObject.GetComponent<CircularSegment>();
-			segmentComponent.Arc = segment;
-
-			// Set particle shape to match up to segment arc
-			var destroyedParticles = segmentComponent.destroyedParticles;
-			var shape = destroyedParticles.shape;
-			shape.arc = Mathf.Rad2Deg * segment.Angle;
-			shape.radius = InnerRadius + Thickness * 0.5f;
-			var rotation = Quaternion.AngleAxis(-Mathf.Rad2Deg * segment.AngleEnd, Vector3.up) * Quaternion.AngleAxis(-90.0f, new Vector3(1.0f, 0.0f, 0.0f));
-			destroyedParticles.transform.rotation = rotation;
-			destroyedParticles.transform.localPosition = Vector3.up * Height * 0.5f;
-
+			segmentComponent.SegmentIndex = segmentIndex;
+			segmentComponent.AngleStart = segment.AngleStart;
+			segmentComponent.AngleEnd = segment.AngleEnd;
 
 			// Create NavMeshObstacles for this segment
 			int numObstacles = Mathf.Max(Mathf.RoundToInt(segment.Angle * InnerRadius * NUM_OBSTACLES_FACTOR), 1);
@@ -66,6 +60,16 @@ public class CircularLevelDescription {
 					- Mathf.Rad2Deg * (segment.AngleStart + (segment.Angle / numObstacles) * (i + 0.5f)), 
 					0.0f));
 				obstacleObject.transform.SetParent(segmentComponent.transform);
+
+				// Setup particle shape for the obstacle	
+				var destroyedParticles = obstacleObject.GetComponentInChildren<ParticleSystem>();
+				var shape = destroyedParticles.shape;
+				shape.box = obstacle.size;
+				destroyedParticles.transform.localPosition = obstacle.center;
+
+				for (int iplane = 0; iplane < destroyedParticles.collision.maxPlaneCount && iplane < particleColliderPlanes.Length; ++iplane) {
+					destroyedParticles.collision.SetPlane(iplane, particleColliderPlanes[iplane].transform);
+				}
 			}
 
 			var segmentMesh = WallMeshGenerator.GenerateArcWallMesh(segment.AngleStart,

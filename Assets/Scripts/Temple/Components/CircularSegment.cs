@@ -18,6 +18,12 @@ public class CircularSegment : MonoBehaviour {
 		}
 	}
 
+	public float OuterRadius {
+		get {
+			return InnerRadius + Thickness;
+		}
+	}
+
 	public float Thickness {
 		get {
 			return ParentLevel.Thickness;
@@ -30,19 +36,31 @@ public class CircularSegment : MonoBehaviour {
 		}
 	}
 
-	public Arc Arc;
+	public int SegmentIndex;
 
-	public Material outlineOnlyMaterial;
-	public Material originalMaterial;
+	public float AngleStart;
+	public float AngleEnd;
+
+	public float Angle {
+		get {
+			return AngleEnd - AngleStart;
+		}
+	}
+
+	[SerializeField] private Material outlineOnlyMaterial;
+	[SerializeField] private Material originalMaterial;
+
+	[SerializeField] private float EmittedParticlesConstant;
 
 	private MeshRenderer meshRenderer;
+	private MeshCollider meshCollider;
 	private Outline outline;
-	public ParticleSystem destroyedParticles;
 
 	private ShadowCastingMode initialShadowCastingMode;
 
 	private void Start() {
 		meshRenderer = GetComponent<MeshRenderer>();
+		meshCollider = GetComponent<MeshCollider>();
 		outline = GetComponent<Outline>();
 
 		initialShadowCastingMode = meshRenderer.shadowCastingMode;
@@ -65,11 +83,22 @@ public class CircularSegment : MonoBehaviour {
 			obstacle.enabled = isActive;
 		}
 	}
-
-	public void handleCannonballHit(Cannonball cannonball) {
-		GameObject.Destroy(cannonball);
-
+		
+	public void handleCannonballHit() {
+		// Disable this segment in the clone object
+		if (ParentLevel.Clone) {
+			ParentLevel.Clone.GetSegmentByIndex(SegmentIndex).gameObject.SetActive(false);
+		}
+			
 		meshRenderer.enabled = false;
-		destroyedParticles.Emit(250);
+		meshCollider.enabled = false;
+		setEnableObstacle(false);
+
+		int particleCount = Mathf.RoundToInt(Angle * Height * (Mathf.Pow(OuterRadius, 2) - Mathf.Pow(InnerRadius, 2)) * EmittedParticlesConstant);
+
+		var obstacles = GetComponentsInChildren<SegmentObstacle>();
+		for (int i = 0; i < obstacles.Length; ++i) {
+			obstacles[i].EmitParticles(Mathf.CeilToInt(particleCount / obstacles.Length));
+		}
 	}
 }

@@ -1,17 +1,22 @@
 fileFormatVersion: 2
 guid: 00e419f72bfe340f3886a6465e2e32de
-timeCreated: 1488938805
+timeCreated: 1489002442
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: tetrahedron
     100002: //RootNode
+    100004: default
     400000: tetrahedron
     400002: //RootNode
+    400004: default
     2300000: tetrahedron
+    2300002: default
     3300000: tetrahedron
+    3300002: default
     4300000: tetrahedron
+    4300002: default
   materials:
     importMaterials: 1
     materialName: 0
