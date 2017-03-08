@@ -1,0 +1,7 @@
+﻿public static class Tags {
+	public static readonly string CircularTemple = "CircularTemple";
+	public static readonly string CircularLevel = "CircularLevel";
+	public static readonly string CircularSegment = "CircularSegment";
+	public static readonly string CircularSegmentObstacle = "CircularSegmentObstacle";
+	public static readonly string GameManager = "GameManager";
+}

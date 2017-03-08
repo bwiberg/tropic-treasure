@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fa884ed156844819750bfcd1a0a9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineOnlyMaterial: {fileID: 2100000, guid: 7860b0b2aaef14a21bae9a5ff39e263d, type: 2}
+  originalMaterial: {fileID: 2100000, guid: 0362f66b1c5a940e086195df1989f565, type: 2}
 --- !u!114 &114213282502674734
 MonoBehaviour:
   m_ObjectHideFlags: 1

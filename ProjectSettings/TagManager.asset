@@ -7,6 +7,8 @@ TagManager:
   - CircularTemple
   - CircularLevel
   - CircularSegment
+  - CircularSegmentObstacle
+  - GameManager
   layers:
   - Default
   - TransparentFX

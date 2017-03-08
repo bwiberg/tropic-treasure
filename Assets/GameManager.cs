@@ -4,6 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
+	public static GameManager Instance {
+		get {
+			if (!instance) {
+				instance = GameObject.FindGameObjectWithTag(Tags.GameManager).GetComponent<GameManager>();
+			}
+			return instance;
+		}
+	}
+
+	private static GameManager instance;
 
 	public GameObject score;
 	public GameObject enterNameScoreDisplay;
@@ -21,6 +31,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject trapPowerUp;
 	public GameObject earthPowerUp;
 	public GameObject ballPowerUp;
+
+	public PirateShip pirateShip;
 
 	private const string mainNameKey = "HighscoreName";
 	private const string mainScoreKey = "HighscoreScore";
@@ -126,5 +138,9 @@ public class GameManager : MonoBehaviour {
 			levels[i].enabled = true;
 		}
 		playMenuPanel.SetActive(true);
+	}
+
+	public void FireCannonballAtSegment(GameObject segment, Vector3 target) {
+		pirateShip.FireCannonballAtSegment(segment, target);
 	}
 }

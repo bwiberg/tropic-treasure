@@ -23,8 +23,7 @@ public class CircularLevel : MonoBehaviour {
 	public float Thickness;
 	public float Height;
 
-	public Material outlineOnlyMaterial;
-	public Material originalMaterial;
+	private List<CircularSegment> segmentObjects = new List<CircularSegment>();
 
 	private Outline outline;
 	private SingleTouchRotationGesture gesture;
@@ -32,18 +31,33 @@ public class CircularLevel : MonoBehaviour {
 
 	private CircularLevel clone;
 
-	void Awake() {
-		outline = GetComponent<Outline>();
+	private void Awake() {
+		// Has to be in Awake since it is used in OnEnable
 		gesture = GetComponent<SingleTouchRotationGesture>();
+	}
+
+	private void Start() {
+		foreach (Transform child in transform) {
+			var segment = child.GetComponent<CircularSegment>();
+			if (segment) {
+				segmentObjects.Add(segment);
+			}
+		}
+
+		outline = GetComponent<Outline>();
 		transformer = GetComponent<Transformer>();
 	}
 
-	void OnEnable() {
+	private void Destroy() {
+		segmentObjects.Clear();
+	}
+
+	private void OnEnable() {
 		gesture.TransformStarted += transformStartedHandler;
 		gesture.TransformCompleted += transformCompletedHandler;
 	}
 
-	void OnDisable() {
+	private void OnDisable() {
 		gesture.TransformStarted -= transformStartedHandler;
 		gesture.TransformCompleted -= transformCompletedHandler;
 	}
@@ -56,11 +70,11 @@ public class CircularLevel : MonoBehaviour {
 		clone.transform.rotation = transform.rotation;
 		clone.gameObject.SetActive(true);
 		clone.setRenderOutlineOnly(false);
-		clone.setIsObstacleActive(true);
+		clone.setAreObstaclesActive(true);
 		clone.transform.DOShakeRotation(DURATION_SHAKE, 4.0f * Vector3.up);
 
 		this.setRenderOutlineOnly(true);
-		this.setIsObstacleActive(false);
+		this.setAreObstaclesActive(false);
     }
 
     private void transformCompletedHandler(object sender, EventArgs e) {
@@ -83,20 +97,14 @@ public class CircularLevel : MonoBehaviour {
 	}
 
 	private void setRenderOutlineOnly(bool renderOutlineOnly) {
-		foreach (Transform child in transform) {
-			child.GetComponent<Outline>().enabled = renderOutlineOnly;
-
-			if (renderOutlineOnly) {
-				child.GetComponent<MeshRenderer>().material = outlineOnlyMaterial;
-			} else {
-				child.GetComponent<MeshRenderer>().material = originalMaterial;
-			}
+		foreach (var segment in segmentObjects) {
+			segment.renderOutlineOnly(renderOutlineOnly);
 		}
 	}
 
-	private void setIsObstacleActive(bool shouldBeActive) {
-		foreach (var obstacle in GetComponentsInChildren<NavMeshObstacle>()) {
-			obstacle.enabled = shouldBeActive;
+	private void setAreObstaclesActive(bool shouldBeActive) {
+		foreach (var segment in segmentObjects) {
+			segment.setEnableObstacle(shouldBeActive);
 		}
 	}
 

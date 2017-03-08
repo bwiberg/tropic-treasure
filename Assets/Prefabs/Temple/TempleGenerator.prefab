@@ -57,6 +57,8 @@ MonoBehaviour:
     type: 2}
   SegmentPrefab: {fileID: 1128144196939256, guid: 300dc3ab517b246fd9f4b7e08b565e49,
     type: 2}
+  ObstaclePrefab: {fileID: 1660439393590480, guid: f55600dd16187420696896716f9f67ad,
+    type: 2}
   TempleLevels: 3
   InnerRadius: 2
   MeanThickness: 2

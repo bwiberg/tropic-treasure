@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114556106397632644}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,3 +65,5 @@ MonoBehaviour:
   trapPowerUp: {fileID: 0}
   earthPowerUp: {fileID: 0}
   ballPowerUp: {fileID: 0}
+  cannonballPrefab: {fileID: 1511683136822758, guid: fa86c4b71a6d4403795eac69dd8dcca5,
+    type: 2}

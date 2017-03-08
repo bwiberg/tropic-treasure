@@ -18,7 +18,7 @@ public class CircularLevelDescription {
 		Height = height;
 	}
 
-	public GameObject toGameObject(int levelIndex, GameObject levelPrefab, GameObject levelSegmentPrefab) {
+	public GameObject toGameObject(int levelIndex, GameObject levelPrefab, GameObject segmentPrefab, GameObject obstaclePrefab) {
 		var gameObject = GameObject.Instantiate(levelPrefab);
 		gameObject.name = string.Format("Level {0}", levelIndex);
 		var circularLevel = gameObject.GetComponent<CircularLevel>();
@@ -29,7 +29,7 @@ public class CircularLevelDescription {
 
 		var segmentIndex = 0;
 		foreach (var segment in Segments) {
-			var segmentGameObject = GameObject.Instantiate(levelSegmentPrefab) ;
+			var segmentGameObject = GameObject.Instantiate(segmentPrefab) ;
 			segmentGameObject.name = string.Format("Segment {0}", segmentIndex++);
 			segmentGameObject.transform.SetParent(gameObject.transform);
 
@@ -44,8 +44,9 @@ public class CircularLevelDescription {
 			Vector3 size = new Vector3(Thickness, Height, (end - start).magnitude);
 
 			for (int i = 0; i < numObstacles; ++i) {
-				GameObject obstacleObject = new GameObject(string.Format("Obstacle {0}", i));
-				var obstacle = obstacleObject.AddComponent<NavMeshObstacle>();
+				var obstacleObject = GameObject.Instantiate(obstaclePrefab);
+				obstacleObject.name = string.Format("Obstacle {0}", i);
+				var obstacle = obstacleObject.GetComponent<NavMeshObstacle>();
 				obstacle.shape = NavMeshObstacleShape.Box;
 				obstacle.size = size;
 				obstacle.center = new Vector3((InnerRadius + 0.5f * Thickness), 0.5f * Height, 0.0f);

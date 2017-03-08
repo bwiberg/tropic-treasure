@@ -10,7 +10,7 @@ public class SimpleAgent : MonoBehaviour {
 
 	public static float RemainingDistanceThreshold = 0.5f;
 
-	private NavMeshPathStatus status;
+	public static bool shipIsCurrentlyFiring = false;
 
 	private GameObject pathEndMarker;
 
@@ -23,50 +23,44 @@ public class SimpleAgent : MonoBehaviour {
 	}
 
 	void Update() {
-		if (checkAndUpdatePathStatus()) {
-			transitionToNewPathStatus();
-		}
-
-		switch (status) {
-			case NavMeshPathStatus.PathComplete:
-				UpdateWithCompletePath();
-				break;
-			case NavMeshPathStatus.PathPartial:
-				UpdateWithPartialPath();
-				break;
-			case NavMeshPathStatus.PathInvalid:
-				UpdateWithInvalidPath();
-				break;
+		if (!shipIsCurrentlyFiring && 
+			agent.pathStatus == NavMeshPathStatus.PathPartial && 
+			agent.remainingDistance < RemainingDistanceThreshold) {
+			findObstructionWallAndAlertCannon();
 		}
 	}
 
-	private bool checkAndUpdatePathStatus() {
-		var oldStatus = status;
-		status = agent.pathStatus;
+	void findObstructionWallAndAlertCannon() {
+		Vector3 agentPosition = transform.position;
 
-		return oldStatus != status;
-	}
+		GameObject closestSegment = null;
+		float closestDistance = float.PositiveInfinity;
 
-	private void transitionToNewPathStatus() {
-#if UNITY_EDITOR
-		Debug.LogFormat("New path status: {0}, Path end position: {1}", status, agent.pathEndPosition);
-		pathEndMarker.transform.position = agent.pathEndPosition + new Vector3(0.0f, 2.0f, 0.0f);
-#endif
-	}
+		var segments = GameObject.FindGameObjectsWithTag(Tags.CircularSegment);
+		foreach (var segment in segments) {
+			foreach (Transform obstacleTransform in segment.transform) {
+				NavMeshObstacle obstacle = obstacleTransform.GetComponent<NavMeshObstacle>();
 
-	private void UpdateWithCompletePath() {
-		
-	}
+				Vector3 position = obstacleTransform.TransformPoint(obstacle.center);
 
-	private void UpdateWithPartialPath() {
-		if (agent.remainingDistance < RemainingDistanceThreshold) {
-			Ray ray = new Ray(transform.position, agent.pathEndPosition - transform.position);
-			RaycastHit hit = new RaycastHit();
-			Physics.Raycast(ray, out hit, 2 * RemainingDistanceThreshold, 0);
+				float distance = (position - agentPosition).magnitude;
+				if (distance < closestDistance) {
+					closestDistance = distance;
+					closestSegment = segment;
+				}
+			}
 		}
-	}
+	
 
-	private void UpdateWithInvalidPath() {
+		shipIsCurrentlyFiring = true;
 
+		// Hacky way to find middle of segment
+		var allObstacles = closestSegment.GetComponentsInChildren<NavMeshObstacle>();
+		var middleObstacle = allObstacles[Mathf.FloorToInt(allObstacles.Length / 2)];
+
+		GameManager.Instance.FireCannonballAtSegment(
+			closestSegment,
+			middleObstacle.transform.TransformPoint(middleObstacle.center)
+		);
 	}
 }

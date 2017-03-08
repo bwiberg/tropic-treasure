@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Rendering;
+using cakeslice;
 
 public class CircularSegment : MonoBehaviour {
 	private CircularLevel ParentLevel {
@@ -28,4 +31,37 @@ public class CircularSegment : MonoBehaviour {
 	}
 
 	public Arc Arc;
+
+	public Material outlineOnlyMaterial;
+	public Material originalMaterial;
+
+	private MeshRenderer meshRenderer;
+	private Outline outline;
+
+	private ShadowCastingMode initialShadowCastingMode;
+
+	private void Start() {
+		meshRenderer = GetComponent<MeshRenderer>();
+		outline = GetComponent<Outline>();
+
+		initialShadowCastingMode = meshRenderer.shadowCastingMode;
+	}
+
+	public void renderOutlineOnly(bool renderOutlineOnly) {
+		outline.enabled = renderOutlineOnly;
+
+		if (renderOutlineOnly) {
+			meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
+			meshRenderer.material = outlineOnlyMaterial;
+		} else {
+			meshRenderer.shadowCastingMode = initialShadowCastingMode;
+			meshRenderer.material = originalMaterial;
+		}
+	}
+
+	public void setEnableObstacle(bool isActive) {
+		foreach (var obstacle in GetComponentsInChildren<NavMeshObstacle>()) {
+			obstacle.enabled = isActive;
+		}
+	}
 }
