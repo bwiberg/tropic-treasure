@@ -6,6 +6,7 @@ using DG.Tweening;
 public class PirateShip : MonoBehaviour {
 	public GameObject cannon;
 	public GameObject cannonballSpawnPoint;
+	public ParticleSystem particles;
 
 	public GameObject cannonballPrefab;
 
@@ -26,7 +27,12 @@ public class PirateShip : MonoBehaviour {
 		float angle = float.NaN;
 		if (!float.IsNaN(angleA) && !float.IsNaN(angleB)) {
 			float fortyfive = Mathf.Deg2Rad * 45.0f;
-			angle = Mathf.Min(Mathf.Abs(angleA - fortyfive), Mathf.Abs(angleB - fortyfive));
+			if (Mathf.Abs(angleA - fortyfive) < Mathf.Abs(angleB - fortyfive)) {
+				angle = angleA;
+			} 
+			else {
+				angle = angleB;
+			}
 		}
 		else if (float.IsNaN(angleB)) {
 			angle = angleA;
@@ -66,7 +72,8 @@ public class PirateShip : MonoBehaviour {
 			.Append(cannon.transform.DOLookAt(cannon.transform.position + lookAt, CannonRotationDuration))
 			.AppendInterval(CannonFireWaitDuration)
 			.AppendCallback(() => {
-				playFireCannonExplosion();
+				particles.randomSeed = (uint)Random.Range(uint.MinValue, uint.MaxValue);
+				particles.Play();
 
 				cannonball.transform.position = cannonballSpawnPoint.transform.position;
 				cannonball.GetComponent<MeshRenderer>().enabled = true;
@@ -79,9 +86,5 @@ public class PirateShip : MonoBehaviour {
 				SimpleAgent.shipIsCurrentlyFiring = false;
 			})
 			.Play();
-	}
-
-	private void playFireCannonExplosion() {
-		
 	}
 }
