@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class CircularLevelDescription {
 	public static readonly float NUM_OBSTACLES_FACTOR = 0.75f;
-	public static readonly float OBSTACLE_SIZE_BIAS = 0.025f;
+	public static readonly float OBSTACLE_SIZE_BIAS = 0.22f;
 
 	public readonly List<Arc> Segments = new List<Arc>();
 	public readonly float InnerRadius;
@@ -36,12 +36,22 @@ public class CircularLevelDescription {
 			var segmentComponent = segmentGameObject.GetComponent<CircularSegment>();
 			segmentComponent.Arc = segment;
 
+			// Set particle shape to match up to segment arc
+			var destroyedParticles = segmentComponent.destroyedParticles;
+			var shape = destroyedParticles.shape;
+			shape.arc = Mathf.Rad2Deg * segment.Angle;
+			shape.radius = InnerRadius + Thickness * 0.5f;
+			var rotation = Quaternion.AngleAxis(-Mathf.Rad2Deg * segment.AngleEnd, Vector3.up) * Quaternion.AngleAxis(-90.0f, new Vector3(1.0f, 0.0f, 0.0f));
+			destroyedParticles.transform.rotation = rotation;
+			destroyedParticles.transform.localPosition = Vector3.up * Height * 0.5f;
+
+
 			// Create NavMeshObstacles for this segment
 			int numObstacles = Mathf.Max(Mathf.RoundToInt(segment.Angle * InnerRadius * NUM_OBSTACLES_FACTOR), 1);
 
-			Vector3 start = new Utility.Polar(InnerRadius + 0.5f * Thickness, segment.AngleStart - OBSTACLE_SIZE_BIAS).Cartesian3D;
-			Vector3 end = new Utility.Polar(InnerRadius + 0.5f * Thickness, segment.AngleStart + OBSTACLE_SIZE_BIAS + (segment.Angle / numObstacles)).Cartesian3D;
-			Vector3 size = new Vector3(Thickness, Height, (end - start).magnitude);
+			Vector3 start = new Utility.Polar(InnerRadius + 0.5f * Thickness, segment.AngleStart).Cartesian3D;
+			Vector3 end = new Utility.Polar(InnerRadius + 0.5f * Thickness, segment.AngleStart + (segment.Angle / numObstacles)).Cartesian3D;
+			Vector3 size = new Vector3(Thickness, Height, (end - start).magnitude + OBSTACLE_SIZE_BIAS);
 
 			for (int i = 0; i < numObstacles; ++i) {
 				var obstacleObject = GameObject.Instantiate(obstaclePrefab);

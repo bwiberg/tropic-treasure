@@ -37,6 +37,7 @@ public class CircularSegment : MonoBehaviour {
 
 	private MeshRenderer meshRenderer;
 	private Outline outline;
+	public ParticleSystem destroyedParticles;
 
 	private ShadowCastingMode initialShadowCastingMode;
 
@@ -68,5 +69,7 @@ public class CircularSegment : MonoBehaviour {
 	public void handleCannonballHit(Cannonball cannonball) {
 		GameObject.Destroy(cannonball);
 
+		meshRenderer.enabled = false;
+		destroyedParticles.Emit(250);
 	}
 }
