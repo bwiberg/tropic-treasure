@@ -24,7 +24,7 @@ public class SimpleAgent : MonoBehaviour {
 		}
 	}
 
-	void findObstructionWallAndAlertCannon() {
+	private void findObstructionWallAndAlertCannon() {
 		Vector3 agentPosition = transform.position;
 
 		GameObject closestSegment = null;
@@ -53,5 +53,9 @@ public class SimpleAgent : MonoBehaviour {
 			closestSegment,
 			middleObstacle.transform.TransformPoint(middleObstacle.center)
 		);
+	}
+
+	public void handleHitByRollingBall(RollingBallOfDeath ball) {
+		GameObject.Destroy(gameObject);
 	}
 }

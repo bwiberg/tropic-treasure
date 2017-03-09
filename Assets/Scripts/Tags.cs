@@ -7,4 +7,5 @@
 	public static readonly string CircularSegmentObstacle = "CircularSegmentObstacle";
 	public static readonly string GameManager = "GameManager";
 	public static readonly string ParticleCollider = "ParticleCollider";
+	public static readonly string Enemy = "Enemy";
 }
