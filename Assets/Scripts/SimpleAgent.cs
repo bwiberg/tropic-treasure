@@ -16,6 +16,7 @@ public class SimpleAgent : MonoBehaviour {
 
 	// Use this for initialization
 	private void OnEnable () {
+        target = FindObjectOfType<spawnBox>().chest.transform;
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
 	}
