@@ -165,9 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Radius: 0.4
   m_SampleCount: 0
-  m_OcclusionIntensity: 2
+  m_OcclusionIntensity: 1
   m_Blur: 2
-  m_Downsampling: 1
+  m_Downsampling: 2
   m_OcclusionAttenuation: 2
   m_MinZ: 0.001
   m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}

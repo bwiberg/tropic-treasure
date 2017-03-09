@@ -60,9 +60,21 @@ MonoBehaviour:
   playMenuPanel: {fileID: 0}
   templeGenerator: {fileID: 0}
   treasure: {fileID: 0}
-  enemies: {fileID: 0}
   windPowerUp: {fileID: 0}
   trapPowerUp: {fileID: 0}
   earthPowerUp: {fileID: 0}
   ballPowerUp: {fileID: 0}
   pirateShip: {fileID: 0}
+  windHelpText: {fileID: 0}
+  windHelpTextEmpty: {fileID: 0}
+  windHelpTextFull: {fileID: 0}
+  trees:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  wind: {fileID: 0}
+  ship: {fileID: 0}
+  windMaxLevel: 20

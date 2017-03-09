@@ -22,7 +22,6 @@ public class CircularLevelDescription {
 		var gameObject = GameObject.Instantiate(levelPrefab);
 		gameObject.name = string.Format("Level {0}", levelIndex);
 		var circularLevel = gameObject.GetComponent<CircularLevel>();
-		circularLevel.Segments = new List<Arc>(Segments);
 		circularLevel.InnerRadius = InnerRadius;
 		circularLevel.Thickness = Thickness;
 		circularLevel.Height = Height;
@@ -32,7 +31,7 @@ public class CircularLevelDescription {
 		var segmentIndex = 0;
 		foreach (var segment in Segments) {
 			var segmentGameObject = GameObject.Instantiate(segmentPrefab) ;
-			segmentGameObject.name = string.Format("Segment {0}", segmentIndex++);
+			segmentGameObject.name = string.Format("Segment {0}", segmentIndex);
 			segmentGameObject.transform.SetParent(gameObject.transform);
 
 			var segmentComponent = segmentGameObject.GetComponent<CircularSegment>();
@@ -78,6 +77,8 @@ public class CircularLevelDescription {
 
 			segmentGameObject.GetComponent<MeshCollider>().sharedMesh = segmentMesh;
 			segmentGameObject.GetComponent<MeshFilter>().sharedMesh = segmentMesh;
+
+			++segmentIndex;
 		}
 
 		return gameObject;

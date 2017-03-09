@@ -33,8 +33,8 @@ public class TempleGenerator : MonoBehaviour {
 
 	public int RandomSeed = -1;
 
-    public void GenerateTemple_InEditor() {
 #if UNITY_EDITOR
+    public void GenerateTemple_InEditor() {
         foreach (Transform child in transform) {
 //            UnityEditor.EditorApplication.delayCall += () => { DestroyImmediate(child.gameObject); };
             DestroyImmediate(child.gameObject);
@@ -72,8 +72,8 @@ public class TempleGenerator : MonoBehaviour {
 
         Debug.LogFormat("Generated temple with {0} levels in {1} milliseconds", temple.Levels.Count,
             sw.ElapsedMilliseconds);
-#endif
     }
+#endif
 
 	public void GenerateTemple_InGame() {
 		if (RandomSeed != -1) {
