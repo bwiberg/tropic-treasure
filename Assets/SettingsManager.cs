@@ -36,6 +36,6 @@ public class SettingsManager : MonoBehaviour {
 	}
 
 	public void SaveDifficulty () {
-		PlayerPrefs.SetFloat(difficultyKey, difficultySlider.value);
+		PlayerPrefs.SetInt(difficultyKey, (int)difficultySlider.value);
 	}
 }
