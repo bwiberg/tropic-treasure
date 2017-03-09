@@ -66,6 +66,7 @@ public class CircularLevelDescription {
 				var shape = destroyedParticles.shape;
 				shape.box = obstacle.size;
 				destroyedParticles.transform.localPosition = obstacle.center;
+				destroyedParticles.randomSeed = (uint) Random.Range(uint.MinValue, uint.MaxValue);
 
 				for (int iplane = 0; iplane < destroyedParticles.collision.maxPlaneCount && iplane < particleColliderPlanes.Length; ++iplane) {
 					destroyedParticles.collision.SetPlane(iplane, particleColliderPlanes[iplane].transform);

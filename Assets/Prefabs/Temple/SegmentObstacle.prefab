@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 198601338174707978}
+  particleRenderer: {fileID: 199754512598405026}
 --- !u!198 &198601338174707978
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -96,7 +97,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   startDelay:
     scalar: 0
     maxCurve:
@@ -139,7 +140,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2090661903
+  randomSeed: 2090661888
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1093,7 +1094,7 @@ ParticleSystem:
   VelocityModule:
     enabled: 1
     x:
-      scalar: 0.5
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1147,7 +1148,7 @@ ParticleSystem:
         m_RotationOrder: 0
       minMaxState: 3
     z:
-      scalar: 0.5
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
