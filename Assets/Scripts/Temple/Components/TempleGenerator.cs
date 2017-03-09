@@ -55,8 +55,13 @@ public class TempleGenerator : MonoBehaviour {
             Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
             LevelPadding);
 
+		// Create wrapper with EditorOnly tag
+		var templeContainer = new GameObject("__EditorOnly_TempleContainer__");
+		templeContainer.tag = Tags.EditorOnly;
+		templeContainer.transform.SetParent(transform);
+
 		var templeGameObject = temple.toGameObject(TemplePrefab, LevelPrefab, SegmentPrefab, ObstaclePrefab);
-        templeGameObject.transform.SetParent(transform);
+        templeGameObject.transform.SetParent(templeContainer.transform);
 
 		foreach (var rotationGesture in templeGameObject.GetComponentsInChildren<SingleTouchRotationGesture>()) {
 			rotationGesture.ForceSnapping = SnapWallRotations;
@@ -70,7 +75,24 @@ public class TempleGenerator : MonoBehaviour {
 #endif
     }
 
-	private void Awake() {
-		
+	public void GenerateTemple_InGame() {
+		if (RandomSeed != -1) {
+			Random.InitState(RandomSeed);
+		}
+
+		var temple = CircularTempleGenerator.Generate(
+			TempleLevels,
+			InnerRadius,
+			Tuple.Create(MeanThickness - ThicknessRange / 2, MeanThickness + ThicknessRange / 2),
+			Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
+			LevelPadding);
+
+		var templeGameObject = temple.toGameObject(TemplePrefab, LevelPrefab, SegmentPrefab, ObstaclePrefab);
+		templeGameObject.transform.SetParent(transform);
+
+		foreach (var rotationGesture in templeGameObject.GetComponentsInChildren<SingleTouchRotationGesture>()) {
+			rotationGesture.ForceSnapping = SnapWallRotations;
+			rotationGesture.NumSnapAngles = NumWallSnapModes;
+		}
 	}
 }

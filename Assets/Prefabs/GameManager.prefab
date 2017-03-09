@@ -58,12 +58,11 @@ MonoBehaviour:
   nameMenuPanel: {fileID: 0}
   leaderboardMenuPanel: {fileID: 0}
   playMenuPanel: {fileID: 0}
-  temple: {fileID: 0}
+  templeGenerator: {fileID: 0}
   treasure: {fileID: 0}
   enemies: {fileID: 0}
   windPowerUp: {fileID: 0}
   trapPowerUp: {fileID: 0}
   earthPowerUp: {fileID: 0}
   ballPowerUp: {fileID: 0}
-  cannonballPrefab: {fileID: 1511683136822758, guid: fa86c4b71a6d4403795eac69dd8dcca5,
-    type: 2}
+  pirateShip: {fileID: 0}

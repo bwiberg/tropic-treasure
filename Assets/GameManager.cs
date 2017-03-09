@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject leaderboardMenuPanel;
 	public GameObject playMenuPanel;
 
-	public GameObject temple;
+	public TempleGenerator templeGenerator;
+	private GameObject temple;
 	public GameObject treasure;
 	public GameObject enemies;
 
@@ -46,6 +47,12 @@ public class GameManager : MonoBehaviour {
 
 	private List<SingleTouchRotationGesture> levels;
 
+	void Awake() {
+		if (!Application.isEditor) {
+			templeGenerator.GenerateTemple_InGame();
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		lost = false;
@@ -53,7 +60,7 @@ public class GameManager : MonoBehaviour {
 		accomplishedScore = 0;
 		place = 0;
 
-		if(temple == null) {
+		if(!temple) {
 			temple = GameObject.FindGameObjectWithTag(Tags.CircularTemple);
 		}
 	}

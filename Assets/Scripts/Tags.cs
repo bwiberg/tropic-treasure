@@ -1,4 +1,6 @@
 ﻿public static class Tags {
+	public static readonly string EditorOnly = "EditorOnly";
+
 	public static readonly string CircularTemple = "CircularTemple";
 	public static readonly string CircularLevel = "CircularLevel";
 	public static readonly string CircularSegment = "CircularSegment";
