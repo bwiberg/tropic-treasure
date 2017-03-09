@@ -18,7 +18,6 @@ public class SegmentObstacle : MonoBehaviour {
 	private void Update() {
 		if (hasEmitted) {
 			float t = (Time.time - emitTime) / particles.main.startLifetime.constant;
-			Debug.Log(t);
 			var alpha = particles.colorOverLifetime.color.Evaluate(t).a;
 
 			var color = particleRenderer.material.color;

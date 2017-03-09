@@ -91,14 +91,16 @@ public class PirateShip : MonoBehaviour {
 			return;
 		}
 
+		var lookAt = calcVelocityToHitTarget(cannon.transform.position, cannonballTarget, CannonballSpeed).normalized;
+
 		GameObject cannonball = GameObject.Instantiate(cannonballPrefab);
+		cannonball.transform.LookAt(cannonball.transform.position + lookAt);
 		cannonball.GetComponent<Cannonball>().firingShip = this;
 		cannonball.GetComponent<MeshRenderer>().enabled = false;
 
 		var animation = DOTween.Sequence();
 
-		//var lookAt = target + Vector3.up * 10.0f;
-		var lookAt = calcVelocityToHitTarget(cannon.transform.position, cannonballTarget, CannonballSpeed).normalized;
+
 
 		animation
 			.Append(cannon.transform.DOLookAt(cannon.transform.position + lookAt, CannonRotationDuration))
@@ -112,6 +114,7 @@ public class PirateShip : MonoBehaviour {
 
 				var rb = cannonball.GetComponent<Rigidbody>();
 				rb.velocity = calcVelocityToHitTarget(cannonball.transform.position, cannonballTarget, CannonballSpeed);
+				rb.angularVelocity = new Vector3(Random.Range(3, 6), Random.Range(0, 2), Random.Range(0, 2));
 			})
 			.AppendInterval(CannonReshootWaitDuration)
 			.AppendCallback(() => {
