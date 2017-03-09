@@ -4,13 +4,27 @@ using UnityEngine;
 using DG.Tweening;
 
 public class PirateShip : MonoBehaviour {
+	public enum CannonFireState {
+		HasNoTarget,
+		FiringAtTarget,
+		TargetDestroyed
+	}
+
 	public GameObject cannon;
 	public GameObject cannonballSpawnPoint;
 	public ParticleSystem particles;
 
 	public GameObject cannonballPrefab;
 
-	private Vector3 calcVelocityToHitTarget(Vector3 origin, Vector3 target, float initialSpeed) {
+	public CannonFireState FireState;
+
+	private GameObject targetSegment;
+
+	private void Update() {
+		Debug.LogFormat("CannonFireState: {0}", FireState.ToString());
+	}
+
+	private static Vector3 calcVelocityToHitTarget(Vector3 origin, Vector3 target, float initialSpeed) {
 		Vector3 diff = target - origin;
 		Vector2 dxz = diff.xz();
 
@@ -58,9 +72,27 @@ public class PirateShip : MonoBehaviour {
 	private Vector3 cannonballTarget;
 
 	public void FireCannonballAtSegment(GameObject segment, Vector3 target) {
+		if (FireState != CannonFireState.HasNoTarget) {
+			Debug.LogError("FireCannonballAtSegment called when already has target");
+		}
+
+		FireState = CannonFireState.FiringAtTarget;
+		targetSegment = segment;
+
 		cannonballTarget = target;
 
+		doFireCannonballAtSegment();
+	}
+
+	private void doFireCannonballAtSegment() {
+		if (FireState == CannonFireState.TargetDestroyed) {
+			FireState = CannonFireState.HasNoTarget;
+			targetSegment = null;
+			return;
+		}
+
 		GameObject cannonball = GameObject.Instantiate(cannonballPrefab);
+		cannonball.GetComponent<Cannonball>().firingShip = this;
 		cannonball.GetComponent<MeshRenderer>().enabled = false;
 
 		var animation = DOTween.Sequence();
@@ -83,7 +115,7 @@ public class PirateShip : MonoBehaviour {
 			})
 			.AppendInterval(CannonReshootWaitDuration)
 			.AppendCallback(() => {
-				SimpleAgent.shipIsCurrentlyFiring = false;
+				doFireCannonballAtSegment();
 			})
 			.Play();
 	}

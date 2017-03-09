@@ -10,20 +10,14 @@ public class SimpleAgent : MonoBehaviour {
 
 	public static float RemainingDistanceThreshold = 0.5f;
 
-	public static bool shipIsCurrentlyFiring = false;
-
-	private GameObject pathEndMarker;
-
 	// Use this for initialization
 	void OnEnable () {
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
-
-		pathEndMarker = GameObject.Find("PathEndMarker");
 	}
 
 	void Update() {
-		if (!shipIsCurrentlyFiring && 
+		if (GameManager.Instance.pirateShip.FireState == PirateShip.CannonFireState.HasNoTarget &&
 			agent.pathStatus == NavMeshPathStatus.PathPartial && 
 			agent.remainingDistance < RemainingDistanceThreshold) {
 			findObstructionWallAndAlertCannon();
@@ -50,15 +44,12 @@ public class SimpleAgent : MonoBehaviour {
 				}
 			}
 		}
-	
-
-		shipIsCurrentlyFiring = true;
 
 		// Hacky way to find middle of segment
 		var allObstacles = closestSegment.GetComponentsInChildren<NavMeshObstacle>();
 		var middleObstacle = allObstacles[Mathf.FloorToInt(allObstacles.Length / 2)];
 
-		GameManager.Instance.FireCannonballAtSegment(
+		GameManager.Instance.pirateShip.FireCannonballAtSegment(
 			closestSegment,
 			middleObstacle.transform.TransformPoint(middleObstacle.center)
 		);

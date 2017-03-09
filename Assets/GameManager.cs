@@ -147,8 +147,4 @@ public class GameManager : MonoBehaviour {
 		}
 		playMenuPanel.SetActive(true);
 	}
-
-	public void FireCannonballAtSegment(GameObject segment, Vector3 target) {
-		pirateShip.FireCannonballAtSegment(segment, target);
-	}
 }
