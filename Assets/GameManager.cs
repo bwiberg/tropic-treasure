@@ -101,11 +101,13 @@ public class GameManager : MonoBehaviour {
 			// Deactivate Help Text
 			windHelpText.SetActive(false);
 
-			// Reset wind level
-			windLoadLevel = 0.0f;
-
 			// Move ship back
 			var shipMovement = ship.GetComponent<BlowShipAway>();
+
+			// Reset wind level if ship was gone else keep it
+			if(shipMovement.shipIsGone)
+				windLoadLevel = 0.0f;
+
 			shipMovement.MoveShipBack();
 
 			// Reset blinking
