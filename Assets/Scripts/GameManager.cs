@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance {
@@ -24,9 +25,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject playMenuPanel;
 
 	public TempleGenerator templeGenerator;
-	private GameObject temple;
+	private CircularTemple temple;
 	public GameObject treasure;
-	public GameObject enemies;
 
 	public GameObject windPowerUp;
 	public GameObject trapPowerUp;
@@ -57,10 +57,17 @@ public class GameManager : MonoBehaviour {
 	private bool isFinished;
 	private bool blinkedOnce = false;
 
-	private List<SingleTouchRotationGesture> levels;
+	private SimpleAgent[] enemies;
+
+	private Rigidbody[] rigidbodies;
+	private Tuple<bool, Vector3, Vector3>[] rigidbodyStates;
+
+	private ParticleSystem[] particleSystems;
+	private bool[] particleSystemStates;
 
 	void Awake() {
 		if (!Application.isEditor) {
+			templeGenerator.RandomSeed = -1;
 			templeGenerator.GenerateTemple_InGame();
 		}
 	}
@@ -73,7 +80,7 @@ public class GameManager : MonoBehaviour {
 		place = 0;
 
 		if(!temple) {
-			temple = GameObject.FindGameObjectWithTag(Tags.CircularTemple);
+			temple = GameObject.FindGameObjectWithTag(Tags.CircularTemple).GetComponent<CircularTemple>();
 		}
 	}
 	
@@ -156,13 +163,6 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void FindLevels()
-	{
-		levels = new List<SingleTouchRotationGesture>();
-		foreach(Transform level in temple.transform)
-			levels.Add(level.GetComponent<SingleTouchRotationGesture>());
-	}
-
 	void FinishGame()
 	{
 		if(isFinished)
@@ -210,22 +210,63 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DisableGameInput() {
-		FindLevels();
-		enemies.SetActive(false);
-		for(int i=0; i < levels.Count; i++)
-		{
-			levels[i].enabled = false;
+		foreach (var templeLevel in temple.Levels) {
+			templeLevel.SetRotationsEnabled(false);
 		}
 		playMenuPanel.SetActive(false);
+
+		// Disable enemy movement
+		enemies = Object.FindObjectsOfType<SimpleAgent>();
+		for (int i = 0; i < enemies.Length; ++i) {
+			enemies[i].Pause();
+		}
+
+		// Disable simulation on rigidbodies and save their state
+		rigidbodies = Object.FindObjectsOfType<Rigidbody>();
+		rigidbodyStates = new Tuple<bool, Vector3, Vector3>[rigidbodies.Length];
+		for (int i = 0; i < rigidbodies.Length; ++i) {
+			rigidbodyStates[i] = Tuple.Create(rigidbodies[i].isKinematic, rigidbodies[i].velocity, rigidbodies[i].angularVelocity);
+			rigidbodies[i].isKinematic = true;
+		}
+
+		// Pause particle systems playback
+		particleSystems = Object.FindObjectsOfType<ParticleSystem>();
+		particleSystemStates = new bool[particleSystems.Length];
+		for (int i = 0; i < particleSystems.Length; ++i) {
+			particleSystemStates[i] = particleSystems[i].particleCount > 0;
+			particleSystems[i].Pause();
+		}
+
+		// Disable pirate ship
+		pirateShip.enabled = false;
 	}
 
 	public void EnableGameInput() {
-		FindLevels();
-		enemies.SetActive(true);
-		for(int i=0; i < levels.Count; i++)
-		{
-			levels[i].enabled = true;
+		foreach (var templeLevel in temple.Levels) {
+			templeLevel.SetRotationsEnabled(true);
 		}
 		playMenuPanel.SetActive(true);
+
+		// Enable enemy movement
+		for (int i = 0; i < enemies.Length; ++i) {
+			enemies[i].Resume();
+		}
+
+		// Enable simulation on rigidbodies and restore their state
+		for (int i = 0; i < rigidbodies.Length; ++i) {
+			rigidbodies[i].isKinematic = rigidbodyStates[i].Item1;
+			rigidbodies[i].velocity = rigidbodyStates[i].Item2;
+			rigidbodies[i].angularVelocity = rigidbodyStates[i].Item3;
+		}
+
+		// Resume particle systems playback
+		for (int i = 0; i < particleSystems.Length; ++i) {
+			if (particleSystemStates[i]) {
+				particleSystems[i].Play();
+			};
+		}
+
+		// Enable pirate ship
+		pirateShip.enabled = true;
 	}
 }

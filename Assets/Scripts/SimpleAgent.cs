@@ -12,13 +12,16 @@ public class SimpleAgent : MonoBehaviour {
 
 	private bool wasAlerted = false;
 
+	[SerializeField] private float linearSpeed = 1.0f;
+
 	// Use this for initialization
-	void OnEnable () {
+	private void OnEnable () {
+        target = FindObjectOfType<spawnBox>().chest.transform;
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
 	}
 
-	void Update() {
+	private void Update() {
 		if (GameManager.Instance.pirateShip.FireState == PirateShip.CannonFireState.HasNoTarget &&
 			agent.pathStatus == NavMeshPathStatus.PathPartial && 
 			agent.remainingDistance < RemainingDistanceThreshold || wasAlerted) {
@@ -26,7 +29,7 @@ public class SimpleAgent : MonoBehaviour {
 		}
 	}
 
-	void findObstructionWallAndAlertCannon() {
+	private void findObstructionWallAndAlertCannon() {
 		// Do not alert cannon if ship is moving 
 		if (GameManager.Instance.ship.GetComponent<BlowShipAway>().shipIsGone)
 		{
@@ -64,5 +67,13 @@ public class SimpleAgent : MonoBehaviour {
 			closestSegment,
 			middleObstacle.transform.TransformPoint(middleObstacle.center)
 		);
+	}
+
+	public void Pause() {
+		agent.speed = 0.0f;
+	}
+
+	public void Resume() {
+		agent.speed = linearSpeed;
 	}
 }

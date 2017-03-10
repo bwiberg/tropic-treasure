@@ -18,16 +18,18 @@ public class CircularLevel : MonoBehaviour {
 		}
 	}
 
-	public List<Arc> Segments = new List<Arc>();
 	public float InnerRadius;
 	public float Thickness;
 	public float Height;
 
+	public CircularSegment[] Segments;
 	private List<CircularSegment> segmentObjects = new List<CircularSegment>();
 
 	private Outline outline;
 	private SingleTouchRotationGesture gesture;
 	private Transformer transformer;
+
+	private Sequence rotationSequence;
 
 	public CircularLevel Clone {
 		get {
@@ -43,24 +45,22 @@ public class CircularLevel : MonoBehaviour {
 	}
 
 	private void Start() {
-		foreach (Transform child in transform) {
-			var segment = child.GetComponent<CircularSegment>();
-			if (segment) {
-				segmentObjects.Add(segment);
-			}
-		}
-
 		outline = GetComponent<Outline>();
 		transformer = GetComponent<Transformer>();
+		Segments = GetComponentsInChildren<CircularSegment>();
 	}
 
-	private void Destroy() {
-		segmentObjects.Clear();
+	private void OnDestroy() {
+		Debug.Log("OnDestroy");
 	}
 
 	private void OnEnable() {
 		gesture.TransformStarted += transformStartedHandler;
 		gesture.TransformCompleted += transformCompletedHandler;
+
+		if (rotationSequence != null && !rotationSequence.IsComplete()) {
+			rotationSequence.Play();
+		}
 	}
 
 	private void OnDisable() {
@@ -94,22 +94,21 @@ public class CircularLevel : MonoBehaviour {
     }
 
 	private void createClone() {
-		clone = GameObject.Instantiate(gameObject).GetComponent<CircularLevel>();
+		clone = GameObject.Instantiate(gameObject, transform.parent).GetComponent<CircularLevel>();
 
 		// Assign this GameObject as the clone's clone (phew!)
 		clone.clone = this;
-		clone.transform.SetParent(transform.parent);
 		clone.gameObject.SetActive(false);
 	}
 
 	private void setRenderOutlineOnly(bool renderOutlineOnly) {
-		foreach (var segment in segmentObjects) {
+		foreach (var segment in Segments) {
 			segment.renderOutlineOnly(renderOutlineOnly);
 		}
 	}
 
 	private void setAreObstaclesActive(bool shouldBeActive) {
-		foreach (var segment in segmentObjects) {
+		foreach (var segment in Segments) {
 			segment.setEnableObstacle(shouldBeActive);
 		}
 	}
@@ -119,8 +118,8 @@ public class CircularLevel : MonoBehaviour {
 
 	private void animateRotation(Quaternion target) {
 		float duration = InnerRadius * ParentTemple.WallRotationDurationFactor;
-		var animation = DOTween.Sequence();
-		animation
+		rotationSequence = DOTween.Sequence();
+		rotationSequence
 			.Append(transform.DORotateQuaternion(target, duration).SetEase(Ease.Linear))
 			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
 			.OnComplete(() => {
@@ -133,9 +132,31 @@ public class CircularLevel : MonoBehaviour {
 		gesture.enabled = false;
 	}
 
+	public void SetRotationsEnabled(bool enabled) {
+		this.internalSetRotationsEnabled(enabled);
+		if (clone != null) {
+			clone.internalSetRotationsEnabled(enabled);
+		}
+	}
+
+	private void internalSetRotationsEnabled(bool enable) {
+		gesture.enabled = enable;
+
+		if (enable && rotationSequence != null && !rotationSequence.IsComplete()) {
+			rotationSequence.Play();
+		}
+
+		else if (!enable && rotationSequence != null && !rotationSequence.IsComplete()) {
+			rotationSequence.Pause();
+		}
+	}
+
 	public CircularSegment GetSegmentByIndex(int index) {
-		return segmentObjects.Find((CircularSegment segment) => {
-			return segment.SegmentIndex == index;
-		});
+		for (int i = 0; i < Segments.Length; ++i) {
+			if (i == Segments[i].SegmentIndex) {
+				return Segments[i];
+			}
+		}
+		throw new IndexOutOfRangeException("GetSegmentByIndex did not find the segment");
 	}
 }
