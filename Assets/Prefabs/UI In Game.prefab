@@ -2350,13 +2350,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1766424411492908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2364,21 +2364,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 372d46d32e5a6475e882947083ec2813, type: 3}
+    m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 80
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: Tap and release to spawn ball
 --- !u!114 &114321485788988954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2744,8 +2742,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargingTime: 30
-  activeTime: 5
   ball: {fileID: 0}
+  InstructionText: {fileID: 114312408624852848}
+  InstructionTextDuration: 5
+  InstructionTextFadeDuration: 2
+  IsFirstTime: 1
 --- !u!114 &114430414043658914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4455,8 +4456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -373, y: 858}
+  m_SizeDelta: {x: 482.3001, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224154445476370830
 RectTransform:

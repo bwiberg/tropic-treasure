@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class RollingBallPowerUp : MonoBehaviour {
 
 	public float chargingTime = 10.0f;
 
 	public RollingBallOfDeath ball;
+
+	public Text InstructionText;
+	public float InstructionTextDuration = 5.0f;
+	public float InstructionTextFadeDuration = 2.0f;
+
+	public bool IsFirstTime = true;
 
 	private bool isCharging = false;
 
@@ -40,6 +47,18 @@ public class RollingBallPowerUp : MonoBehaviour {
 	}
 
 	public void Activate() {
+		if (IsFirstTime) {
+			IsFirstTime = false;
+			InstructionText.enabled = true;
+			DOTween.Sequence()
+				.AppendInterval(InstructionTextDuration - InstructionTextFadeDuration)
+				.Append(InstructionText.DOFade(0.0f, InstructionTextFadeDuration).SetEase(Ease.InOutQuad))
+				.AppendCallback(() => {
+					InstructionText.enabled = false;
+				})
+				.Play();
+		}
+
 		ball.enabled = true;
 		button.interactable = false;
 	}
@@ -54,6 +73,7 @@ public class RollingBallPowerUp : MonoBehaviour {
 	}
 
 	public void HandleBallPlaced() {
+		InstructionText.enabled = false;
 		image.fillAmount = 0.0f;
 	}
 
