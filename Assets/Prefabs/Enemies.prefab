@@ -55,5 +55,5 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1604236138954656, guid: 55f3c6ac7f4d93a4c9b5295789df2620,
     type: 2}
   radius: 15
-  spawnRatePerSec: 1
+  spawnRatePerSec: 0.5
   chest: {fileID: 0}
