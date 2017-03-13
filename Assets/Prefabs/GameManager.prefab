@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4716294353842880}
-  - component: {fileID: 114556106397632644}
+  - component: {fileID: 114671898698336572}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114556106397632644
+--- !u!114 &114671898698336572
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650746925583980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347fd5363fd9341bbadf57e37557ce14, type: 3}
+  m_Script: {fileID: 11500000, guid: d09011eee87f84307a44902f5d4cb46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 0}
@@ -64,6 +64,7 @@ MonoBehaviour:
   trapPowerUp: {fileID: 0}
   earthPowerUp: {fileID: 0}
   ballPowerUp: {fileID: 0}
+  rollingBall: {fileID: 0}
   pirateShip: {fileID: 0}
   windHelpText: {fileID: 0}
   windHelpTextEmpty: {fileID: 0}
@@ -77,4 +78,4 @@ MonoBehaviour:
   - {fileID: 0}
   wind: {fileID: 0}
   ship: {fileID: 0}
-  windMaxLevel: 20
+  windMaxLevel: 10

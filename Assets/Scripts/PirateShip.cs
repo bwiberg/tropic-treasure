@@ -20,6 +20,15 @@ public class PirateShip : MonoBehaviour {
 
 	private GameObject targetSegment;
 
+	public float RollFrequency = 0.4f;
+	public float RollMagnitude = 0.75f;
+
+	private void FixedUpdate() {
+		Vector3 eulerAngles = transform.localRotation.eulerAngles;
+		eulerAngles.x = RollMagnitude * Mathf.Sin(RollFrequency * Time.time * 2 * Mathf.PI);
+		transform.localRotation = Quaternion.Euler(eulerAngles);
+	}
+
 	private static Vector3 calcVelocityToHitTarget(Vector3 origin, Vector3 target, float initialSpeed) {
 		Vector3 diff = target - origin;
 		Vector2 dxz = diff.xz();
@@ -84,6 +93,10 @@ public class PirateShip : MonoBehaviour {
 		if (FireState == CannonFireState.TargetDestroyed) {
 			FireState = CannonFireState.HasNoTarget;
 			targetSegment = null;
+			return;
+		}
+
+		if (FireState != CannonFireState.FiringAtTarget) {
 			return;
 		}
 

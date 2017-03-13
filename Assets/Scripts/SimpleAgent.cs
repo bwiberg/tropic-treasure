@@ -8,6 +8,8 @@ public class SimpleAgent : MonoBehaviour {
 
 	public Transform target;
 
+	public GameObject DeathParticlesPrefab;
+
 	public static float RemainingDistanceThreshold = 0.5f;
 
 	private bool wasAlerted = false;
@@ -36,7 +38,6 @@ public class SimpleAgent : MonoBehaviour {
 			wasAlerted = true;
 			return;
 		}
-
 
 		Vector3 agentPosition = transform.position;
 
@@ -67,6 +68,18 @@ public class SimpleAgent : MonoBehaviour {
 			closestSegment,
 			middleObstacle.transform.TransformPoint(middleObstacle.center)
 		);
+	}
+
+	public void handleHitByRollingBall(RollingBallOfDeath ball) {
+		var blood = GameObject.Instantiate(DeathParticlesPrefab);
+		blood.transform.position = transform.position;
+		GameObject.Destroy(gameObject);
+	}
+
+	public void handleHitByCannonball(Cannonball ball) {
+		var blood = GameObject.Instantiate(DeathParticlesPrefab);
+		blood.transform.position = transform.position;
+		GameObject.Destroy(gameObject);
 	}
 
 	public void Pause() {

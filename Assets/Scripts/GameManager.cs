@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject trapPowerUp;
 	public GameObject earthPowerUp;
 	public GameObject ballPowerUp;
+	public RollingBallOfDeath rollingBall;
 
 	public PirateShip pirateShip;
 

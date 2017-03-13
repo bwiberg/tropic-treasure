@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 4629269141849716}
   - component: {fileID: 218282917108244158}
   - component: {fileID: 154568228888234816}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2378,6 +2378,8 @@ MonoBehaviour:
   cannonballPrefab: {fileID: 1511683136822758, guid: fa86c4b71a6d4403795eac69dd8dcca5,
     type: 2}
   FireState: 0
+  RollFrequency: 0.4
+  RollMagnitude: 0.75
   CannonballSpeed: 20
   CannonRotationDuration: 0.25
   CannonFireWaitDuration: 0.4
