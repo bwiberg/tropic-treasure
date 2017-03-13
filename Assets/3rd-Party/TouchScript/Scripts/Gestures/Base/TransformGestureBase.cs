@@ -92,6 +92,8 @@ namespace TouchScript.Gestures.Base
 
         #region Public properties
 
+		public bool ForceNoApplyTransform = false;
+
         /// <summary>
         /// Gets or sets types of transformation this gesture supports.
         /// </summary>

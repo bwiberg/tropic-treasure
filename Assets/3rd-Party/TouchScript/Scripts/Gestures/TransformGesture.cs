@@ -47,6 +47,8 @@ namespace TouchScript.Gestures
 
         #region Public properties
 
+		public Vector3 Touch_WorldPosition;
+
         /// <summary>
         /// Gets or sets transform's projection type.
         /// </summary>
@@ -129,6 +131,9 @@ namespace TouchScript.Gestures
         /// <inheritdoc />
         public void ApplyTransform(Transform target)
         {
+			if (ForceNoApplyTransform) {
+				return;
+			}
             if (!Mathf.Approximately(DeltaScale, 1f)) target.localScale *= DeltaScale;
             if (!Mathf.Approximately(DeltaRotation, 0f)) target.rotation = Quaternion.AngleAxis(DeltaRotation, RotationAxis) * target.rotation;
             if (DeltaPosition != Vector3.zero) target.position += DeltaPosition;
@@ -210,9 +215,10 @@ namespace TouchScript.Gestures
         protected override Vector3 doOnePointTranslation(Vector2 oldScreenPos, Vector2 newScreenPos,
                                                          ProjectionParams projectionParams)
         {
+			Touch_WorldPosition = projectionParams.ProjectTo(newScreenPos, TransformPlane);
             if (isTransforming)
             {
-                return projectionParams.ProjectTo(newScreenPos, TransformPlane) -
+				return Touch_WorldPosition -
                        projectionParams.ProjectTo(oldScreenPos, TransformPlane);
             }
 
@@ -220,7 +226,7 @@ namespace TouchScript.Gestures
             if (screenPixelTranslationBuffer.sqrMagnitude > screenTransformPixelThresholdSquared)
             {
                 isTransforming = true;
-                return projectionParams.ProjectTo(newScreenPos, TransformPlane) -
+				return Touch_WorldPosition -
                        projectionParams.ProjectTo(newScreenPos - screenPixelTranslationBuffer, TransformPlane);
             }
 

@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114193443254116138}
   - component: {fileID: 114853300868282770}
   - component: {fileID: 114397739377883266}
+  - component: {fileID: 114525059687246890}
   m_Layer: 0
   m_Name: MainGameCamera
   m_TagString: MainCamera
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784280522117896}
   m_LocalRotation: {x: 0.5084179, y: -0, z: -0, w: 0.8611105}
-  m_LocalPosition: {x: 0, y: 24.9, z: -13.39}
+  m_LocalPosition: {x: 0, y: 24.6, z: -13.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +64,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 15
+  near clip plane: 5
   far clip plane: 50
   field of view: 67
   orthographic: 0
@@ -110,8 +111,8 @@ MonoBehaviour:
   lineIntensity: 0.5
   fillAmount: 0.2
   lineColor0: {r: 1, g: 0.6, b: 0, a: 1}
-  lineColor1: {r: 0, g: 1, b: 0, a: 1}
-  lineColor2: {r: 0, g: 0, b: 1, a: 1}
+  lineColor1: {r: 1, g: 0, b: 0, a: 1}
+  lineColor2: {r: 1, g: 1, b: 1, a: 1}
   additiveRendering: 0
   cornerOutlines: 1
   addLinesBetweenColors: 0
@@ -152,6 +153,19 @@ MonoBehaviour:
   blurIterations: 2
   blurType: 0
   fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+--- !u!114 &114525059687246890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784280522117896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4266c9b0d994abbbe9ad33bd6532d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deltaZ: 10
+  time: 5
 --- !u!114 &114853300868282770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,9 +179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Radius: 0.4
   m_SampleCount: 0
-  m_OcclusionIntensity: 2
+  m_OcclusionIntensity: 4
   m_Blur: 2
-  m_Downsampling: 1
+  m_Downsampling: 2
   m_OcclusionAttenuation: 2
   m_MinZ: 0.001
   m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}

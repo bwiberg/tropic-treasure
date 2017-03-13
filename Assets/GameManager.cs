@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject trapPowerUp;
 	public GameObject earthPowerUp;
 	public GameObject ballPowerUp;
+	public RollingBallOfDeath rollingBall;
 
 	public PirateShip pirateShip;
 
@@ -44,6 +45,14 @@ public class GameManager : MonoBehaviour {
 
 	private bool lost;
 	private bool isFinished;
+
+	public bool GameIsPaused {
+		get {
+			return isPaused;
+		}
+	}
+
+	private bool isPaused = false;
 
 	private List<SingleTouchRotationGesture> levels;
 
@@ -129,6 +138,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DisableGameInput() {
+		isPaused = true;
+
 		FindLevels();
 		enemies.SetActive(false);
 		for(int i=0; i < levels.Count; i++)
@@ -139,6 +150,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EnableGameInput() {
+		isPaused = false;
+
 		FindLevels();
 		enemies.SetActive(true);
 		for(int i=0; i < levels.Count; i++)
