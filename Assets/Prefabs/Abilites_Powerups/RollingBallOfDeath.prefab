@@ -45,7 +45,7 @@ Transform:
   m_GameObject: {fileID: 1099086824910874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -169,15 +169,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731f025e57cfa4a269d9962783870781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SteerMultiplier: 30
+  SteerMultiplier: 5
   VelocityDampeningPerSecond: 0.9
-  SpawnPosition: {x: 0, y: 5, z: 0}
   InvisibleMaterial: {fileID: 2100000, guid: 7860b0b2aaef14a21bae9a5ff39e263d, type: 2}
   BallMaterial: {fileID: 2100000, guid: 7dd22fd69704e4332bdd4c5a8afa8357, type: 2}
   controller: {fileID: 0}
   DestroyedParticleCount: 25
   ValidPlacementRadius: 10
-  MaxRollDuration: 10
+  MaxRollDuration: 6
 --- !u!114 &114296491581449754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1166,15 +1165,15 @@ ParticleSystem:
     flipV: 0
     randomRow: 1
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
-      scalar: 2
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: -1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1193,15 +1192,15 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      minMaxState: 3
+      minMaxState: 0
     y:
-      scalar: 12
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0.41666666
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1220,15 +1219,15 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      minMaxState: 3
+      minMaxState: 0
     z:
-      scalar: 2
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: -1
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1247,10 +1246,10 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      minMaxState: 3
+      minMaxState: 0
     inWorldSpace: 1
   InheritVelocityModule:
-    enabled: 1
+    enabled: 0
     m_Mode: 0
     m_Curve:
       scalar: 1
@@ -2200,7 +2199,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     plane0: {fileID: 0}
     plane1: {fileID: 0}

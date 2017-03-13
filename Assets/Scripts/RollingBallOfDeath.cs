@@ -100,20 +100,38 @@ public class RollingBallOfDeath : MonoBehaviour {
 			RollingUpdate();
 		}
 		else if (state == BallState.Finished_ParticlesAlive) {
-			this.enabled = false;
-//			float t = (Time.time - emitTime) / particles.main.startLifetime.constant;
-//			if (t < 1.0f) {
-//				var alpha = particles.colorOverLifetime.color.Evaluate(t).a;
-//
-//				var color = particleRenderer.material.color;
-//				color.a = alpha;
-//				particleRenderer.material.color = color;
-//			}
-//
-//			else {
-//				this.enabled = false;
-//			}
+			float t = (Time.time - emitTime) / particles.main.startLifetime.constant;
+			if (t < 1.0f) {
+				var alpha = particles.colorOverLifetime.color.Evaluate(t).a;
+				var color = particleRenderer.material.color;
+				color.a = alpha;
+				particleRenderer.material.color = color;
+			}
+
+			else {
+				this.enabled = false;
+			}
 		}
+	}
+
+	private void FixedUpdate() {
+		if (!isRolling()) {
+			return;
+		}
+
+		if (state == BallState.Rolling_HasTarget) {
+			Vector3 relativePosition = new Vector3(rollTargetXZ.x, transform.position.y, rollTargetXZ.y) - transform.position;
+			float magnitude = relativePosition.magnitude;
+			Vector3 direction = relativePosition.normalized;
+
+			Vector3 force = SteerMultiplier * direction * Mathf.Pow(magnitude, 0.5f);
+			rb.AddForce(force);
+		}
+
+		Vector3 velocity = rb.velocity;
+		float velmag = velocity.magnitude;
+		velmag = velmag - Time.fixedDeltaTime * VelocityDampeningPerSecond * velmag;
+		rb.velocity = velmag * velocity.normalized;
 	}
 
 	private void StartRolling() {
@@ -146,32 +164,22 @@ public class RollingBallOfDeath : MonoBehaviour {
 		if (Time.time - rollStartTime >= MaxRollDuration) {
 			Debug.Log("Time's up for Rolling Ball of Death");
 			state = BallState.Finished_ParticlesAlive;
-//			particles.Emit(DestroyedParticleCount);
-//			emitTime = Time.time;
-//			var color = particleRenderer.material.color;
-//			color.a = 1.0f;
-//			particleRenderer.material.color = color;
+			var VOL = particles.velocityOverLifetime;
+			VOL.x = new ParticleSystem.MinMaxCurve(rb.velocity.x);
+			VOL.y = new ParticleSystem.MinMaxCurve(rb.velocity.y);
+			VOL.z = new ParticleSystem.MinMaxCurve(rb.velocity.z);
+			particles.Emit(DestroyedParticleCount);
+			emitTime = Time.time;
+			var color = particleRenderer.material.color;
+			color.a = 1.0f;
+			particleRenderer.material.color = color;
 
 			rb.isKinematic = true;
-			makeFullyInvisible();
 			sphereCollider.enabled = false;
+			makeFullyInvisible();
 
 			controller.HandleAbilityFinished();
 		}
-
-		if (state == BallState.Rolling_HasTarget) {
-			Vector3 relativePosition = new Vector3(rollTargetXZ.x, transform.position.y, rollTargetXZ.y) - transform.position;
-			float magnitude = relativePosition.magnitude;
-			Vector3 direction = relativePosition.normalized;
-
-			Vector3 force = SteerMultiplier * direction * Mathf.Pow(magnitude, 0.5f);
-			rb.AddForce(force);
-		}
-
-		Vector3 velocity = rb.velocity;
-		float velmag = velocity.magnitude;
-		velmag = velmag - Time.deltaTime * VelocityDampeningPerSecond * velmag;
-		rb.velocity = velmag * velocity.normalized;
 	}
 
 	private void OnCollisionEnter(Collision col) {

@@ -15218,6 +15218,71 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1815105339}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: InheritVelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.x.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.x.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.y.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.y.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.z.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.z.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198795184453445430, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: VelocityModule.z.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241353043203894, guid: c42fb63e627704447984db4f3c9d4852,
+        type: 2}
+      propertyPath: MaxRollDuration
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c42fb63e627704447984db4f3c9d4852, type: 2}
   m_IsPrefabParent: 0
@@ -126621,7 +126686,7 @@ Prefab:
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 129.594
+      value: 129.59601
       objectReference: {fileID: 0}
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126631,7 +126696,7 @@ Prefab:
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 259.188
+      value: 259.19202
       objectReference: {fileID: 0}
     - target: {fileID: 224694442975765084, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126651,7 +126716,7 @@ Prefab:
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 389.28198
+      value: 389.28802
       objectReference: {fileID: 0}
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126661,7 +126726,7 @@ Prefab:
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 260.188
+      value: 260.19202
       objectReference: {fileID: 0}
     - target: {fileID: 224763492162265394, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126681,7 +126746,7 @@ Prefab:
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 648.97
+      value: 648.98004
       objectReference: {fileID: 0}
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126691,7 +126756,7 @@ Prefab:
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 259.188
+      value: 259.19202
       objectReference: {fileID: 0}
     - target: {fileID: 224619868885640946, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126711,7 +126776,7 @@ Prefab:
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 908.15796
+      value: 908.17206
       objectReference: {fileID: 0}
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
@@ -126721,17 +126786,12 @@ Prefab:
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 259.188
+      value: 259.19202
       objectReference: {fileID: 0}
     - target: {fileID: 224832333659104120, guid: ec3446b2ae6c144b9b883254f511a831,
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114428599427446788, guid: ec3446b2ae6c144b9b883254f511a831,
-        type: 2}
-      propertyPath: chargingTime
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec3446b2ae6c144b9b883254f511a831, type: 2}
