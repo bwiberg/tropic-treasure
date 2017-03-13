@@ -8,6 +8,8 @@ public class SimpleAgent : MonoBehaviour {
 
 	public Transform target;
 
+	public GameObject DeathParticlesPrefab;
+
 	public static float RemainingDistanceThreshold = 0.5f;
 
 	// Use this for initialization
@@ -56,6 +58,8 @@ public class SimpleAgent : MonoBehaviour {
 	}
 
 	public void handleHitByRollingBall(RollingBallOfDeath ball) {
+		var blood = GameObject.Instantiate(DeathParticlesPrefab);
+		blood.transform.position = transform.position;
 		GameObject.Destroy(gameObject);
 	}
 }

@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 136977377927640646}
   m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1659,6 +1659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  DeathParticlesPrefab: {fileID: 1073910385028174, guid: 7b3a560e78db04cb89964a821ceb0310,
+    type: 2}
 --- !u!136 &136977377927640646
 CapsuleCollider:
   m_ObjectHideFlags: 1
