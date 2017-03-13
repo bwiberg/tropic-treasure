@@ -12,21 +12,33 @@ public class SimpleAgent : MonoBehaviour {
 
 	public static float RemainingDistanceThreshold = 0.5f;
 
+	private bool wasAlerted = false;
+
+	[SerializeField] private float linearSpeed = 1.0f;
+
 	// Use this for initialization
-	void OnEnable () {
+	private void OnEnable () {
+        target = FindObjectOfType<spawnBox>().chest.transform;
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
 	}
 
-	void Update() {
+	private void Update() {
 		if (GameManager.Instance.pirateShip.FireState == PirateShip.CannonFireState.HasNoTarget &&
 			agent.pathStatus == NavMeshPathStatus.PathPartial && 
-			agent.remainingDistance < RemainingDistanceThreshold) {
+			agent.remainingDistance < RemainingDistanceThreshold || wasAlerted) {
 			findObstructionWallAndAlertCannon();
 		}
 	}
 
 	private void findObstructionWallAndAlertCannon() {
+		// Do not alert cannon if ship is moving 
+		if (GameManager.Instance.ship.GetComponent<BlowShipAway>().shipIsGone)
+		{
+			wasAlerted = true;
+			return;
+		}
+
 		Vector3 agentPosition = transform.position;
 
 		GameObject closestSegment = null;
@@ -51,6 +63,7 @@ public class SimpleAgent : MonoBehaviour {
 		var allObstacles = closestSegment.GetComponentsInChildren<NavMeshObstacle>();
 		var middleObstacle = allObstacles[Mathf.FloorToInt(allObstacles.Length / 2)];
 
+		wasAlerted = false;
 		GameManager.Instance.pirateShip.FireCannonballAtSegment(
 			closestSegment,
 			middleObstacle.transform.TransformPoint(middleObstacle.center)
@@ -61,5 +74,19 @@ public class SimpleAgent : MonoBehaviour {
 		var blood = GameObject.Instantiate(DeathParticlesPrefab);
 		blood.transform.position = transform.position;
 		GameObject.Destroy(gameObject);
+	}
+
+	public void handleHitByCannonball(Cannonball ball) {
+		var blood = GameObject.Instantiate(DeathParticlesPrefab);
+		blood.transform.position = transform.position;
+		GameObject.Destroy(gameObject);
+	}
+
+	public void Pause() {
+		agent.speed = 0.0f;
+	}
+
+	public void Resume() {
+		agent.speed = linearSpeed;
 	}
 }

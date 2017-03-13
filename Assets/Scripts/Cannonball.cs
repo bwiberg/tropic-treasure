@@ -12,5 +12,9 @@ public class Cannonball : MonoBehaviour {
 
 			firingShip.FireState = PirateShip.CannonFireState.TargetDestroyed;
 		}
+
+		else if (col.gameObject.CompareTag(Tags.Enemy)) {
+			col.gameObject.GetComponent<SimpleAgent>().handleHitByCannonball(this);
+		}
 	}
 }

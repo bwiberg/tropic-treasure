@@ -47,6 +47,8 @@ public class CircularSegment : MonoBehaviour {
 		}
 	}
 
+	public SegmentObstacle[] Obstacles;
+
 	[SerializeField] private Material outlineOnlyMaterial;
 	[SerializeField] private Material originalMaterial;
 
@@ -58,12 +60,15 @@ public class CircularSegment : MonoBehaviour {
 
 	private ShadowCastingMode initialShadowCastingMode;
 
-	private void Start() {
+	private void Awake() {
 		meshRenderer = GetComponent<MeshRenderer>();
 		meshCollider = GetComponent<MeshCollider>();
 		outline = GetComponent<Outline>();
-
 		initialShadowCastingMode = meshRenderer.shadowCastingMode;
+	}
+
+	private void Start() {
+		Obstacles = GetComponentsInChildren<SegmentObstacle>();
 	}
 
 	public void renderOutlineOnly(bool renderOutlineOnly) {
@@ -79,14 +84,14 @@ public class CircularSegment : MonoBehaviour {
 	}
 
 	public void setEnableObstacle(bool isActive) {
-		foreach (var obstacle in GetComponentsInChildren<NavMeshObstacle>()) {
-			obstacle.enabled = isActive;
+		foreach (var obstacle in Obstacles) {
+			obstacle.Obstacle.enabled = isActive;
 		}
 	}
 		
 	public void handleCannonballHit() {
 		// Disable this segment in the clone object
-		if (ParentLevel.Clone) {
+		if (ParentLevel.Clone != null) {
 			ParentLevel.Clone.GetSegmentByIndex(SegmentIndex).gameObject.SetActive(false);
 		}
 			
@@ -96,9 +101,8 @@ public class CircularSegment : MonoBehaviour {
 
 		int particleCount = Mathf.RoundToInt(Angle * Height * (Mathf.Pow(OuterRadius, 2) - Mathf.Pow(InnerRadius, 2)) * EmittedParticlesConstant);
 
-		var obstacles = GetComponentsInChildren<SegmentObstacle>();
-		for (int i = 0; i < obstacles.Length; ++i) {
-			obstacles[i].EmitParticles(Mathf.CeilToInt(particleCount / obstacles.Length));
+		for (int i = 0; i < Obstacles.Length; ++i) {
+			Obstacles[i].EmitParticles(Mathf.CeilToInt(particleCount / Obstacles.Length));
 		}
 	}
 }

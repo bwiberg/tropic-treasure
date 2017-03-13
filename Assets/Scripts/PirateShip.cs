@@ -96,6 +96,19 @@ public class PirateShip : MonoBehaviour {
 			return;
 		}
 
+		if (FireState != CannonFireState.FiringAtTarget) {
+			return;
+		}
+
+		// Hack to not fire if game is paused
+		if (!enabled) {
+			DOTween.Sequence()
+				.AppendInterval(CannonReshootWaitDuration)
+				.AppendCallback(doFireCannonballAtSegment)
+				.Play();
+			return;
+		}
+
 		var lookAt = calcVelocityToHitTarget(cannon.transform.position, cannonballTarget, CannonballSpeed).normalized;
 
 		GameObject cannonball = GameObject.Instantiate(cannonballPrefab);
@@ -104,8 +117,6 @@ public class PirateShip : MonoBehaviour {
 		cannonball.GetComponent<MeshRenderer>().enabled = false;
 
 		var animation = DOTween.Sequence();
-
-
 
 		animation
 			.Append(cannon.transform.DOLookAt(cannon.transform.position + lookAt, CannonRotationDuration))
@@ -122,9 +133,7 @@ public class PirateShip : MonoBehaviour {
 				rb.angularVelocity = new Vector3(Random.Range(3, 6), Random.Range(0, 2), Random.Range(0, 2));
 			})
 			.AppendInterval(CannonReshootWaitDuration)
-			.AppendCallback(() => {
-				doFireCannonballAtSegment();
-			})
+			.AppendCallback(doFireCannonballAtSegment)
 			.Play();
 	}
 }
