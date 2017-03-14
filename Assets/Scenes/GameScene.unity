@@ -33243,14 +33243,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114905402966044740, guid: 5ea3591a5c30f40248122be7bec36f28,
+    - target: {fileID: 114329842466905804, guid: 5ea3591a5c30f40248122be7bec36f28,
         type: 2}
-      propertyPath: ball
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1541416048}
-    - target: {fileID: 114886907459965576, guid: 5ea3591a5c30f40248122be7bec36f28,
+      objectReference: {fileID: 938468816}
+    - target: {fileID: 114225712734758918, guid: 5ea3591a5c30f40248122be7bec36f28,
         type: 2}
-      propertyPath: menus.Array.data[4]
+      propertyPath: menus.Array.data[2]
       value: 
       objectReference: {fileID: 938468815}
     - target: {fileID: 114664642422888760, guid: 5ea3591a5c30f40248122be7bec36f28,
@@ -33258,15 +33258,20 @@ Prefab:
       propertyPath: menus.Array.data[3]
       value: 
       objectReference: {fileID: 938468815}
-    - target: {fileID: 114225712734758918, guid: 5ea3591a5c30f40248122be7bec36f28,
+    - target: {fileID: 114886907459965576, guid: 5ea3591a5c30f40248122be7bec36f28,
         type: 2}
-      propertyPath: menus.Array.data[2]
+      propertyPath: menus.Array.data[4]
       value: 
       objectReference: {fileID: 938468815}
     - target: {fileID: 1837128979012654, guid: 5ea3591a5c30f40248122be7bec36f28, type: 2}
       propertyPath: m_Name
       value: UI In Game
       objectReference: {fileID: 0}
+    - target: {fileID: 114905402966044740, guid: 5ea3591a5c30f40248122be7bec36f28,
+        type: 2}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1541416048}
     - target: {fileID: 224438853555390122, guid: 5ea3591a5c30f40248122be7bec36f28,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -33386,31 +33391,6 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114569274846127900, guid: 5ea3591a5c30f40248122be7bec36f28,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114845921026992918, guid: 5ea3591a5c30f40248122be7bec36f28,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114122520690049588, guid: 5ea3591a5c30f40248122be7bec36f28,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114329842466905804, guid: 5ea3591a5c30f40248122be7bec36f28,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 938468816}
-    - target: {fileID: 114329842466905804, guid: 5ea3591a5c30f40248122be7bec36f28,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: DisableGameInput
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ea3591a5c30f40248122be7bec36f28, type: 2}
