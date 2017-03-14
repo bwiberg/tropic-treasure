@@ -1661,6 +1661,8 @@ MonoBehaviour:
   target: {fileID: 0}
   DeathParticlesPrefab: {fileID: 1073910385028174, guid: 7b3a560e78db04cb89964a821ceb0310,
     type: 2}
+  YarrProbabilityOnSpawn: 0.1
+  YarrSilenceFactor: 0.1
   linearSpeed: 1
 --- !u!136 &136720903640660364
 CapsuleCollider:
