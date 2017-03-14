@@ -5,7 +5,9 @@ using EazyTools.SoundManager;
 
 public static class ListExtensions {
 	public static T GetAny<T>(this List<T> list) {
-		return list[Random.Range(0, list.Count - 1)];
+		var index = Random.Range(0, list.Count - 1);
+		Debug.LogFormat("GetAny() chose index={0} from a list of {1} elements.", index, list.Count);
+		return list[index];
 	}
 }
 

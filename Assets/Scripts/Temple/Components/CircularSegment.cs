@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
 using cakeslice;
+using EazyTools.SoundManager;
 
 public class CircularSegment : MonoBehaviour {
 	private CircularLevel ParentLevel {
@@ -104,5 +105,8 @@ public class CircularSegment : MonoBehaviour {
 		for (int i = 0; i < Obstacles.Length; ++i) {
 			Obstacles[i].EmitParticles(Mathf.CeilToInt(particleCount / Obstacles.Length));
 		}
+
+		var clip = AudioClips.Instance.Walls.Destroyed.GetAny();
+		SoundManager.PlaySound(clip);
 	}
 }
