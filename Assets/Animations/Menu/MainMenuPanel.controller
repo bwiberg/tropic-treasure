@@ -57,6 +57,58 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!114 &114261041225690988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35027cdfd3d1f47ae94d75601196cbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMenu: MainMenuPanel
+  nextMenu: TalePanel
+--- !u!114 &114302147509507580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35027cdfd3d1f47ae94d75601196cbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMenu: MainMenuPanel
+  nextMenu: FadeToWhite
+--- !u!114 &114399855334907512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35027cdfd3d1f47ae94d75601196cbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMenu: MainMenuPanel
+  nextMenu: LeaderBoardPanel
+--- !u!114 &114550058135742020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35027cdfd3d1f47ae94d75601196cbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMenu: MainMenuPanel
+  nextMenu: SettingsPanel
 --- !u!1101 &1101026602964371150
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -230,7 +282,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 114399855334907512}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -278,7 +330,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 114261041225690988}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -330,7 +382,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 114302147509507580}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -354,7 +406,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: 0}
+  - {fileID: 114550058135742020}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
