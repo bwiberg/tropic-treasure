@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using EazyTools.SoundManager;
 
 public class SimpleAgent : MonoBehaviour {
 	private NavMeshAgent agent;
@@ -71,15 +72,20 @@ public class SimpleAgent : MonoBehaviour {
 	}
 
 	public void handleHitByRollingBall(RollingBallOfDeath ball) {
-		var blood = GameObject.Instantiate(DeathParticlesPrefab);
-		blood.transform.position = transform.position;
-		GameObject.Destroy(gameObject);
+		killSelf();
 	}
 
 	public void handleHitByCannonball(Cannonball ball) {
+		killSelf();
+	}
+
+	private void killSelf() {
 		var blood = GameObject.Instantiate(DeathParticlesPrefab);
 		blood.transform.position = transform.position;
 		GameObject.Destroy(gameObject);
+
+		var clip = AudioClips.Instance.Pirates.Death.GetAny();
+		SoundManager.PlaySound(clip);
 	}
 
 	public void Pause() {
