@@ -128,6 +128,7 @@ public class PirateShip : MonoBehaviour {
 
 				cannonball.transform.position = cannonballSpawnPoint.transform.position;
 				cannonball.GetComponent<MeshRenderer>().enabled = true;
+				cannonball.GetComponent<Cannonball>().OnFired();
 
 				var rb = cannonball.GetComponent<Rigidbody>();
 				rb.velocity = calcVelocityToHitTarget(cannonball.transform.position, cannonballTarget, CannonballSpeed);
