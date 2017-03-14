@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
+using EazyTools.SoundManager;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance {
@@ -66,6 +67,9 @@ public class GameManager : MonoBehaviour {
 	private ParticleSystem[] particleSystems;
 	private bool[] particleSystemStates;
 
+	// AUDIO STUFF
+	private Audio audioOceanWaves;
+
 	void Awake() {
 		if (!Application.isEditor) {
 			templeGenerator.RandomSeed = -1;
@@ -83,6 +87,9 @@ public class GameManager : MonoBehaviour {
 		if(!temple) {
 			temple = GameObject.FindGameObjectWithTag(Tags.CircularTemple).GetComponent<CircularTemple>();
 		}
+
+		audioOceanWaves = SoundManager.GetAudio(SoundManager.PlaySound(AudioClips.Instance.Ambience.OceanWaves.GetAny(), 0.5f));
+		audioOceanWaves.loop = true;
 	}
 	
 	// Update is called once per frame
