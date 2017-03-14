@@ -29,5 +29,10 @@ public class Cannonball : MonoBehaviour {
 		else if (col.gameObject.CompareTag(Tags.Enemy)) {
 			col.gameObject.GetComponent<SimpleAgent>().handleHitByCannonball(this);
 		}
+
+		else if (col.gameObject.layer == LayerMask.NameToLayer("Terrain")) {
+			var clip = AudioClips.Instance.Cannonball.SandImpact.GetAny();
+			SoundManager.PlaySound(clip);
+		}
 	}
 }
