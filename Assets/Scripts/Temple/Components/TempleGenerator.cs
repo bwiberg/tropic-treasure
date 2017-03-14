@@ -33,6 +33,15 @@ public class TempleGenerator : MonoBehaviour {
 
 	public int RandomSeed = -1;
 
+	private CircularTempleDescription Generate() {
+		return CircularTempleGenerator.Generate(
+			TempleLevels,
+			InnerRadius,
+			Tuple.Create(MeanThickness - ThicknessRange / 2, MeanThickness + ThicknessRange / 2),
+			Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
+			LevelPadding);
+	}
+
 #if UNITY_EDITOR
     public void GenerateTemple_InEditor() {
         foreach (Transform child in transform) {
@@ -48,12 +57,7 @@ public class TempleGenerator : MonoBehaviour {
         var sw = new Stopwatch();
         sw.Start();
 
-        var temple = CircularTempleGenerator.Generate(
-            TempleLevels,
-            InnerRadius,
-            Tuple.Create(MeanThickness - ThicknessRange / 2, MeanThickness + ThicknessRange / 2),
-            Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
-            LevelPadding);
+		var temple = Generate();
 
 		// Create wrapper with EditorOnly tag
 		var templeContainer = new GameObject("__EditorOnly_TempleContainer__");
@@ -80,12 +84,7 @@ public class TempleGenerator : MonoBehaviour {
 			Random.InitState(RandomSeed);
 		}
 
-		var temple = CircularTempleGenerator.Generate(
-			TempleLevels,
-			InnerRadius,
-			Tuple.Create(MeanThickness - ThicknessRange / 2, MeanThickness + ThicknessRange / 2),
-			Tuple.Create(MeanHeight - HeightRange / 2, MeanHeight + HeightRange / 2),
-			LevelPadding);
+		var temple = Generate();
 
 		var templeGameObject = temple.toGameObject(TemplePrefab, LevelPrefab, SegmentPrefab, ObstaclePrefab);
 		templeGameObject.transform.SetParent(transform);
