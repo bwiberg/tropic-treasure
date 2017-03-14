@@ -33402,6 +33402,16 @@ Prefab:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114329842466905804, guid: 5ea3591a5c30f40248122be7bec36f28,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 938468816}
+    - target: {fileID: 114329842466905804, guid: 5ea3591a5c30f40248122be7bec36f28,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: DisableGameInput
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ea3591a5c30f40248122be7bec36f28, type: 2}
   m_IsPrefabParent: 0
@@ -44572,6 +44582,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1650746925583980, guid: ef8667d52cf644ddfabf52e3a95958eb,
     type: 2}
   m_PrefabInternal: {fileID: 938468814}
+--- !u!114 &938468816 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114671898698336572, guid: ef8667d52cf644ddfabf52e3a95958eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 938468814}
+  m_Script: {fileID: 11500000, guid: d09011eee87f84307a44902f5d4cb46b, type: 3}
 --- !u!1 &960219286
 GameObject:
   m_ObjectHideFlags: 0
