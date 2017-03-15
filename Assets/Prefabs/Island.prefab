@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 33145087904890880}
   - component: {fileID: 23282763631724276}
   - component: {fileID: 95975478334555906}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 54381981455440692}
   - component: {fileID: 114644989985164464}
   - component: {fileID: 114714247517672626}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 4996489693820080}
   - component: {fileID: 33963273356203626}
   - component: {fileID: 23168189637602048}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: chest_open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 4165104588485626}
   - component: {fileID: 198159564518385880}
   - component: {fileID: 199129160231883902}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CoinParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2333,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.72413796, b: 0, a: 1}
   m_Intensity: 8
   m_Range: 2
   m_SpotAngle: 30
@@ -2352,10 +2352,10 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 2.71
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!108 &108819939881660654
