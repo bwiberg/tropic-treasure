@@ -64,6 +64,7 @@ public class AudioClips : MonoBehaviour {
 	[System.Serializable]
 	public class GameOver_ {
 		public List<AudioClip> Applause;
+		public List<AudioClip> Laughter;
 	}
 	public GameOver_ GameOver;
 

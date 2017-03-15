@@ -78,6 +78,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 930a7415051954604b412dad92fe1c50, type: 3}
     - {fileID: 8300000, guid: 880d27b0854104ef1a526e5b3bfe6e01, type: 3}
     - {fileID: 8300000, guid: 980bde49887684b5ca23a44679198957, type: 3}
+    Laughter:
+    - {fileID: 8300000, guid: 7702d0835bc1c49a5b21418552c2da56, type: 3}
   Pirates:
     Death:
     - {fileID: 8300000, guid: ce16a4298c0464366ae5b14b6b08c3e2, type: 3}
