@@ -820,6 +820,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1808050071526072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4812386515467366}
+  - component: {fileID: 114849059959208270}
+  m_Layer: 0
+  m_Name: UI Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1828598768058550
 GameObject:
   m_ObjectHideFlags: 1
@@ -996,6 +1012,7 @@ Transform:
   m_Children:
   - {fileID: 224951980381526354}
   - {fileID: 4785880660862546}
+  - {fileID: 4812386515467366}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1011,6 +1028,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4767771061086576}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4812386515467366
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808050071526072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4767771061086576}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4920590649288178
 Transform:
@@ -1491,8 +1521,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1707,8 +1737,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82873461397944776}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1846,8 +1876,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayUseAbilitySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2188,17 +2218,6 @@ MonoBehaviour:
           m_StringArgument: Fade
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 82873461397944776}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1203166607040482}
         m_MethodName: SetActive
         m_Mode: 6
@@ -2212,6 +2231,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: DisableGameInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlaySelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2306,8 +2336,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82873461397944776}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2456,8 +2486,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2530,8 +2560,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3030,8 +3060,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayUseAbilitySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3276,8 +3306,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82873461397944776}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3763,8 +3793,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayUseAbilitySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3828,6 +3858,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114849059959208270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808050071526072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845688c9dbb8942da8fdcf83225b6e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114852102462450204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4099,8 +4140,8 @@ MonoBehaviour:
           m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayConfirmSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4281,8 +4322,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82551227429555464}
-        m_MethodName: Play
+      - m_Target: {fileID: 114849059959208270}
+        m_MethodName: PlayUseAbilitySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

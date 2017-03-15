@@ -97,6 +97,7 @@ public class AudioClips : MonoBehaviour {
 	public class UI_ {
 		public List<AudioClip> MenuBack;
 		public List<AudioClip> MenuSelect;
+		public List<AudioClip> MenuConfirm;
 	}
 	public UI_ UI;
 
