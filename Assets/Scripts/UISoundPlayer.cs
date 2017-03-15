@@ -10,7 +10,7 @@ public class UISoundPlayer : MonoBehaviour {
 	}
 
 	public void PlayBackSound() {
-		var clip = AudioClips.Instance.UI.MenuSelect.GetAny();
+		var clip = AudioClips.Instance.UI.MenuBack.GetAny();
 		SoundManager.PlayUISound(clip);
 	}
 
