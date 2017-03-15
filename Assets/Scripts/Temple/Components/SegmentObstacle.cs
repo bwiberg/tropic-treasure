@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class SegmentObstacle : MonoBehaviour {
-	[SerializeField] private ParticleSystem particles;
-	[SerializeField] private ParticleSystemRenderer particleRenderer;
+	public ParticleSystem dustParticles;
+	public ParticleSystemRenderer dustParticlesRenderer;
+
+	public ParticleSystem destroyedParticles;
+	public ParticleSystemRenderer destroyedParticlesRenderer;
 
 	public NavMeshObstacle Obstacle;
+
+	public int DustParticlesPerDistance = 1;
 
 	private float emitTime;
 	private bool hasEmitted = false;
@@ -16,20 +21,32 @@ public class SegmentObstacle : MonoBehaviour {
 		Obstacle = GetComponent<NavMeshObstacle>();
 	}
 
-	public void EmitParticles(int count) {
+	public void EmitDestroyedParticles(int count) {
 		emitTime = Time.time;
 		hasEmitted = true;
-		particles.Emit(count);
+		destroyedParticles.Emit(count);
+		dustParticles.Emit(count); 
+	}
+
+	public void ShouldEmitDustParticles(bool shouldEmit) {
+		if (shouldEmit) {
+			var emission = dustParticles.emission;
+			emission.rateOverDistance = DustParticlesPerDistance;
+		}
+		else {
+			var emission = dustParticles.emission;
+			emission.rateOverDistance = 0;
+		}
 	}
 
 	private void Update() {
 		if (hasEmitted) {
-			float t = (Time.time - emitTime) / particles.main.startLifetime.constant;
-			var alpha = particles.colorOverLifetime.color.Evaluate(t).a;
+			float t = (Time.time - emitTime) / destroyedParticles.main.startLifetime.constant;
+			var alpha = destroyedParticles.colorOverLifetime.color.Evaluate(t).a;
 
-			var color = particleRenderer.material.color;
+			var color = destroyedParticlesRenderer.material.color;
 			color.a = alpha;
-			particleRenderer.material.color = color;
+			destroyedParticlesRenderer.material.color = color;
 		}
 	}
 }
