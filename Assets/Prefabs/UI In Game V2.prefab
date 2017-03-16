@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 223588417829310022}
   - component: {fileID: 114552123622558738}
   - component: {fileID: 114390851751892406}
+  - component: {fileID: 114698322495110200}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1611,7 +1612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1457a5a50dc4db49eb8a0644c197cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargingTime: 20
+  initialWaitDuration: 5
+  chargingTime: 10
   activeTime: 30
   isActive: 0
 --- !u!114 &114074343769312604
@@ -1833,6 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1457a5a50dc4db49eb8a0644c197cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialWaitDuration: 5
   chargingTime: 10
   activeTime: 5
   isActive: 0
@@ -3348,6 +3351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02be9b5c89d8ac848b06261a6af034ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialWaitDuration: 5
   chargingTime: 10
   activeTime: 2
   InstructionText: {fileID: 114103309569907642}
@@ -3407,6 +3411,19 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &114698322495110200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216752440925352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251bbcab77ce74e469bd5cebfda32515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitDuration: 5
+  fadeDuration: 0.5
 --- !u!114 &114706608074436652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4112,6 +4129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ccaacdbc4d04e04adb197e1312e9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialWaitDuration: 5
   chargingTime: 10
   ball: {fileID: 0}
   InstructionText: {fileID: 114575167821911206}

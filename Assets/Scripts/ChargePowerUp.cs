@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using EazyTools.SoundManager;
 
 public class ChargePowerUp : MonoBehaviour {
+	public float initialWaitDuration;
 
 	public float chargingTime = 10.0f;
 	public float activeTime = 5.0f;
@@ -29,6 +30,10 @@ public class ChargePowerUp : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Time.time <= initialWaitDuration) {
+			return;
+		}
+		
 		if(isActive) {
 			Deplete();
 		}

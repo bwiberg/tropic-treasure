@@ -4,14 +4,22 @@ using UnityEngine;
 using DG.Tweening;
 
 public class DollyOutOnStart : MonoBehaviour {
-	public Vector3 delta;
-	public float time;
+	public float delta;
+	public float waitDuration;
+	public float dollyDuration;
+
+	void Awake() {
+		
+	}
 
 	void Start () {
-		Vector3 position = transform.position;
-		position += delta;
-		transform.position = position;
+		Vector3 endPosition = transform.position;
+		Vector3 startPosition = endPosition + transform.forward * delta;
+		transform.position = startPosition;
 
-		transform.DOMove(-delta, time).SetEase(Ease.InOutCubic);
+		DOTween.Sequence()
+			.AppendInterval(waitDuration)
+			.Append(transform.DOMove(endPosition, dollyDuration).SetEase(Ease.InOutQuad))
+			.Play();
 	}
 }

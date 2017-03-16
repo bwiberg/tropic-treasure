@@ -6,6 +6,7 @@ using DG.Tweening;
 using EazyTools.SoundManager;
 
 public class RollingBallPowerUp : MonoBehaviour {
+	public float initialWaitDuration;
 
 	public float chargingTime = 10.0f;
 
@@ -34,6 +35,10 @@ public class RollingBallPowerUp : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Time.time <= initialWaitDuration) {
+			return;
+		}
+
 		if (isCharging) {
 			Charge();
 		}
