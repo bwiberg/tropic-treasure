@@ -46734,6 +46734,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 938468816}
+    - target: {fileID: 114845921026992918, guid: 5ea3591a5c30f40248122be7bec36f28,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1713223846}
     - target: {fileID: 1837128979012654, guid: 5ea3591a5c30f40248122be7bec36f28, type: 2}
       propertyPath: m_Name
       value: UI In Game
@@ -46863,11 +46868,6 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114845921026992918, guid: 5ea3591a5c30f40248122be7bec36f28,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ea3591a5c30f40248122be7bec36f28, type: 2}
   m_IsPrefabParent: 0
@@ -46947,6 +46947,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 737081629}
   m_Script: {fileID: 11500000, guid: 41ccaacdbc4d04e04adb197e1312e9d8, type: 3}
+--- !u!114 &737081673 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114555376351457526, guid: 5ea3591a5c30f40248122be7bec36f28,
+    type: 2}
+  m_PrefabInternal: {fileID: 737081629}
+  m_Script: {fileID: 11500000, guid: c5a8a2cc6f391402d9d81cb3e99c4b4d, type: 3}
 --- !u!1 &762123422
 GameObject:
   m_ObjectHideFlags: 0
@@ -143823,6 +143829,16 @@ Prefab:
       propertyPath: chest
       value: 
       objectReference: {fileID: 398564577}
+    - target: {fileID: 114310600866959626, guid: 89fd68573f16e475e9149dc7931c10a6,
+        type: 2}
+      propertyPath: pirateShip
+      value: 
+      objectReference: {fileID: 186128047}
+    - target: {fileID: 114310600866959626, guid: 89fd68573f16e475e9149dc7931c10a6,
+        type: 2}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 737081673}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89fd68573f16e475e9149dc7931c10a6, type: 2}
   m_IsPrefabParent: 0
@@ -149460,6 +149476,10 @@ Prefab:
     - target: {fileID: 4333395430403508, guid: c011bdbe4e5b648a499bb114bdd14c79, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258717356576682, guid: c011bdbe4e5b648a499bb114bdd14c79, type: 2}
+      propertyPath: m_TagString
+      value: Chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c011bdbe4e5b648a499bb114bdd14c79, type: 2}

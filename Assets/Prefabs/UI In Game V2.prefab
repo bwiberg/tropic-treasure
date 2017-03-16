@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 224493836381998886}
   - component: {fileID: 222382865562534164}
   - component: {fileID: 114103309569907642}
+  - component: {fileID: 114759322328220022}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -974,7 +975,7 @@ GameObject:
   - component: {fileID: 222607120674854338}
   - component: {fileID: 114706608074436652}
   - component: {fileID: 114122520690049588}
-  - component: {fileID: 114181469825517500}
+  - component: {fileID: 114660817647767074}
   m_Layer: 5
   m_Name: EarthPowerUpButton
   m_TagString: Untagged
@@ -1794,13 +1795,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395977722818858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1808,21 +1809,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 372d46d32e5a6475e882947083ec2813, type: 3}
+    m_FontSize: 255
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 80
+    m_MinSize: 5
+    m_MaxSize: 256
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: Shake
 --- !u!114 &114112782766885510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1871,7 +1870,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 114706608074436652}
   m_OnClick:
     m_PersistentCalls:
@@ -1887,7 +1886,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114181469825517500}
+      - m_Target: {fileID: 114660817647767074}
         m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
@@ -1975,20 +1974,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Score: 10000'
---- !u!114 &114181469825517500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1975396267934786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1457a5a50dc4db49eb8a0644c197cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chargingTime: 10
-  activeTime: 5
-  isActive: 0
 --- !u!114 &114183528423103202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3352,6 +3337,24 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &114660817647767074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1975396267934786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02be9b5c89d8ac848b06261a6af034ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargingTime: 10
+  activeTime: 2
+  InstructionText: {fileID: 114103309569907642}
+  InstructionTextDuration: 5
+  InstructionTextFadeDuration: 2
+  IsFirstTime: 1
+  shakeDetectionThreshold: 0.5
 --- !u!114 &114664642422888760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3514,6 +3517,20 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &114759322328220022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395977722818858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114768102063353044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5022,8 +5039,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -121, y: 765}
+  m_SizeDelta: {x: 504.19998, y: 378.30017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224532677828867552
 RectTransform:

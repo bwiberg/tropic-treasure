@@ -44,10 +44,10 @@ public class EarthPowerUp : MonoBehaviour {
 		image = GetComponent<Image>();
 		button = GetComponent<Button>();
 		remainingActiveTime = 1.0f;
-		image.fillAmount = 1;
-		isCharged = true;
+		image.fillAmount = 0;
+		isCharged = false;
 		isActive = false;
-		button.interactable = true;
+		button.interactable = false;
 
 		LowPassValue = Input.acceleration;
 		shakeCounter = 0;
@@ -55,7 +55,7 @@ public class EarthPowerUp : MonoBehaviour {
 		ChestLocation = GameObject.FindGameObjectWithTag ("Chest").transform.position;
 
 		maxNumEnemies = 3;
-		enemiesKill = new GameObject[maxNumEnemies];
+		//enemiesKill = new GameObject[maxNumEnemies];
 
 	}
 
@@ -96,14 +96,7 @@ public class EarthPowerUp : MonoBehaviour {
 		button.interactable = false;
 		isActive = true;
 
-		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		// sort enemies based on distance from treasure; closest is first index of array
-		for (int i = 0; i < maxNumEnemies; i++) {
-			enemiesKill [i] = enemies [i];
-		}
-
-
-
+		enemiesKill = GameObject.FindGameObjectsWithTag ("Enemy");
 	}
 		
 

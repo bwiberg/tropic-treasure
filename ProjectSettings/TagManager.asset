@@ -11,6 +11,7 @@ TagManager:
   - GameManager
   - ParticleCollider
   - Enemy
+  - Chest
   layers:
   - Default
   - TransparentFX
