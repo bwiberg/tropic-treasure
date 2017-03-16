@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DisplayScore : MonoBehaviour {
 
+	public float waitDuration;
+
 	public GameObject clock;
 	public float rotationSpeed = 3.0f;
 	public float deltaAngle = 12.0f;  
@@ -28,8 +30,12 @@ public class DisplayScore : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (Time.time <= waitDuration) {
+			return;
+		}
+
 		//Remove once we have gamelogic
-		float timeUpdate = Time.deltaTime;
+		float timeUpdate = Time.fixedDeltaTime;
 		UpdateTime(timeUpdate);
 	}
 
