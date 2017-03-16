@@ -28,17 +28,17 @@ public class FadeCanvasOnStart : MonoBehaviour {
 			return;
 		}
 
-		if (Time.time <= waitDuration) {
+		if (Time.timeSinceLevelLoad <= waitDuration) {
 			return;
 		}
 
-		if (Time.time >= waitDuration + fadeDuration) {
+		if (Time.timeSinceLevelLoad >= waitDuration + fadeDuration) {
 			hasCompletedFade = true;
 			setAlphas(1.0f);
 			return;
 		}
 
-		float fraction = (Time.time - waitDuration) / fadeDuration;
+		float fraction = (Time.timeSinceLevelLoad - waitDuration) / fadeDuration;
 		setAlphas(fraction);
 	}
 

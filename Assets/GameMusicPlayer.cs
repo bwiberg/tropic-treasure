@@ -23,7 +23,7 @@ public class GameMusicPlayer : MonoBehaviour {
 	}
 
 	private void Update () {
-		if (!hasStartedPlaying && Time.time >= timeUntilStart) {
+		if (!hasStartedPlaying && Time.timeSinceLevelLoad >= timeUntilStart) {
 			hasStartedPlaying = true;
 
 			var clip = AudioClips.Instance.Music.GameMusic.GetAny();

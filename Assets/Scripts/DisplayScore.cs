@@ -30,7 +30,7 @@ public class DisplayScore : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Time.time <= waitDuration) {
+		if (Time.timeSinceLevelLoad <= waitDuration) {
 			return;
 		}
 
