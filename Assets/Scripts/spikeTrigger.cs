@@ -46,9 +46,10 @@ public class spikeTrigger : MonoBehaviour {
     {
         for (int i = 0; i < inTrap.Length; i++)
         {
-            if (inTrap[i].gameObject.GetComponent<SimpleAgent>())
+			var simpleAgent = inTrap[i].gameObject.GetComponent<SimpleAgent>();
+            if (simpleAgent != null)
             {
-                GameObject.Destroy(inTrap[i].gameObject);
+				simpleAgent.handleHitBySpikes();
             }
         }
         iTween.MoveBy(gameObject, iTween.Hash("amount", new Vector3(0f, -3.5f, 0f), "time", 2.0f, "oncomplete", "setTrap"));

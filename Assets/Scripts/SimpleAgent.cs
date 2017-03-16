@@ -94,6 +94,10 @@ public class SimpleAgent : MonoBehaviour {
 		killSelf();
 	}
 
+	public void handleHitBySpikes() {
+		killSelf();
+	}
+
 	private void killSelf() {
 		var blood = GameObject.Instantiate(DeathParticlesPrefab);
 		blood.transform.position = transform.position;
