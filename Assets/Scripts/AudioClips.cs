@@ -6,7 +6,6 @@ using EazyTools.SoundManager;
 public static class ListExtensions {
 	public static T GetAny<T>(this List<T> list) {
 		var index = Random.Range(0, list.Count - 1);
-		Debug.LogFormat("GetAny() chose index={0} from a list of {1} elements.", index, list.Count);
 		return list[index];
 	}
 }
@@ -67,6 +66,15 @@ public class AudioClips : MonoBehaviour {
 		public List<AudioClip> Laughter;
 	}
 	public GameOver_ GameOver;
+
+	//----------//
+	//  Music  //
+	//--------//
+	[System.Serializable]
+	public class Music_ {
+		public List<AudioClip> GameMusic;
+	}
+	public Music_ Music;
 
 
 	//-----------.--------------//

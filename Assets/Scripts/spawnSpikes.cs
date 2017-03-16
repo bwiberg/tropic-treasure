@@ -9,6 +9,7 @@ public class spawnSpikes : MonoBehaviour {
     public float duration;
     public bool placeTrap;
 
+	private bool hasPlacedTrap;
     private GameObject spikeField;
 
 	// Use this for initialization
@@ -42,13 +43,15 @@ public class spawnSpikes : MonoBehaviour {
                 spikeField = GameObject.Instantiate(spawnObject, hit.point, Quaternion.identity);
                 spikeField.name = string.Format("spikes");
                 spikeField.transform.SetParent(gameObject.transform.parent);
+
+				hasPlacedTrap = true;
             }
             if (Input.GetMouseButton(0)
                 && gameObject.GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {
                 spikeField.transform.position = hit.point;
             }
-            if (Input.GetMouseButtonUp(0)
+            if (hasPlacedTrap && Input.GetMouseButtonUp(0)
                 && gameObject.GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {
                 spikeField.GetComponent<Outline>().enabled = false;
@@ -64,5 +67,6 @@ public class spawnSpikes : MonoBehaviour {
     public void setTrap()
     {
         placeTrap = true;
+		hasPlacedTrap = false;
     }
 }

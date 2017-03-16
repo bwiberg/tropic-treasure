@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spikeTrigger : MonoBehaviour {
 
+	List<Collider> collidersInTrap = new List<Collider>();
     Collider[] inTrap;
     bool isSet;
     public bool isPlaced;
@@ -28,7 +29,9 @@ public class spikeTrigger : MonoBehaviour {
         Vector3 bot = transform.position + new Vector3(0, -5.0f, 0);
         Vector3 top = transform.position + new Vector3(0, 0.2f, 0);
 
-        inTrap = Physics.OverlapCapsule(bot, top, transform.localScale.z / 2.0f);
+        //inTrap = Physics.OverlapCapsule(bot, top, transform.localScale.z / 2.0f);
+		inTrap = collidersInTrap.ToArray();
+		Debug.Log(inTrap);
         if (isSet) {
             for (int i = 0; i < inTrap.Length; i++)
             {
@@ -46,11 +49,13 @@ public class spikeTrigger : MonoBehaviour {
     {
         for (int i = 0; i < inTrap.Length; i++)
         {
-			var simpleAgent = inTrap[i].gameObject.GetComponent<SimpleAgent>();
-            if (simpleAgent != null)
-            {
+			var collider = inTrap[i];
+			collidersInTrap.Remove(collider);
+			var simpleAgent = collider.gameObject.GetComponent<SimpleAgent>();
+			if (simpleAgent != null)
+			{
 				simpleAgent.handleHitBySpikes();
-            }
+			}
         }
         iTween.MoveBy(gameObject, iTween.Hash("amount", new Vector3(0f, -3.5f, 0f), "time", 2.0f, "oncomplete", "setTrap"));
     }
@@ -69,4 +74,14 @@ public class spikeTrigger : MonoBehaviour {
     {
         iTween.Resume(gameObject,true);
     }
+
+	private void OnTriggerEnter(Collider other) {
+		Debug.Log("OnTriggerEnter");
+		collidersInTrap.Add(other);
+	}
+
+	private void OnTriggerExit(Collider other) {
+		Debug.Log("OnTriggerExit");
+		collidersInTrap.Remove(other);
+	}
 }
