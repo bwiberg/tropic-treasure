@@ -119,20 +119,32 @@ public class EarthPowerUp : MonoBehaviour {
 			if(shakeCounter <= 5) {
 				// kill one enemy
 				Debug.Log("Kill 1 enemy");
-				Destroy(enemiesKill[0]);
+				for (int i = 0; i < 1; ++i) {
+					var agent = enemiesKill[i].GetComponent<SimpleAgent>();
+					if (agent != null) {
+						agent.handleKilledByEarthquake();
+					}
+				}
 			}
 			else if(shakeCounter > 5 && shakeCounter < 10) {
 				//kill 2 enemies
 				Debug.Log("Kill 2 enemies");
-				Destroy(enemiesKill[0]);
-				Destroy(enemiesKill[1]);
+				for (int i = 0; i < 2; ++i) {
+					var agent = enemiesKill[i].GetComponent<SimpleAgent>();
+					if (agent != null) {
+						agent.handleKilledByEarthquake();
+					}
+				}
 			}
 			else if (shakeCounter >= 10) {
 				// kill 3 enemies
 				Debug.Log("Kill 3 enemies");
-				Destroy(enemiesKill[0]);
-				Destroy(enemiesKill[1]);
-				Destroy(enemiesKill[2]);
+				for (int i = 0; i < 3; ++i) {
+					var agent = enemiesKill[i].GetComponent<SimpleAgent>();
+					if (agent != null) {
+						agent.handleKilledByEarthquake();
+					}
+				}
 			}
 
 			// reset storage arrays for enemy game objects and distances

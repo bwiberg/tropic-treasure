@@ -27,9 +27,8 @@ public class GameMusicPlayer : MonoBehaviour {
 			hasStartedPlaying = true;
 
 			var clip = AudioClips.Instance.Music.GameMusic.GetAny();
-			music = SoundManager.GetMusicAudio(SoundManager.PlayMusic(clip));
+			music = SoundManager.GetMusicAudio(SoundManager.PlayMusic(clip, 1.0f, true, false));
 			music.fadeInSeconds = 0.05f;
-			music.loop = true;
 		}
 	}
 
