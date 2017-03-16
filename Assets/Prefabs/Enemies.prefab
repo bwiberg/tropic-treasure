@@ -57,3 +57,5 @@ MonoBehaviour:
   radius: 15
   spawnRatePerSec: 0.5
   chest: {fileID: 0}
+  pirateShip: {fileID: 0}
+  score: {fileID: 0}

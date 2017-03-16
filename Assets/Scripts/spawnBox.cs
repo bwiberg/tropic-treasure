@@ -12,6 +12,7 @@ public class spawnBox : MonoBehaviour {
     private float maxRange;
     private int testCount;
     private float threshold;
+    private bool repSet;
 
     public int difficulty;
     
@@ -20,6 +21,8 @@ public class spawnBox : MonoBehaviour {
     public float radius;
     public float spawnRatePerSec;
     public GameObject chest;
+    public PirateShip pirateShip;
+    public DisplayScore score;
 
     private void Start()
     {
@@ -27,6 +30,7 @@ public class spawnBox : MonoBehaviour {
         maxRange = 1000.0f;
         testCount = 100;
         threshold = 1;
+        repSet = true;
 
         //difficulty = PlayerPrefs.GetInt(difficultyKey);
 
@@ -37,7 +41,24 @@ public class spawnBox : MonoBehaviour {
 
         InvokeRepeating("spawnEnemy",5.0f,0.1f/spawnRatePerSec);
         if(difficulty != 0)
-            InvokeRepeating("incSpawnRate", 15.0f, 10.0f);
+            InvokeRepeating("incSpawnRate", 10.0f, 10.0f);
+    }
+
+    private void Update()
+    {
+        if (!pirateShip.enabled && repSet)
+        {
+            CancelInvoke("spawnEnemy");
+            if (difficulty != 0)
+                CancelInvoke("incSpawnRate");
+            repSet = false;
+        }else if (!repSet && pirateShip.enabled)
+        {
+            InvokeRepeating("spawnEnemy", 0.0f, 0.1f / spawnRatePerSec);
+            if (difficulty != 0)
+                InvokeRepeating("incSpawnRate", score.getScore() % 10, 10.0f);
+            repSet = true;
+        }
     }
 
     public void spawnEnemy() {
