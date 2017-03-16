@@ -8,9 +8,18 @@ public class GameMusicPlayer : MonoBehaviour {
 	public float timeUntilStart = 5.0f;
 
 	private Audio music;
+	private string volumeKey = "volume";
 
 	private void Start() {
-		SoundManager.globalMusicVolume = 0.25f;
+		if(PlayerPrefs.HasKey(volumeKey))
+		{
+			float volume = PlayerPrefs.GetFloat(volumeKey);
+			SetVolume(volume);
+		}
+		else
+		{
+			SetVolume(1.0f);
+		}
 	}
 
 	private void Update () {
@@ -22,5 +31,14 @@ public class GameMusicPlayer : MonoBehaviour {
 			music.fadeInSeconds = 0.05f;
 			music.loop = true;
 		}
+	}
+
+	public void SetVolume(float volume)
+	{
+		SoundManager.globalVolume = volume;
+		SoundManager.globalMusicVolume = 0.25f * volume;
+		SoundManager.globalUISoundsVolume = volume;
+		SoundManager.globalSoundsVolume = volume;
+		AudioListener.volume = volume;
 	}
 }

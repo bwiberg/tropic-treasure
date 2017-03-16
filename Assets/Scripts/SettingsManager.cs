@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EazyTools.SoundManager;
 
 public class SettingsManager : MonoBehaviour {
 
@@ -26,7 +27,10 @@ public class SettingsManager : MonoBehaviour {
 		}
 
 		if(PlayerPrefs.HasKey(volumeKey))
+		{
 			volumeSlider.value = PlayerPrefs.GetFloat(volumeKey);
+			SetVolume();
+		}
 
 		if(PlayerPrefs.HasKey(difficultyKey))
 		{
@@ -43,6 +47,7 @@ public class SettingsManager : MonoBehaviour {
 	}
 
 	public void SaveVolume () {
+		SetVolume();
 		PlayerPrefs.SetFloat(volumeKey, volumeSlider.value);
 	}
 
@@ -55,5 +60,13 @@ public class SettingsManager : MonoBehaviour {
 		current_difficulty = difficulty;
 		toggles[current_difficulty].isOn = true;
 		SaveDifficulty();
+	}
+
+	public void SetVolume() {
+		SoundManager.globalVolume = volumeSlider.value;
+		SoundManager.globalMusicVolume = 0.25f * volumeSlider.value;
+		SoundManager.globalUISoundsVolume = volumeSlider.value;
+		SoundManager.globalSoundsVolume = volumeSlider.value;
+		AudioListener.volume = volumeSlider.value;
 	}
 }

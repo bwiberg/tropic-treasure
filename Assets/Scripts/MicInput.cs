@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class MicInput : MonoBehaviour {
 	public static float loudness;
 
@@ -12,6 +11,7 @@ public class MicInput : MonoBehaviour {
     void InitMic(){
         if(_device == null) _device = Microphone.devices[0];
         _clipRecord = Microphone.Start(_device, true, 999, 44100);
+		iPhoneSpeaker.ForceToSpeaker();
     }
  
     void StopMicrophone()
