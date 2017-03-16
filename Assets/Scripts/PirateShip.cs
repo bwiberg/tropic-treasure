@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using EazyTools.SoundManager;
 
 public class PirateShip : MonoBehaviour {
 	public enum CannonFireState {
@@ -127,10 +128,14 @@ public class PirateShip : MonoBehaviour {
 
 				cannonball.transform.position = cannonballSpawnPoint.transform.position;
 				cannonball.GetComponent<MeshRenderer>().enabled = true;
+				cannonball.GetComponent<Cannonball>().OnFired();
 
 				var rb = cannonball.GetComponent<Rigidbody>();
 				rb.velocity = calcVelocityToHitTarget(cannonball.transform.position, cannonballTarget, CannonballSpeed);
 				rb.angularVelocity = new Vector3(Random.Range(3, 6), Random.Range(0, 2), Random.Range(0, 2));
+
+				var clip = AudioClips.Instance.PirateShip.Fire.GetAny();
+				SoundManager.PlaySound(clip);
 			})
 			.AppendInterval(CannonReshootWaitDuration)
 			.AppendCallback(doFireCannonballAtSegment)

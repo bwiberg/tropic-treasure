@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 using DG.Tweening;
+using EazyTools.SoundManager;
 
 [RequireComponent(typeof(Transformer),
     typeof(SingleTouchRotationGesture))]
@@ -77,7 +78,7 @@ public class CircularLevel : MonoBehaviour {
 		clone.gameObject.SetActive(true);
 		clone.setRenderOutlineOnly(false);
 		clone.setAreObstaclesActive(true);
-		clone.transform.DOShakeRotation(DURATION_SHAKE, 4.0f * Vector3.up);
+		clone.animateShakeRotation();
 
 		this.setRenderOutlineOnly(true);
 		this.setAreObstaclesActive(false);
@@ -116,11 +117,27 @@ public class CircularLevel : MonoBehaviour {
 	private static float DURATION_SHAKE = 0.4f;
 	private static float DURATION_ROTATE_FACTOR = 1.0f;
 
+	private void animateShakeRotation() {
+		transform.DOShakeRotation(DURATION_SHAKE, 4.0f * Vector3.up);
+
+		var clip = AudioClips.Instance.Walls.Grabbed.GetAny();
+		SoundManager.PlaySound(clip);
+
+	}
+
 	private void animateRotation(Quaternion target) {
 		float duration = InnerRadius * ParentTemple.WallRotationDurationFactor;
+
+		var rotationClip = AudioClips.Instance.Walls.Rotation.GetAny();
+		var rotationSound = SoundManager.GetAudio(SoundManager.PlaySound(rotationClip));
+
 		rotationSequence = DOTween.Sequence();
 		rotationSequence
 			.Append(transform.DORotateQuaternion(target, duration).SetEase(Ease.Linear))
+			.AppendCallback(() => {
+				rotationSound.fadeOutSeconds = 0.5f;
+				rotationSound.Stop();
+			})
 			.Append(transform.DOShakeRotation(DURATION_SHAKE, 2.0f * Vector3.up))
 			.OnComplete(() => {
 				// Enable further rotations when complete

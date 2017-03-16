@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using EazyTools.SoundManager;
 
 public class RollingBallPowerUp : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class RollingBallPowerUp : MonoBehaviour {
 
 	public bool IsFirstTime = true;
 
-	private bool isCharging = false;
+	private bool isCharging = true;
 
 	private float remainingActiveTime;
 	private Image image;
@@ -27,8 +28,8 @@ public class RollingBallPowerUp : MonoBehaviour {
 		image = GetComponent<Image>();
 		button = GetComponent<Button>();
 		remainingActiveTime = 1.0f;
-		image.fillAmount = 1;
-		button.interactable = true;
+		image.fillAmount = 0.0f;
+		button.interactable = false;
 	}
 
 	// Update is called once per frame
@@ -43,6 +44,12 @@ public class RollingBallPowerUp : MonoBehaviour {
 
 		if(image.fillAmount >= 1) {
 			Reset();
+
+			var clip = AudioClips.Instance.Abilities.Recharged.GetAny();
+			var audio = SoundManager.GetUISoundAudio(clip);
+			if (audio == null || !audio.playing) {
+				SoundManager.PlayUISound(clip);
+			};
 		}
 	}
 

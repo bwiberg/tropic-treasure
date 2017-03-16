@@ -60,15 +60,22 @@ public class CircularLevelDescription {
 					0.0f));
 				obstacleObject.transform.SetParent(segmentComponent.transform);
 
-				// Setup particle shape for the obstacle	
-				var destroyedParticles = obstacleObject.GetComponentInChildren<ParticleSystem>();
-				var shape = destroyedParticles.shape;
+				// Setup particle shapes for the obstacle	
+				SegmentObstacle obstacleComponent = obstacleObject.GetComponent<SegmentObstacle>();
+				var shape = obstacleComponent.destroyedParticles.shape;
 				shape.box = obstacle.size;
-				destroyedParticles.transform.localPosition = obstacle.center;
-				destroyedParticles.randomSeed = (uint) Random.Range(uint.MinValue, uint.MaxValue);
+				obstacleComponent.destroyedParticles.transform.localPosition = obstacle.center;
+				obstacleComponent.destroyedParticles.randomSeed = (uint) Random.Range(uint.MinValue, uint.MaxValue);
 
-				for (int iplane = 0; iplane < destroyedParticles.collision.maxPlaneCount && iplane < particleColliderPlanes.Length; ++iplane) {
-					destroyedParticles.collision.SetPlane(iplane, particleColliderPlanes[iplane].transform);
+				shape = obstacleComponent.dustParticles.shape;
+				var box = obstacle.size;
+				box.z = 0.1f;
+				shape.box = box;
+				obstacleComponent.dustParticles.transform.localPosition = obstacle.center - new Vector3(0.0f, obstacle.size.y / 2.5f, 0.0f);
+				obstacleComponent.dustParticles.randomSeed = (uint) Random.Range(uint.MinValue, uint.MaxValue);
+
+				for (int iplane = 0; iplane < obstacleComponent.destroyedParticles.collision.maxPlaneCount && iplane < particleColliderPlanes.Length; ++iplane) {
+					obstacleComponent.destroyedParticles.collision.SetPlane(iplane, particleColliderPlanes[iplane].transform);
 				}
 			}
 

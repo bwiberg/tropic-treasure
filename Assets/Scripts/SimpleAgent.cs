@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using EazyTools.SoundManager;
 
 public class SimpleAgent : MonoBehaviour {
 	private NavMeshAgent agent;
@@ -14,6 +15,10 @@ public class SimpleAgent : MonoBehaviour {
 
 	private bool wasAlerted = false;
 
+	public float YarrProbabilityOnSpawn = 0.1f;
+	public float YarrSilenceFactor = 1.0f;
+	private static float timeOfLastYarr = 0.0f;
+
 	[SerializeField] private float linearSpeed = 1.0f;
 
 	// Use this for initialization
@@ -21,6 +26,17 @@ public class SimpleAgent : MonoBehaviour {
         target = FindObjectOfType<spawnBox>().chest.transform;
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
+	}
+
+	private void Start() {
+		float timeSinceLastYarr = Time.time - timeOfLastYarr;
+		float probabilityContribution = (1.0f - YarrProbabilityOnSpawn) * Mathf.Atan(YarrSilenceFactor * timeSinceLastYarr);
+
+		if (Random.value <= YarrProbabilityOnSpawn + probabilityContribution) {
+			var clip = AudioClips.Instance.Pirates.VoiceYarr.GetAny();
+			SoundManager.PlaySound(clip);
+			timeOfLastYarr = Time.time;
+		}
 	}
 
 	private void Update() {
@@ -71,15 +87,20 @@ public class SimpleAgent : MonoBehaviour {
 	}
 
 	public void handleHitByRollingBall(RollingBallOfDeath ball) {
-		var blood = GameObject.Instantiate(DeathParticlesPrefab);
-		blood.transform.position = transform.position;
-		GameObject.Destroy(gameObject);
+		killSelf();
 	}
 
 	public void handleHitByCannonball(Cannonball ball) {
+		killSelf();
+	}
+
+	private void killSelf() {
 		var blood = GameObject.Instantiate(DeathParticlesPrefab);
 		blood.transform.position = transform.position;
 		GameObject.Destroy(gameObject);
+
+		var clip = AudioClips.Instance.Pirates.Death.GetAny();
+		SoundManager.PlaySound(clip);
 	}
 
 	public void Pause() {
