@@ -33442,6 +33442,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1950491639769288, guid: 5ea3591a5c30f40248122be7bec36f28,
     type: 2}
   m_PrefabInternal: {fileID: 737081629}
+--- !u!114 &737081704 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114555376351457526, guid: 5ea3591a5c30f40248122be7bec36f28,
+    type: 2}
+  m_PrefabInternal: {fileID: 737081629}
+  m_Script: {fileID: 11500000, guid: c5a8a2cc6f391402d9d81cb3e99c4b4d, type: 3}
 --- !u!1 &794656179
 GameObject:
   m_ObjectHideFlags: 0
@@ -71931,6 +71937,16 @@ Prefab:
       propertyPath: chest
       value: 
       objectReference: {fileID: 398564577}
+    - target: {fileID: 114310600866959626, guid: 89fd68573f16e475e9149dc7931c10a6,
+        type: 2}
+      propertyPath: pirateShip
+      value: 
+      objectReference: {fileID: 186128047}
+    - target: {fileID: 114310600866959626, guid: 89fd68573f16e475e9149dc7931c10a6,
+        type: 2}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 737081704}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89fd68573f16e475e9149dc7931c10a6, type: 2}
   m_IsPrefabParent: 0

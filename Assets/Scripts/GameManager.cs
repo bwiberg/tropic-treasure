@@ -58,8 +58,10 @@ public class GameManager : MonoBehaviour {
 	private bool blinkedOnce = false;
 
 	private SimpleAgent[] enemies;
+    private spikeTrigger[] spikes;
 
-	private Rigidbody[] rigidbodies;
+
+    private Rigidbody[] rigidbodies;
 	private Tuple<bool, Vector3, Vector3>[] rigidbodyStates;
 
 	private ParticleSystem[] particleSystems;
@@ -239,7 +241,15 @@ public class GameManager : MonoBehaviour {
 
 		// Disable pirate ship
 		pirateShip.enabled = false;
-	}
+
+        // Disable spikes
+        spikes = Object.FindObjectsOfType<spikeTrigger>();
+        for (int i = 0; i < spikes.Length; ++i)
+        {
+            spikes[i].pause();
+            spikes[i].enabled = false;
+        }
+    }
 
 	public void EnableGameInput() {
 		foreach (var templeLevel in temple.Levels) {
@@ -268,5 +278,12 @@ public class GameManager : MonoBehaviour {
 
 		// Enable pirate ship
 		pirateShip.enabled = true;
-	}
+
+        // Enable spikes
+        for (int i = 0; i < spikes.Length; ++i)
+        {
+            spikes[i].resume();
+            spikes[i].enabled = true;
+        }
+    }
 }

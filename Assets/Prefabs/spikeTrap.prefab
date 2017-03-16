@@ -143,6 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4345104915874074}
   - component: {fileID: 95889956756065296}
+  - component: {fileID: 114518722465746326}
   m_Layer: 0
   m_Name: spikes
   m_TagString: Untagged
@@ -1329,6 +1330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadbdb7512fc2a846bf3bff980026008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaced: 0
+  duration: 0
 --- !u!114 &114497256450944326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1344,6 +1347,19 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
+--- !u!114 &114518722465746326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458230548079388}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadbdb7512fc2a846bf3bff980026008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+  duration: 0
 --- !u!136 &136742882765923660
 CapsuleCollider:
   m_ObjectHideFlags: 1

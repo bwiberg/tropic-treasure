@@ -51,8 +51,11 @@ public class spawnSpikes : MonoBehaviour {
             if (Input.GetMouseButtonUp(0)
                 && gameObject.GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {
-                spikeField.gameObject.GetComponent<Outline>().enabled = false;
-                Destroy(spikeField.gameObject,duration);
+                spikeField.GetComponent<Outline>().enabled = false;
+                spikeField.GetComponent<spikeTrigger>().setTrap();
+                spikeField.GetComponent<spikeTrigger>().duration = duration;
+                spikeField.GetComponent<spikeTrigger>().isPlaced = true;
+                //Destroy(spikeField.gameObject, duration);
                 placeTrap = false;
             }
         }
