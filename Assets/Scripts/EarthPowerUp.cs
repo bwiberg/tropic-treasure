@@ -35,8 +35,12 @@ public class EarthPowerUp : MonoBehaviour {
 
 	private GameObject[] enemies;
 	private GameObject[] enemiesKill;
+	private Rigidbody enemyRigidBody;
 	private float[] enemyDistanceFromChest;
 	private int maxNumEnemies;
+	private GameObject Cam;
+	private Quaternion StaticCameraRotation;
+
 
 
 
@@ -55,6 +59,9 @@ public class EarthPowerUp : MonoBehaviour {
 		shakeCounter = 0;
 
 		ChestLocation = GameObject.FindGameObjectWithTag ("Chest").transform.position;
+		Cam = GameObject.FindGameObjectWithTag ("MainCamera");
+		StaticCameraRotation = Cam.transform.rotation;
+
 
 		maxNumEnemies = 3;
 		//enemiesKill = new GameObject[maxNumEnemies];
@@ -97,12 +104,18 @@ public class EarthPowerUp : MonoBehaviour {
 				})
 				.Play();
 		}
-
+		Cam.transform.DOPunchRotation (new Vector3 (0, 1, 1), activeTime*2, 15, 1);
 			
 		button.interactable = false;
 		isActive = true;
 
 		enemiesKill = GameObject.FindGameObjectsWithTag ("Enemy");
+		// stop enemies from moving, add animation transition later
+		for (int i = 0; i < enemiesKill.Length; i++) {
+			enemyRigidBody = enemiesKill [i].GetComponent<Rigidbody>();
+			enemyRigidBody.constraints = RigidbodyConstraints.FreezeAll;
+		}
+
 	}
 		
 
@@ -147,7 +160,7 @@ public class EarthPowerUp : MonoBehaviour {
 				}
 			}
 
-			// reset storage arrays for enemy game objects and distances
+			shakeCounter = 0;
 
 		}
 		// low pass filter accelerometer values to decrease noise
@@ -160,5 +173,6 @@ public class EarthPowerUp : MonoBehaviour {
 			// increment shake counter 
 			shakeCounter++;
 		}
+
 	}
 }
