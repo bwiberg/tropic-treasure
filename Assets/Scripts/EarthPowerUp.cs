@@ -33,8 +33,12 @@ public class EarthPowerUp : MonoBehaviour {
 
 	private GameObject[] enemies;
 	private GameObject[] enemiesKill;
+	private Rigidbody enemyRigidBody;
 	private float[] enemyDistanceFromChest;
 	private int maxNumEnemies;
+	private GameObject Cam;
+	private Quaternion StaticCameraRotation;
+
 
 
 
@@ -53,6 +57,9 @@ public class EarthPowerUp : MonoBehaviour {
 		shakeCounter = 0;
 
 		ChestLocation = GameObject.FindGameObjectWithTag ("Chest").transform.position;
+		Cam = GameObject.FindGameObjectWithTag ("MainCamera");
+		StaticCameraRotation = Cam.transform.rotation;
+
 
 		maxNumEnemies = 3;
 		//enemiesKill = new GameObject[maxNumEnemies];
@@ -91,12 +98,18 @@ public class EarthPowerUp : MonoBehaviour {
 				})
 				.Play();
 		}
-
+		Cam.transform.DOPunchRotation (new Vector3 (0, 1, 1), activeTime*2, 15, 1);
 			
 		button.interactable = false;
 		isActive = true;
 
 		enemiesKill = GameObject.FindGameObjectsWithTag ("Enemy");
+		// stop enemies from moving, add animation transition later
+		for (int i = 0; i < enemiesKill.Length; i++) {
+			enemyRigidBody = enemiesKill [i].GetComponent<Rigidbody>();
+			enemyRigidBody.constraints = RigidbodyConstraints.FreezeAll;
+		}
+
 	}
 		
 
@@ -109,27 +122,14 @@ public class EarthPowerUp : MonoBehaviour {
 			isCharged = false;
 
 			// based on shake counter value, destroy enemies
-			Debug.Log("shakeCounter: " + shakeCounter);
-			if(shakeCounter <= 5) {
-				// kill one enemy
-				Debug.Log("Kill 1 enemy");
-				Destroy(enemiesKill[0]);
-			}
-			else if(shakeCounter > 5 && shakeCounter < 10) {
-				//kill 2 enemies
-				Debug.Log("Kill 2 enemies");
+			//Debug.Log("shakeCounter: " + shakeCounter);
+			if(shakeCounter >= 3) {
+				// kill 2 enemies
 				Destroy(enemiesKill[0]);
 				Destroy(enemiesKill[1]);
-			}
-			else if (shakeCounter >= 10) {
-				// kill 3 enemies
-				Debug.Log("Kill 3 enemies");
-				Destroy(enemiesKill[0]);
-				Destroy(enemiesKill[1]);
-				Destroy(enemiesKill[2]);
 			}
 
-			// reset storage arrays for enemy game objects and distances
+			shakeCounter = 0;
 
 		}
 		// low pass filter accelerometer values to decrease noise
@@ -142,5 +142,6 @@ public class EarthPowerUp : MonoBehaviour {
 			// increment shake counter 
 			shakeCounter++;
 		}
+
 	}
 }
