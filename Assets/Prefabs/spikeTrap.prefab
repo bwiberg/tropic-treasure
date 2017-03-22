@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114497256450944326}
   - component: {fileID: 114343247279118980}
   - component: {fileID: 54105405012896112}
+  - component: {fileID: 114734578053754524}
   m_Layer: 0
   m_Name: spikeTrap
   m_TagString: Untagged
@@ -1331,7 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaced: 0
-  duration: 0
+  duration: 10
 --- !u!114 &114497256450944326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1360,6 +1361,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlaced: 0
   duration: 0
+--- !u!114 &114734578053754524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147067823452886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ea9930ecb674732bee27116520fad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  advancedProps: 0
+  minTouches: 0
+  maxTouches: 0
+  combineTouches: 0
+  combineTouchesInterval: 0.3
+  useSendMessage: 0
+  sendStateChangeMessages: 0
+  sendMessageTarget: {fileID: 0}
+  requireGestureToFail: {fileID: 0}
+  friendlyGestures: []
+  ForceNoApplyTransform: 0
+  type: 1
+  minScreenPointsDistance: 0.5
+  screenTransformThreshold: 0.1
+  Touch_WorldPosition: {x: 0, y: 0, z: 0}
+  projection: 0
+  projectionPlaneNormal: {x: 0, y: 0, z: 1}
 --- !u!136 &136742882765923660
 CapsuleCollider:
   m_ObjectHideFlags: 1
