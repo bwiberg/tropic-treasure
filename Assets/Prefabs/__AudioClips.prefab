@@ -81,8 +81,16 @@ MonoBehaviour:
     Laughter:
     - {fileID: 8300000, guid: 7702d0835bc1c49a5b21418552c2da56, type: 3}
   Music:
+    MainMenu:
+    - {fileID: 8300000, guid: 58c57f767564249a4948cabc4c286b88, type: 3}
+    GameIntro:
+    - {fileID: 8300000, guid: bc9c1d5e71ca34f6c8f0439a25182b31, type: 3}
     GameMusic:
-    - {fileID: 8300000, guid: 3984977214cb94dbb82d07632804fc61, type: 3}
+    - {fileID: 8300000, guid: bd769eda8f3594042bec40224bb2a226, type: 3}
+    Highscore:
+    - {fileID: 8300000, guid: ecd5ff76e16b54a508dd0e66f7adc7bb, type: 3}
+    NoHighscore:
+    - {fileID: 8300000, guid: a9914c6b6b09a46698544b5e7a6d988e, type: 3}
   Pirates:
     Death:
     - {fileID: 8300000, guid: ce16a4298c0464366ae5b14b6b08c3e2, type: 3}
@@ -95,6 +103,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: dafb4e3ff6d2e43f0809d3a020af1528, type: 3}
     - {fileID: 8300000, guid: 66a9534a715f243acb13f4fcd1c188d1, type: 3}
     - {fileID: 8300000, guid: d29282a7739174bebbe03156ff989364, type: 3}
+    GrabCoins:
+    - {fileID: 8300000, guid: c2dc8142ef51744adb90aa88e247652a, type: 3}
   PirateShip:
     Fire:
     - {fileID: 8300000, guid: dbbe530320af840659f3d9a22395f06a, type: 3}

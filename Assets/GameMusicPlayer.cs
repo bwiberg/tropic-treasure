@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using EazyTools.SoundManager;
 
+using DG.Tweening;
+
 public class GameMusicPlayer : MonoBehaviour {
 	public bool hasStartedPlaying = false;
 	public float timeUntilStart = 5.0f;
@@ -20,6 +22,12 @@ public class GameMusicPlayer : MonoBehaviour {
 		{
 			SetVolume(1.0f);
 		}
+
+		DOTween.Sequence()
+			.AppendCallback(PlayIntroMusic)
+			.AppendInterval(timeUntilStart)
+			.AppendCallback(PlayGameLoopMusic)
+			.Play();
 	}
 
 	private void Update () {
@@ -30,6 +38,24 @@ public class GameMusicPlayer : MonoBehaviour {
 			music = SoundManager.GetMusicAudio(SoundManager.PlayMusic(clip, 1.0f, true, false));
 			music.fadeInSeconds = 0.05f;
 		}
+	}
+
+	private void PlayIntroMusic() {
+		var clip = AudioClips.Instance.Music.GameIntro.GetAny();
+		music = SoundManager.GetMusicAudio(SoundManager.PlayMusic(clip, 1.0f, false, false));
+	}
+
+	private void PlayGameLoopMusic() {
+		var clip = AudioClips.Instance.Music.GameMusic.GetAny();
+		music = SoundManager.GetMusicAudio(SoundManager.PlayMusic(clip, 1.0f, true, false));
+	}
+
+	public void PauseGameMusic() {
+		music.Pause();
+	}
+
+	public void ResumeGameMusic() {
+		music.Resume();
 	}
 
 	public void SetVolume(float volume)

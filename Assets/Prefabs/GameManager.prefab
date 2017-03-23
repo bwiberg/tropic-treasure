@@ -78,4 +78,5 @@ MonoBehaviour:
   - {fileID: 0}
   wind: {fileID: 0}
   ship: {fileID: 0}
+  musicPlayer: {fileID: 0}
   windMaxLevel: 10

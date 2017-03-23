@@ -38,7 +38,7 @@ public class spikeTrigger : MonoBehaviour {
                 if (inTrap[i].gameObject.GetComponent<SimpleAgent>())
                 {
                     isSet = false;
-                    iTween.MoveBy(gameObject, iTween.Hash("amount", new Vector3(0f, 3.5f, 0f), "time", 0.5f, "oncomplete", "spikesUp"));
+                    iTween.MoveBy(gameObject, iTween.Hash("amount", new Vector3(0f, 3.5f, 0f), "time", 0.25f, "oncomplete", "spikesUp"));
                     break;
                 }
             }
@@ -57,7 +57,7 @@ public class spikeTrigger : MonoBehaviour {
 				simpleAgent.handleHitBySpikes();
 			}
         }
-        iTween.MoveBy(gameObject, iTween.Hash("amount", new Vector3(0f, -3.5f, 0f), "time", 2.0f, "oncomplete", "setTrap"));
+        iTween.MoveBy(gameObject, iTween.Hash("amount", new Vector3(0f, -3.5f, 0f), "time", 1.0f, "oncomplete", "setTrap"));
     }
 
     public void setTrap()

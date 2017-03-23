@@ -7,8 +7,12 @@ public class NameMenuScript : StateMachineBehaviour {
 
 	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		Debug.Log("Highscore!");
 		var clip = AudioClips.Instance.GameOver.Applause.GetAny();
-		SoundManager.PlaySound(clip);
+		SoundManager.PlaySound(clip, 0.5f);
+
+		clip = AudioClips.Instance.Music.Highscore.GetAny();
+		SoundManager.PlayMusic(clip, 1.0f, false, false);
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

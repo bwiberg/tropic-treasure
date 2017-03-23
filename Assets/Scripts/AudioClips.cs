@@ -72,7 +72,11 @@ public class AudioClips : MonoBehaviour {
 	//--------//
 	[System.Serializable]
 	public class Music_ {
+		public List<AudioClip> MainMenu;
+		public List<AudioClip> GameIntro;
 		public List<AudioClip> GameMusic;
+		public List<AudioClip> Highscore;
+		public List<AudioClip> NoHighscore;
 	}
 	public Music_ Music;
 
@@ -84,6 +88,7 @@ public class AudioClips : MonoBehaviour {
 	public class Pirates_ {
 		public List<AudioClip> Death;
 		public List<AudioClip> VoiceYarr;
+		public List<AudioClip> GrabCoins;
 	}
 	public Pirates_ Pirates;
 

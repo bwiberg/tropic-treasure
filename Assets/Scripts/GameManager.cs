@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject wind;
 	public GameObject ship;
 
+	public GameMusicPlayer musicPlayer;
+
 	private float windLoadLevel = 0.0f;
 	public float windMaxLevel = 10.0f;
 
@@ -220,6 +222,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DisableGameInput() {
+		musicPlayer.PauseGameMusic();
+
 		foreach (var templeLevel in temple.Levels) {
 			templeLevel.SetRotationsEnabled(false);
 		}
@@ -260,6 +264,8 @@ public class GameManager : MonoBehaviour {
     }
 
 	public void EnableGameInput() {
+		musicPlayer.ResumeGameMusic();
+
 		foreach (var templeLevel in temple.Levels) {
 			templeLevel.SetRotationsEnabled(true);
 		}
@@ -294,4 +300,8 @@ public class GameManager : MonoBehaviour {
             spikes[i].enabled = true;
         }
     }
+
+	public bool AchievedHighscore() {
+		return place > 0;
+	}
 }

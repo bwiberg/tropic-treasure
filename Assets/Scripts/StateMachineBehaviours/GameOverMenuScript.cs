@@ -6,9 +6,13 @@ using EazyTools.SoundManager;
 public class GameOverMenuScript : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {	
+		Debug.Log("No highscore!");
 		var clip = AudioClips.Instance.GameOver.Laughter.GetAny();
-		SoundManager.PlaySound(clip);
+		SoundManager.PlaySound(clip, 0.5f);
+
+		clip = AudioClips.Instance.Music.NoHighscore.GetAny();
+		SoundManager.PlayMusic(clip, 1.0f, false, false);
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
