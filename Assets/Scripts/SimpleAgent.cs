@@ -6,6 +6,8 @@ using EazyTools.SoundManager;
 
 public class SimpleAgent : MonoBehaviour {
 	private NavMeshAgent agent;
+	private Animator anim;
+	private Rigidbody rb;
 
 	public Transform target;
 
@@ -24,8 +26,11 @@ public class SimpleAgent : MonoBehaviour {
 	// Use this for initialization
 	private void OnEnable () {
         target = FindObjectOfType<spawnBox>().chest.transform;
+		anim = GetComponentInChildren<Animator> ();
 		agent = GetComponent<NavMeshAgent>();
 		agent.SetDestination(target.position);
+		rb = GetComponent<Rigidbody> ();
+
 	}
 
 	private void Start() {
@@ -45,6 +50,19 @@ public class SimpleAgent : MonoBehaviour {
 			agent.remainingDistance < RemainingDistanceThreshold || wasAlerted) {
 			findObstructionWallAndAlertCannon();
 		}
+
+		// Check speed of object to see if walking or idle animation should be played
+		if ((rb.velocity.magnitude == 0.2f)) {
+			// switch to idle animation
+			anim.SetBool ("isMoving", false);
+			//Debug.Log ("idle");
+		}
+		else {
+			//switch to walking animation
+			anim.SetBool ("isMoving", true);
+			//Debug.Log ("walk");
+		}
+
 	}
 
 	private void findObstructionWallAndAlertCannon() {

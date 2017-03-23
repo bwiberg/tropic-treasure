@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.AI;
 
 public class EarthPowerUp : MonoBehaviour {
 	public float chargingTime = 10.0f;
@@ -38,6 +39,9 @@ public class EarthPowerUp : MonoBehaviour {
 	private int maxNumEnemies;
 	private GameObject Cam;
 	private Quaternion StaticCameraRotation;
+
+	private Animator enemyAnim;
+	private SimpleAgent enemyAgent;
 
 
 
@@ -104,10 +108,13 @@ public class EarthPowerUp : MonoBehaviour {
 		isActive = true;
 
 		enemiesKill = GameObject.FindGameObjectsWithTag ("Enemy");
-		// stop enemies from moving, add animation transition later
 		for (int i = 0; i < enemiesKill.Length; i++) {
-			enemyRigidBody = enemiesKill [i].GetComponent<Rigidbody>();
-			enemyRigidBody.constraints = RigidbodyConstraints.FreezeAll;
+			// stop enemies from moving
+			enemiesKill[i].GetComponent<NavMeshAgent> ().Stop();
+
+			//switch to quake animation
+			enemyAnim = enemiesKill[i].GetComponentInChildren<Animator>();
+			enemyAnim.SetBool ("powerActivated", true);
 		}
 
 	}
@@ -121,13 +128,23 @@ public class EarthPowerUp : MonoBehaviour {
 			isActive = false;
 			isCharged = false;
 
-			// based on shake counter value, destroy enemies
-			//Debug.Log("shakeCounter: " + shakeCounter);
-			if(shakeCounter >= 3) {
-				// kill 2 enemies
-				Destroy(enemiesKill[0]);
-				Destroy(enemiesKill[1]);
+			// switch to walking animation and turn on nav mesh
+			for (int i = 0; i < enemiesKill.Length; i++) {
+
+				//switch to walk animation
+				enemyAnim = enemiesKill[i].GetComponentInChildren<Animator>();
+				enemyAnim.SetBool ("powerActivated", false);
+
+				// turn on nav mesh
+				enemiesKill[i].GetComponent<NavMeshAgent> ().Resume();
 			}
+
+			// kill 2 enemies regardless
+			Destroy(enemiesKill[0]);
+			Destroy(enemiesKill[1]);
+
+ 
+
 
 			shakeCounter = 0;
 
@@ -144,4 +161,5 @@ public class EarthPowerUp : MonoBehaviour {
 		}
 
 	}
+
 }
