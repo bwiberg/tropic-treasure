@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EazyTools.SoundManager;
+using UnityEngine.AI;
 
 public class ChargePowerUp : MonoBehaviour {
-	public float initialWaitDuration;
 
 	public float chargingTime = 10.0f;
 	public float activeTime = 5.0f;
 
 	public bool isActive;
 
+	public float initialWaitDuration = 5.0f;
+
 	private bool isCharged = false;
+	private bool enemiesFrozen = false;
 
 	private float remainingActiveTime;
 	private Image image;
 	private Button button;
+	private GameObject[] enemies;
+	private Animator enemyAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +38,7 @@ public class ChargePowerUp : MonoBehaviour {
 		if (Time.timeSinceLevelLoad <= initialWaitDuration) {
 			return;
 		}
-		
+
 		if(isActive) {
 			Deplete();
 		}
@@ -43,6 +48,10 @@ public class ChargePowerUp : MonoBehaviour {
 	}
 
 	void Charge() {
+		if (enemiesFrozen) {
+			EnableEnemies ();
+			enemiesFrozen = false;
+		}
 		image.fillAmount += Time.deltaTime/chargingTime;
 
 		if(image.fillAmount >= 1) {
@@ -59,6 +68,10 @@ public class ChargePowerUp : MonoBehaviour {
 
 	void Deplete() {
 		remainingActiveTime -= Time.deltaTime/activeTime;
+//		if (enemiesFrozen) {
+//			EnableEnemies ();
+//			enemiesFrozen = false;
+//		}
 		if(remainingActiveTime <= 0) 
 		{
 			remainingActiveTime = 1.0f;
@@ -67,8 +80,11 @@ public class ChargePowerUp : MonoBehaviour {
 	}
 
 	public void Activate() {
+		
+
 		Reset();
 		isActive = true;
+		enemiesFrozen = true;
 	}
 
 	void Reset() {
@@ -77,5 +93,31 @@ public class ChargePowerUp : MonoBehaviour {
 		button.interactable = false;
 		button.gameObject.SetActive(false);
 		button.gameObject.SetActive(true);
+	}
+
+	void DisableEnemies() {
+		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		for (int i = 0; i < enemies.Length; i++) {
+			// stop enemies from moving
+			enemies[i].GetComponent<NavMeshAgent> ().Stop();
+
+			//switch to quake animation
+			enemyAnim = enemies[i].GetComponentInChildren<Animator>();
+			enemyAnim.SetBool ("powerActivated", true);
+		}
+		enemiesFrozen = true;
+	}
+
+	void EnableEnemies() {
+		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		for (int i = 0; i < enemies.Length; i++) {
+			//switch to walking animation
+			enemyAnim = enemies[i].GetComponentInChildren<Animator>();
+			enemyAnim.SetBool ("powerActivated", false);
+
+			// let enemies move
+			enemies[i].GetComponent<NavMeshAgent> ().Resume();
+			enemiesFrozen = false;
+		}
 	}
 }

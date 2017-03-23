@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utility;
 using EazyTools.SoundManager;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance {
@@ -63,6 +64,8 @@ public class GameManager : MonoBehaviour {
 
 	private SimpleAgent[] enemies;
     private spikeTrigger[] spikes;
+	private GameObject[] enemiesObject;
+	private Animator enemyAnim;
 
 
     private Rigidbody[] rigidbodies;
@@ -173,6 +176,14 @@ public class GameManager : MonoBehaviour {
 			var rb = trees[i].GetComponent<Rigidbody>();
 			rb.AddTorque(new Vector3(torque, torque, torque));
 		}
+		if (MicInput.loudness > 0.05f) {
+			DisableEnemies ();
+			Debug.Log ("disabled");
+		} else {
+			EnableEnemies ();
+		}
+
+		//Debug.Log("loudness: " + MicInput.loudness);
 	}
 
 	void FinishGame()
@@ -303,5 +314,30 @@ public class GameManager : MonoBehaviour {
 
 	public bool AchievedHighscore() {
 		return place > 0;
+	}
+
+	void DisableEnemies() {
+		enemiesObject = GameObject.FindGameObjectsWithTag ("Enemy");
+		for (int i = 0; i < enemiesObject.Length; i++) {
+			// stop enemies from moving
+			enemiesObject[i].GetComponent<NavMeshAgent> ().Stop();
+
+			//switch to quake animation
+			enemyAnim = enemiesObject[i].GetComponentInChildren<Animator>();
+			enemyAnim.SetBool ("powerActivated", true);
+		}
+
+	}
+
+	void EnableEnemies() {
+		enemiesObject = GameObject.FindGameObjectsWithTag ("Enemy");
+		for (int i = 0; i < enemiesObject.Length; i++) {
+			//switch to walking animation
+			enemyAnim = enemiesObject[i].GetComponentInChildren<Animator>();
+			enemyAnim.SetBool ("powerActivated", false);
+
+			// let enemies move
+			enemiesObject[i].GetComponent<NavMeshAgent> ().Resume();
+		}
 	}
 }
